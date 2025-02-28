@@ -1,0 +1,10 @@
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\bin\Debug\MAD_BaseDeDatos.exe.config
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\bin\Debug\MAD_BaseDeDatos.exe
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\bin\Debug\MAD_BaseDeDatos.pdb
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\obj\Debug\MAD_BaseDeDatos.csproj.AssemblyReference.cache
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\obj\Debug\MAD_BaseDeDatos.Form1.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\obj\Debug\MAD_BaseDeDatos.Properties.Resources.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\obj\Debug\MAD_BaseDeDatos.csproj.GenerateResource.cache
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\obj\Debug\MAD_BaseDeDatos.csproj.CoreCompileInputs.cache
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\obj\Debug\MAD_BaseDeDatos.exe
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\obj\Debug\MAD_BaseDeDatos.pdb

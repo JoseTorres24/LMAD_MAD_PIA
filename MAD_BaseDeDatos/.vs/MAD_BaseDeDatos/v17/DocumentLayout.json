@@ -1,36 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{9367122C-6C06-4862-B5A3-EA5446E5585F}|MAD_BaseDeDatos.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9367122C-6C06-4862-B5A3-EA5446E5585F}|MAD_BaseDeDatos.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Form1.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T19:45:36.455Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

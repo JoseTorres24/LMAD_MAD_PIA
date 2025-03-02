@@ -3,7 +3,6 @@ C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bi
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bin\Debug\INICIO_Forms.pdb
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.csproj.AssemblyReference.cache
-C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.Home.resources
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.Login.resources
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.Properties.Resources.resources
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.csproj.GenerateResource.cache
@@ -24,3 +23,5 @@ C:\Users\cesar\Desktop\AvancePIAMIA\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\ob
 C:\Users\cesar\Desktop\AvancePIAMIA\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_F.85D8B137.Up2Date
 C:\Users\cesar\Desktop\AvancePIAMIA\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.exe
 C:\Users\cesar\Desktop\AvancePIAMIA\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.pdb
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.Create.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.HomeOperativo.resources

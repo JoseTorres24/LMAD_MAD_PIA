@@ -53,25 +53,58 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADMINISTRATIVO\HomeAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\HomeAdministrador.Designer.cs">
+      <DependentUpon>HomeAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="Create.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="Create.Designer.cs">
+      <DependentUpon>Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPERATIVO\CHECKOUT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPERATIVO\CHECKOUT.Designer.cs">
+      <DependentUpon>CHECKOUT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPERATIVO\CHEKIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPERATIVO\CHEKIN.Designer.cs">
+      <DependentUpon>CHEKIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPERATIVO\HomeOperativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPERATIVO\HomeOperativo.Designer.cs">
+      <DependentUpon>HomeOperativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPERATIVO\Reservaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPERATIVO\Reservaciones.Designer.cs">
+      <DependentUpon>Reservaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="Create.resx">
+      <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPERATIVO\HomeOperativo.resx">
+      <DependentUpon>HomeOperativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -95,6 +129,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\FotoInicio.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

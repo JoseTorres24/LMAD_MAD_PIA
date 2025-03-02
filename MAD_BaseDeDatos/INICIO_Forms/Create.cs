@@ -10,25 +10,14 @@ using System.Windows.Forms;
 
 namespace INICIO_Forms
 {
-    public partial class Login : Form
+    public partial class Create : Form
     {
-        public Login()
+        public Create()
         {
             InitializeComponent();
-
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void Home_Load(object sender, EventArgs e)
         {
 
         }

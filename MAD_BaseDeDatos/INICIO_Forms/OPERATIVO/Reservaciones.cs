@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace INICIO_Forms
+namespace INICIO_Forms.OPERATIVO
 {
-    public partial class Home : Form
+    public partial class Reservaciones : Form
     {
-        public Home()
+        public Reservaciones()
         {
             InitializeComponent();
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

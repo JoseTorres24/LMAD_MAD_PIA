@@ -1,6 +1,6 @@
 ﻿namespace INICIO_Forms
 {
-    partial class Home
+    partial class Create
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Home
+            // Create
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 417);
-            this.Name = "Home";
-            this.Text = "Form2";
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.ClientSize = new System.Drawing.Size(701, 550);
+            this.Name = "Create";
+            this.Text = "Creando cuenta ADMIN";
             this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
 

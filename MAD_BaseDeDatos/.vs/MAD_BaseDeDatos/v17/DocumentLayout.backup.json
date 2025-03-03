@@ -3,20 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\operativo\\homeoperativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\homeoperativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\homeoperativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\homeoperativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,33 +66,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Create.cs",
-              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Create.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\Create.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Create.cs",
-              "RelativeToolTip": "INICIO_Forms\\Create.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T08:15:46.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Create.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Create.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\Create.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Create.cs [Dise\u00F1o]",
-              "RelativeToolTip": "INICIO_Forms\\Create.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-02T06:35:52.874Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -71,7 +78,89 @@
               "RelativeToolTip": "INICIO_Forms\\Login.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T07:13:09.154Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CHECKOUT.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T02:11:35.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CHECKOUT.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T02:11:34.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CHEKIN.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T02:08:56.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CHEKIN.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T02:08:50.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Reservaciones.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T02:06:19.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Reservaciones.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T02:06:13.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeOperativo.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\HomeOperativo.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\HomeOperativo.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\HomeOperativo.cs",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\HomeOperativo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T01:40:27.363Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -81,14 +170,47 @@
               "RelativeDocumentMoniker": "INICIO_Forms\\Login.cs",
               "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Login.cs",
               "RelativeToolTip": "INICIO_Forms\\Login.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAawE0AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAuwBEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T17:43:23.127Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T17:43:23.127Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
+              "Title": "HomeOperativo.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\HomeOperativo.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\HomeOperativo.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\HomeOperativo.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\HomeOperativo.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T22:27:32.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Create.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Create.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\Create.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Create.cs",
+              "RelativeToolTip": "INICIO_Forms\\Create.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T08:15:46.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Create.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\Create.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Create.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\Create.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T06:35:52.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Class1.cs",
               "RelativeDocumentMoniker": "ClasesData\\Class1.cs",
@@ -96,12 +218,11 @@
               "RelativeToolTip": "ClasesData\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T07:17:55.912Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T07:17:55.912Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Program.cs",
               "RelativeDocumentMoniker": "INICIO_Forms\\Program.cs",
@@ -109,8 +230,7 @@
               "RelativeToolTip": "INICIO_Forms\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T07:16:30.209Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T07:16:30.209Z"
             }
           ]
         }

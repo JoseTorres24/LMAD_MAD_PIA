@@ -12,9 +12,22 @@ namespace INICIO_Forms.OPERATIVO
 {
     public partial class Reservaciones : Form
     {
-        public Reservaciones()
+        private HomeOperativo homeOperativo;
+        public Reservaciones(HomeOperativo homeOperativo)
         {
             InitializeComponent();
+            this.homeOperativo = homeOperativo;
+            this.FormClosed += new FormClosedEventHandler(Reservaciones_FormClosed);
+        }
+        // Cuando el formulario se cierre, mostramos HomeOperativo
+        private void Reservaciones_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            homeOperativo.Show();
+        }
+
+        private void Reservaciones_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

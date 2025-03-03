@@ -48,11 +48,19 @@
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.CrearCuenta = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,10 +84,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(29, 26);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(42, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 17);
+            this.label2.Size = new System.Drawing.Size(229, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Registro de Administrador";
             // 
@@ -249,30 +257,90 @@
             this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.UserAstronaut;
             this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox4.IconSize = 228;
-            this.iconPictureBox4.Location = new System.Drawing.Point(583, 72);
+            this.iconPictureBox4.IconSize = 224;
+            this.iconPictureBox4.Location = new System.Drawing.Point(500, 82);
             this.iconPictureBox4.Name = "iconPictureBox4";
-            this.iconPictureBox4.Size = new System.Drawing.Size(259, 228);
+            this.iconPictureBox4.Size = new System.Drawing.Size(224, 228);
             this.iconPictureBox4.TabIndex = 19;
             this.iconPictureBox4.TabStop = false;
             // 
-            // iconButton1
+            // CrearCuenta
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.LightGreen;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Pencil;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(583, 496);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.iconButton1.Size = new System.Drawing.Size(177, 60);
-            this.iconButton1.TabIndex = 20;
-            this.iconButton1.Text = "Crear Cuenta Administrador";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.CrearCuenta.BackColor = System.Drawing.Color.LightGreen;
+            this.CrearCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
+            this.CrearCuenta.IconChar = FontAwesome.Sharp.IconChar.Pencil;
+            this.CrearCuenta.IconColor = System.Drawing.Color.Black;
+            this.CrearCuenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.CrearCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CrearCuenta.Location = new System.Drawing.Point(583, 496);
+            this.CrearCuenta.Name = "CrearCuenta";
+            this.CrearCuenta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CrearCuenta.Size = new System.Drawing.Size(177, 60);
+            this.CrearCuenta.TabIndex = 20;
+            this.CrearCuenta.Text = "Crear Cuenta Administrador";
+            this.CrearCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CrearCuenta.UseVisualStyleBackColor = false;
+            this.CrearCuenta.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.MistyRose;
+            this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.UserLock;
+            this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 33;
+            this.iconPictureBox5.ImageLocation = "";
+            this.iconPictureBox5.Location = new System.Drawing.Point(32, 325);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(39, 33);
+            this.iconPictureBox5.TabIndex = 21;
+            this.iconPictureBox5.TabStop = false;
+            // 
+            // iconPictureBox6
+            // 
+            this.iconPictureBox6.BackColor = System.Drawing.Color.MistyRose;
+            this.iconPictureBox6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.MailBulk;
+            this.iconPictureBox6.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox6.IconSize = 33;
+            this.iconPictureBox6.ImageLocation = "";
+            this.iconPictureBox6.Location = new System.Drawing.Point(32, 237);
+            this.iconPictureBox6.Name = "iconPictureBox6";
+            this.iconPictureBox6.Size = new System.Drawing.Size(39, 33);
+            this.iconPictureBox6.TabIndex = 22;
+            this.iconPictureBox6.TabStop = false;
+            // 
+            // iconPictureBox7
+            // 
+            this.iconPictureBox7.BackColor = System.Drawing.Color.MistyRose;
+            this.iconPictureBox7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.MoneyCheck;
+            this.iconPictureBox7.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox7.IconSize = 33;
+            this.iconPictureBox7.ImageLocation = "";
+            this.iconPictureBox7.Location = new System.Drawing.Point(32, 90);
+            this.iconPictureBox7.Name = "iconPictureBox7";
+            this.iconPictureBox7.Size = new System.Drawing.Size(39, 33);
+            this.iconPictureBox7.TabIndex = 23;
+            this.iconPictureBox7.TabStop = false;
+            // 
+            // iconPictureBox8
+            // 
+            this.iconPictureBox8.BackColor = System.Drawing.Color.MistyRose;
+            this.iconPictureBox8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.iconPictureBox8.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox8.IconSize = 33;
+            this.iconPictureBox8.ImageLocation = "";
+            this.iconPictureBox8.Location = new System.Drawing.Point(32, 154);
+            this.iconPictureBox8.Name = "iconPictureBox8";
+            this.iconPictureBox8.Size = new System.Drawing.Size(39, 33);
+            this.iconPictureBox8.TabIndex = 24;
+            this.iconPictureBox8.TabStop = false;
             // 
             // Create
             // 
@@ -281,7 +349,11 @@
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(927, 636);
             this.ControlBox = false;
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.iconPictureBox8);
+            this.Controls.Add(this.iconPictureBox7);
+            this.Controls.Add(this.iconPictureBox6);
+            this.Controls.Add(this.iconPictureBox5);
+            this.Controls.Add(this.CrearCuenta);
             this.Controls.Add(this.iconPictureBox4);
             this.Controls.Add(this.iconPictureBox3);
             this.Controls.Add(this.iconPictureBox2);
@@ -309,6 +381,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,6 +412,10 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton CrearCuenta;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
     }
 }

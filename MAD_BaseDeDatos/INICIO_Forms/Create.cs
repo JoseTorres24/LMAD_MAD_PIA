@@ -8,14 +8,21 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static INICIO_Forms.Utilidades;
+
 
 namespace INICIO_Forms
 {
     public partial class Create : Form
-    {
-        public Create()
+    {   // Representacion necesaria solo para evitar que se encargue para representar
+        // El hecho de que hay un usuario administrador
+        //Todo esto se tendra que implementar con Base de datos?
+        private Login login;
+
+        public Create(Login login)
         {
             InitializeComponent();
+            this.login = login;
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -81,35 +88,20 @@ namespace INICIO_Forms
                 MessageBox.Show("Los teléfonos deben contener solo números y tener al menos 10 dígitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // Ocultar el botón en el formulario Login
+            if (login != null)
+            {
+                login.OcultarBotonCrearCuenta();
+            }
+
+            // Volver a mostrar el formulario Login
+            login.Show();
+            this.Close(); // Cierra el formulario de crear cuenta
 
         }
 
 
-        private bool ValidarContraseña(string contraseña)
-        {
-            string patron = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$";
-            return Regex.IsMatch(contraseña, patron);
-        }
 
 
-        private bool ValidarCorreo(string correo)
-        {
-            string patron = @"^[a-zA-Z0-9._%+-]+@(outlook\.com|gmail\.com|hotmail\.com)$";
-            return Regex.IsMatch(correo, patron);
-        }
-        private bool ValidarNombre(string nombre)
-        {
-            return Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$");
-        }
-
-        private bool ValidarNumeroNomina(string numeroNomina)
-        {
-            return Regex.IsMatch(numeroNomina, @"^\d{11}$"); // 11 dígitos numéricos
-        }
-
-        private bool ValidarTelefono(string telefono)
-        {
-            return Regex.IsMatch(telefono, @"^\d{10,}$"); // Mínimo 10 dígitos
-        }
     }
 }

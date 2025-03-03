@@ -25,3 +25,6 @@ C:\Users\cesar\Desktop\AvancePIAMIA\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\ob
 C:\Users\cesar\Desktop\AvancePIAMIA\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.pdb
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.Create.resources
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.HomeOperativo.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.CHECKOUT.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.CHEKIN.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.Reservaciones.resources

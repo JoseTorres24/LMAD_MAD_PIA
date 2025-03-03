@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="Create.resx">
       <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,8 +105,17 @@
       <DependentUpon>Login.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="OPERATIVO\CHECKOUT.resx">
+      <DependentUpon>CHECKOUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPERATIVO\CHEKIN.resx">
+      <DependentUpon>CHEKIN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OPERATIVO\HomeOperativo.resx">
       <DependentUpon>HomeOperativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPERATIVO\Reservaciones.resx">
+      <DependentUpon>Reservaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

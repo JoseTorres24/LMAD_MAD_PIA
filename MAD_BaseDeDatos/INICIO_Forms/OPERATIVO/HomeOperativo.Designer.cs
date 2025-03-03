@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.menuTitutlo = new System.Windows.Forms.MenuStrip();
+            this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            this.RegistrarCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.ReservacionesMenu = new FontAwesome.Sharp.IconMenuItem();
             this.frmReservacion = new FontAwesome.Sharp.IconMenuItem();
             this.CheckInMenu = new FontAwesome.Sharp.IconMenuItem();
@@ -46,15 +48,37 @@
             // 
             this.menuTitutlo.BackColor = System.Drawing.Color.Snow;
             this.menuTitutlo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iconMenuItem1,
             this.ReservacionesMenu,
             this.CheckInMenu,
             this.CheckOutMenu,
             this.SalirMenu});
             this.menuTitutlo.Location = new System.Drawing.Point(0, 77);
             this.menuTitutlo.Name = "menuTitutlo";
-            this.menuTitutlo.Size = new System.Drawing.Size(677, 71);
+            this.menuTitutlo.Size = new System.Drawing.Size(691, 73);
             this.menuTitutlo.TabIndex = 0;
             this.menuTitutlo.Text = "menuStrip1";
+            // 
+            // iconMenuItem1
+            // 
+            this.iconMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RegistrarCliente});
+            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.iconMenuItem1.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem1.IconSize = 50;
+            this.iconMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.iconMenuItem1.Name = "iconMenuItem1";
+            this.iconMenuItem1.Size = new System.Drawing.Size(62, 69);
+            this.iconMenuItem1.Text = "Clientes";
+            this.iconMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // RegistrarCliente
+            // 
+            this.RegistrarCliente.Name = "RegistrarCliente";
+            this.RegistrarCliente.Size = new System.Drawing.Size(180, 22);
+            this.RegistrarCliente.Text = "Registrar Cliente";
+            this.RegistrarCliente.Click += new System.EventHandler(this.RegistrarCliente_Click);
             // 
             // ReservacionesMenu
             // 
@@ -100,7 +124,7 @@
             this.frmCheckIn.IconColor = System.Drawing.Color.Black;
             this.frmCheckIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.frmCheckIn.Name = "frmCheckIn";
-            this.frmCheckIn.Size = new System.Drawing.Size(163, 22);
+            this.frmCheckIn.Size = new System.Drawing.Size(180, 22);
             this.frmCheckIn.Text = "Realizar Check In";
             this.frmCheckIn.Click += new System.EventHandler(this.iconMenuItem2_Click);
             // 
@@ -124,7 +148,7 @@
             this.frmCheckOut.IconColor = System.Drawing.Color.Black;
             this.frmCheckOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.frmCheckOut.Name = "frmCheckOut";
-            this.frmCheckOut.Size = new System.Drawing.Size(171, 22);
+            this.frmCheckOut.Size = new System.Drawing.Size(180, 22);
             this.frmCheckOut.Text = "Realizar Check out";
             this.frmCheckOut.Click += new System.EventHandler(this.iconMenuItem3_Click);
             // 
@@ -148,7 +172,7 @@
             this.Salir.IconColor = System.Drawing.Color.Black;
             this.Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(159, 22);
+            this.Salir.Size = new System.Drawing.Size(180, 22);
             this.Salir.Text = "Salir del Sistema";
             this.Salir.Click += new System.EventHandler(this.iconMenuItem4_Click);
             // 
@@ -159,7 +183,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(677, 77);
+            this.menuStrip1.Size = new System.Drawing.Size(691, 77);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -180,7 +204,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(677, 569);
+            this.ClientSize = new System.Drawing.Size(691, 576);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuTitutlo);
             this.Controls.Add(this.menuStrip1);
@@ -208,5 +232,7 @@
         private FontAwesome.Sharp.IconMenuItem frmCheckIn;
         private FontAwesome.Sharp.IconMenuItem frmCheckOut;
         private FontAwesome.Sharp.IconMenuItem Salir;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem RegistrarCliente;
     }
 }

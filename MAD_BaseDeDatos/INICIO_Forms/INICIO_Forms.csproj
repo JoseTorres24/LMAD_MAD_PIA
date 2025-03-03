@@ -59,6 +59,36 @@
     <Compile Include="ADMINISTRATIVO\HomeAdministrador.Designer.cs">
       <DependentUpon>HomeAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADMINISTRATIVO\Hoteles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\Hoteles.Designer.cs">
+      <DependentUpon>Hoteles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\ReporteCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\ReporteCliente.Designer.cs">
+      <DependentUpon>ReporteCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\ReporteHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\ReporteHotel.Designer.cs">
+      <DependentUpon>ReporteHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\ReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\ReporteVentas.Designer.cs">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +119,12 @@
     <Compile Include="OPERATIVO\HomeOperativo.Designer.cs">
       <DependentUpon>HomeOperativo.cs</DependentUpon>
     </Compile>
+    <Compile Include="OPERATIVO\ProcesarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPERATIVO\ProcesarUsuario.Designer.cs">
+      <DependentUpon>ProcesarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="OPERATIVO\Reservaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +136,21 @@
     <Compile Include="Utilidades.cs" />
     <EmbeddedResource Include="ADMINISTRATIVO\HomeAdministrador.resx">
       <DependentUpon>HomeAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMINISTRATIVO\Hoteles.resx">
+      <DependentUpon>Hoteles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMINISTRATIVO\Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMINISTRATIVO\ReporteCliente.resx">
+      <DependentUpon>ReporteCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMINISTRATIVO\ReporteHotel.resx">
+      <DependentUpon>ReporteHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMINISTRATIVO\ReporteVentas.resx">
+      <DependentUpon>ReporteVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Create.resx">
       <DependentUpon>Create.cs</DependentUpon>
@@ -116,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OPERATIVO\HomeOperativo.resx">
       <DependentUpon>HomeOperativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPERATIVO\ProcesarUsuario.resx">
+      <DependentUpon>ProcesarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OPERATIVO\Reservaciones.resx">
       <DependentUpon>Reservaciones.cs</DependentUpon>

@@ -28,3 +28,10 @@ C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\ob
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.CHECKOUT.resources
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.CHEKIN.resources
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.Reservaciones.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.HomeAdministrador.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.Hoteles.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.ReporteCliente.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.ReporteHotel.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.ProcesarUsuario.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.Registro.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.ReporteVentas.resources

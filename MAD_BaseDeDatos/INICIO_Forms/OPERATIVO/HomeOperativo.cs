@@ -52,5 +52,13 @@ namespace INICIO_Forms
             login.Show();
             this.Hide();
         }
+
+        private void RegistrarCliente_Click(object sender, EventArgs e)
+        {
+            ProcesarUsuario usuario = new ProcesarUsuario(this);
+            usuario.Show();
+            this.Hide();
+
+        }
     }
 }

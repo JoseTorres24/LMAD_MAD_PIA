@@ -197,7 +197,7 @@
             // checkedListBoxHabitaciones
             // 
             this.checkedListBoxHabitaciones.FormattingEnabled = true;
-            this.checkedListBoxHabitaciones.Location = new System.Drawing.Point(467, 325);
+            this.checkedListBoxHabitaciones.Location = new System.Drawing.Point(474, 322);
             this.checkedListBoxHabitaciones.Name = "checkedListBoxHabitaciones";
             this.checkedListBoxHabitaciones.Size = new System.Drawing.Size(274, 334);
             this.checkedListBoxHabitaciones.TabIndex = 20;
@@ -297,7 +297,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(835, 175);
+            this.label13.Location = new System.Drawing.Point(829, 175);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(146, 20);
             this.label13.TabIndex = 31;
@@ -305,7 +305,7 @@
             // 
             // dateCheckIn
             // 
-            this.dateCheckIn.Location = new System.Drawing.Point(830, 209);
+            this.dateCheckIn.Location = new System.Drawing.Point(824, 211);
             this.dateCheckIn.Name = "dateCheckIn";
             this.dateCheckIn.Size = new System.Drawing.Size(200, 20);
             this.dateCheckIn.TabIndex = 32;

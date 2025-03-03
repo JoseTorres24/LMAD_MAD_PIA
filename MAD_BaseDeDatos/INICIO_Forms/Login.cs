@@ -71,5 +71,10 @@ namespace INICIO_Forms
         {
             CrearCuentaAdmin_btn.Visible = false;
         }
+
+        private void Salir_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

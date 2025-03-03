@@ -98,6 +98,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades.cs" />
+    <EmbeddedResource Include="ADMINISTRATIVO\HomeAdministrador.resx">
+      <DependentUpon>HomeAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Create.resx">
       <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>

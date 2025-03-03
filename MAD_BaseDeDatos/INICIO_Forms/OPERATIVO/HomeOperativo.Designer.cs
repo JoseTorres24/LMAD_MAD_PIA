@@ -30,15 +30,15 @@
         {
             this.menuTitutlo = new System.Windows.Forms.MenuStrip();
             this.ReservacionesMenu = new FontAwesome.Sharp.IconMenuItem();
+            this.frmReservacion = new FontAwesome.Sharp.IconMenuItem();
             this.CheckInMenu = new FontAwesome.Sharp.IconMenuItem();
+            this.frmCheckIn = new FontAwesome.Sharp.IconMenuItem();
             this.CheckOutMenu = new FontAwesome.Sharp.IconMenuItem();
+            this.frmCheckOut = new FontAwesome.Sharp.IconMenuItem();
             this.SalirMenu = new FontAwesome.Sharp.IconMenuItem();
+            this.Salir = new FontAwesome.Sharp.IconMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
-            this.frmReservacion = new FontAwesome.Sharp.IconMenuItem();
-            this.frmCheckIn = new FontAwesome.Sharp.IconMenuItem();
-            this.frmCheckOut = new FontAwesome.Sharp.IconMenuItem();
-            this.Salir = new FontAwesome.Sharp.IconMenuItem();
             this.menuTitutlo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.SalirMenu});
             this.menuTitutlo.Location = new System.Drawing.Point(0, 77);
             this.menuTitutlo.Name = "menuTitutlo";
-            this.menuTitutlo.Size = new System.Drawing.Size(1182, 71);
+            this.menuTitutlo.Size = new System.Drawing.Size(677, 71);
             this.menuTitutlo.TabIndex = 0;
             this.menuTitutlo.Text = "menuStrip1";
             // 
@@ -70,6 +70,16 @@
             this.ReservacionesMenu.Text = "Reservaciones";
             this.ReservacionesMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // frmReservacion
+            // 
+            this.frmReservacion.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.frmReservacion.IconColor = System.Drawing.Color.Black;
+            this.frmReservacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.frmReservacion.Name = "frmReservacion";
+            this.frmReservacion.Size = new System.Drawing.Size(181, 22);
+            this.frmReservacion.Text = "Generar Reservacion";
+            this.frmReservacion.Click += new System.EventHandler(this.iconMenuItem1_Click);
+            // 
             // CheckInMenu
             // 
             this.CheckInMenu.AutoSize = false;
@@ -83,6 +93,16 @@
             this.CheckInMenu.Size = new System.Drawing.Size(122, 67);
             this.CheckInMenu.Text = "Check In";
             this.CheckInMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // frmCheckIn
+            // 
+            this.frmCheckIn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.frmCheckIn.IconColor = System.Drawing.Color.Black;
+            this.frmCheckIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.frmCheckIn.Name = "frmCheckIn";
+            this.frmCheckIn.Size = new System.Drawing.Size(163, 22);
+            this.frmCheckIn.Text = "Realizar Check In";
+            this.frmCheckIn.Click += new System.EventHandler(this.iconMenuItem2_Click);
             // 
             // CheckOutMenu
             // 
@@ -98,6 +118,16 @@
             this.CheckOutMenu.Text = "Check Out";
             this.CheckOutMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // frmCheckOut
+            // 
+            this.frmCheckOut.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.frmCheckOut.IconColor = System.Drawing.Color.Black;
+            this.frmCheckOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.frmCheckOut.Name = "frmCheckOut";
+            this.frmCheckOut.Size = new System.Drawing.Size(171, 22);
+            this.frmCheckOut.Text = "Realizar Check out";
+            this.frmCheckOut.Click += new System.EventHandler(this.iconMenuItem3_Click);
+            // 
             // SalirMenu
             // 
             this.SalirMenu.AutoSize = false;
@@ -112,6 +142,16 @@
             this.SalirMenu.Text = "Salir";
             this.SalirMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // Salir
+            // 
+            this.Salir.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Salir.IconColor = System.Drawing.Color.Black;
+            this.Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Salir.Name = "Salir";
+            this.Salir.Size = new System.Drawing.Size(159, 22);
+            this.Salir.Text = "Salir del Sistema";
+            this.Salir.Click += new System.EventHandler(this.iconMenuItem4_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
@@ -119,7 +159,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(1182, 77);
+            this.menuStrip1.Size = new System.Drawing.Size(677, 77);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,52 +175,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Control de Hoteles";
             // 
-            // frmReservacion
-            // 
-            this.frmReservacion.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.frmReservacion.IconColor = System.Drawing.Color.Black;
-            this.frmReservacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.frmReservacion.Name = "frmReservacion";
-            this.frmReservacion.Size = new System.Drawing.Size(181, 22);
-            this.frmReservacion.Text = "Generar Reservacion";
-            this.frmReservacion.Click += new System.EventHandler(this.iconMenuItem1_Click);
-            // 
-            // frmCheckIn
-            // 
-            this.frmCheckIn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.frmCheckIn.IconColor = System.Drawing.Color.Black;
-            this.frmCheckIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.frmCheckIn.Name = "frmCheckIn";
-            this.frmCheckIn.Size = new System.Drawing.Size(180, 22);
-            this.frmCheckIn.Text = "Realizar Check In";
-            this.frmCheckIn.Click += new System.EventHandler(this.iconMenuItem2_Click);
-            // 
-            // frmCheckOut
-            // 
-            this.frmCheckOut.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.frmCheckOut.IconColor = System.Drawing.Color.Black;
-            this.frmCheckOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.frmCheckOut.Name = "frmCheckOut";
-            this.frmCheckOut.Size = new System.Drawing.Size(180, 22);
-            this.frmCheckOut.Text = "Realizar Check out";
-            this.frmCheckOut.Click += new System.EventHandler(this.iconMenuItem3_Click);
-            // 
-            // Salir
-            // 
-            this.Salir.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.Salir.IconColor = System.Drawing.Color.Black;
-            this.Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(180, 22);
-            this.Salir.Text = "Salir del Sistema";
-            this.Salir.Click += new System.EventHandler(this.iconMenuItem4_Click);
-            // 
             // HomeOperativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(1182, 652);
+            this.ClientSize = new System.Drawing.Size(677, 569);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuTitutlo);
             this.Controls.Add(this.menuStrip1);

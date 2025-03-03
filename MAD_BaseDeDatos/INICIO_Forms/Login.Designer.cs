@@ -142,6 +142,7 @@ namespace INICIO_Forms
             this.Salir_btn.Text = "Salir";
             this.Salir_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Salir_btn.UseVisualStyleBackColor = false;
+            this.Salir_btn.Click += new System.EventHandler(this.Salir_btn_Click);
             // 
             // IniciarSesion_btn
             // 
@@ -188,6 +189,7 @@ namespace INICIO_Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(559, 364);
+            this.ControlBox = false;
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.CrearCuentaAdmin_btn);
             this.Controls.Add(this.Salir_btn);
@@ -201,6 +203,7 @@ namespace INICIO_Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
             this.Text = "Inicio Sesion";
             this.TopMost = true;

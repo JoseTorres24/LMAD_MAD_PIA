@@ -97,10 +97,10 @@ namespace INICIO_Forms
             {
                 CorreoElectronico = correo,
                 NombreCompleto = nombre,
-                NumeroNomina = int.Parse(numeroNomina),
+                NumeroNomina = long.Parse(numeroNomina),
                 FechaNacimiento = fechaNacimiento.ToString("yyyy-MM-dd"),
-                TelefonoCasa = int.Parse(telefonoCasa),
-                TelefonoCelular = int.Parse(telefonoCelular),
+                TelefonoCasa = long.Parse(telefonoCasa),
+                TelefonoCelular = long.Parse(telefonoCelular),
                 FechaRegistro = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
             };
 

@@ -10,10 +10,10 @@ namespace ClasesData
     {
         public string CorreoElectronico { get; set; }
         public string NombreCompleto { get; set; }
-        public string NumeroNomina { get; set; } // Cambiar a string si es necesario.
+        public long NumeroNomina { get; set; } // Cambiar a string si es necesario.
         public string FechaNacimiento { get; set; }
-        public string TelefonoCasa { get; set; } // Cambiar a string.
-        public string TelefonoCelular { get; set; } // Cambiar a string.
+        public long TelefonoCasa { get; set; } // Cambiar a string.
+        public long TelefonoCelular { get; set; } // Cambiar a string.
         public string FechaRegistro { get; set; }
     }
 

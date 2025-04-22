@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ClasesData.BD
 {
@@ -16,12 +17,10 @@ namespace ClasesData.BD
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-
-                    // Insertar en tabla Usuario
                     string insertUsuario = @"INSERT INTO UsuarioHotelAdministrador 
-                        (CorreoElectronico, NombreCompleto, NumeroNomina, FechaNacimiento, TelefonoCasa, TelefonoCelular, FechaHoraRegistro, Tipo) 
-                        OUTPUT INSERTED.ID_Usuario
-                        VALUES (@Correo, @Nombre, @Nomina, @FechaNac, @TelCasa, @TelCel, @FechaRegistro, 'Administrador')";
+                    (CorreoElectronico, NombreCompleto, NumeroNomina, FechaNacimiento, TelefonoCasa, TelefonoCelular, FechaRegistro) 
+                    OUTPUT INSERTED.ID_Usuario
+                    VALUES (@Correo, @Nombre, @Nomina, @FechaNac, @TelCasa, @TelCel, @FechaRegistro)";
 
                     SqlCommand cmdUsuario = new SqlCommand(insertUsuario, conexion);
                     cmdUsuario.Parameters.AddWithValue("@Correo", admin.CorreoElectronico);
@@ -31,24 +30,29 @@ namespace ClasesData.BD
                     cmdUsuario.Parameters.AddWithValue("@TelCasa", admin.TelefonoCasa);
                     cmdUsuario.Parameters.AddWithValue("@TelCel", admin.TelefonoCelular);
                     cmdUsuario.Parameters.AddWithValue("@FechaRegistro", admin.FechaRegistro);
-
                     int idUsuario = (int)cmdUsuario.ExecuteScalar();
 
-                    // Insertar contraseña
-                    string insertPass = "INSERT INTO Contraseñas (Contraseña, ID_Usuario) VALUES (@Contrasena, @ID)";
+                    string insertPass = "INSERT INTO Contraseñas (Contraseña, ID_Usuario)  VALUES (@Contrasena, @ID)";
                     SqlCommand cmdPass = new SqlCommand(insertPass, conexion);
+
                     cmdPass.Parameters.AddWithValue("@Contrasena", contrasena);
                     cmdPass.Parameters.AddWithValue("@ID", idUsuario);
+
+
                     cmdPass.ExecuteNonQuery();
+                    
+
                 }
 
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error al registrar administrador: " + ex.Message, "Error BD", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
+
         public bool ExisteAdministrador()
         {
             using (SqlConnection conn = new SqlConnection(cadenaConexion))

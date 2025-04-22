@@ -34,18 +34,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboCiudadesCheck = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // listClientes
             // 
             this.listClientes.FormattingEnabled = true;
-            this.listClientes.Location = new System.Drawing.Point(365, 58);
+            this.listClientes.Location = new System.Drawing.Point(380, 111);
             this.listClientes.Name = "listClientes";
             this.listClientes.ScrollAlwaysVisible = true;
-            this.listClientes.Size = new System.Drawing.Size(359, 485);
+            this.listClientes.Size = new System.Drawing.Size(348, 446);
             this.listClientes.TabIndex = 1;
             // 
             // label4
@@ -91,31 +89,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(376, 18);
+            this.label1.Location = new System.Drawing.Point(376, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 21;
             this.label1.Text = "Clientes a Salir";
             this.label1.UseWaitCursor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(736, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(259, 20);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Servicios Adicionales Usados";
-            this.label2.UseWaitCursor = true;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(740, 58);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(238, 289);
-            this.checkedListBox1.TabIndex = 24;
             // 
             // iconButton1
             // 
@@ -125,7 +104,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(755, 403);
+            this.iconButton1.Location = new System.Drawing.Point(470, 571);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.iconButton1.Size = new System.Drawing.Size(208, 73);
@@ -133,16 +112,15 @@
             this.iconButton1.Text = "Generar Factura";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // CHECKOUT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(1007, 680);
+            this.ClientSize = new System.Drawing.Size(767, 680);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listHotelesCheck);
@@ -165,8 +143,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboCiudadesCheck;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

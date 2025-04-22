@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listHotelesRegistados = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textCiudad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textPais = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textnombreHotel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textDomicilio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericPisos = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericHabitaciones = new System.Windows.Forms.NumericUpDown();
             this.listHabitacionesListas = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,18 +66,25 @@
             this.label16 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.textEstado = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.numericHabitacionGente = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPisos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHabitaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCamas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHabitacionGente)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listHotelesRegistados
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(25, 50);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(319, 498);
-            this.listBox1.TabIndex = 0;
+            this.listHotelesRegistados.FormattingEnabled = true;
+            this.listHotelesRegistados.Location = new System.Drawing.Point(25, 50);
+            this.listHotelesRegistados.Name = "listHotelesRegistados";
+            this.listHotelesRegistados.Size = new System.Drawing.Size(319, 498);
+            this.listHotelesRegistados.TabIndex = 0;
             // 
             // label1
             // 
@@ -99,90 +106,90 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Hoteles a Registro";
             // 
-            // textBox3
+            // textCiudad
             // 
-            this.textBox3.Location = new System.Drawing.Point(438, 174);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(254, 24);
-            this.textBox3.TabIndex = 13;
+            this.textCiudad.Location = new System.Drawing.Point(397, 215);
+            this.textCiudad.Multiline = true;
+            this.textCiudad.Name = "textCiudad";
+            this.textCiudad.Size = new System.Drawing.Size(254, 24);
+            this.textCiudad.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label3.Location = new System.Drawing.Point(439, 141);
+            this.label3.Location = new System.Drawing.Point(398, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Ingresar Ciudad";
             // 
-            // textBox2
+            // textPais
             // 
-            this.textBox2.Location = new System.Drawing.Point(438, 96);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(254, 24);
-            this.textBox2.TabIndex = 11;
+            this.textPais.Location = new System.Drawing.Point(397, 87);
+            this.textPais.Multiline = true;
+            this.textPais.Name = "textPais";
+            this.textPais.Size = new System.Drawing.Size(254, 24);
+            this.textPais.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label4.Location = new System.Drawing.Point(439, 63);
+            this.label4.Location = new System.Drawing.Point(398, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "Ingresar Pais";
             // 
-            // textBox1
+            // textnombreHotel
             // 
-            this.textBox1.Location = new System.Drawing.Point(443, 321);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 24);
-            this.textBox1.TabIndex = 15;
+            this.textnombreHotel.Location = new System.Drawing.Point(402, 362);
+            this.textnombreHotel.Multiline = true;
+            this.textnombreHotel.Name = "textnombreHotel";
+            this.textnombreHotel.Size = new System.Drawing.Size(254, 24);
+            this.textnombreHotel.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label5.Location = new System.Drawing.Point(439, 288);
+            this.label5.Location = new System.Drawing.Point(398, 329);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(202, 20);
             this.label5.TabIndex = 14;
             this.label5.Text = "Ingresar Nombre de Hotel";
             // 
-            // textBox4
+            // textDomicilio
             // 
-            this.textBox4.Location = new System.Drawing.Point(443, 246);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(254, 24);
-            this.textBox4.TabIndex = 17;
+            this.textDomicilio.Location = new System.Drawing.Point(402, 287);
+            this.textDomicilio.Multiline = true;
+            this.textDomicilio.Name = "textDomicilio";
+            this.textDomicilio.Size = new System.Drawing.Size(254, 24);
+            this.textDomicilio.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label6.Location = new System.Drawing.Point(439, 213);
+            this.label6.Location = new System.Drawing.Point(398, 254);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 20);
             this.label6.TabIndex = 16;
             this.label6.Text = "Ingresar Domicilio";
             // 
-            // numericUpDown1
+            // numericPisos
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(443, 397);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 18;
+            this.numericPisos.Location = new System.Drawing.Point(411, 444);
+            this.numericPisos.Name = "numericPisos";
+            this.numericPisos.Size = new System.Drawing.Size(120, 20);
+            this.numericPisos.TabIndex = 18;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label7.Location = new System.Drawing.Point(439, 363);
+            this.label7.Location = new System.Drawing.Point(407, 412);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(136, 20);
             this.label7.TabIndex = 19;
@@ -190,7 +197,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(1027, 60);
+            this.textBox5.Location = new System.Drawing.Point(1002, 51);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(209, 24);
@@ -200,23 +207,23 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label8.Location = new System.Drawing.Point(1023, 27);
+            this.label8.Location = new System.Drawing.Point(999, 18);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(212, 20);
+            this.label8.Size = new System.Drawing.Size(203, 20);
             this.label8.TabIndex = 20;
-            this.label8.Text = "Ingresar Servicios de Hotel";
+            this.label8.Text = "Ingresar Servicio de Hotel";
             // 
             // listServicios
             // 
             this.listServicios.FormattingEnabled = true;
-            this.listServicios.Location = new System.Drawing.Point(768, 27);
+            this.listServicios.Location = new System.Drawing.Point(764, 12);
             this.listServicios.Name = "listServicios";
             this.listServicios.Size = new System.Drawing.Size(198, 134);
             this.listServicios.TabIndex = 22;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1027, 99);
+            this.button1.Location = new System.Drawing.Point(754, 168);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(208, 43);
             this.button1.TabIndex = 23;
@@ -225,9 +232,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(754, 617);
+            this.button2.Location = new System.Drawing.Point(786, 593);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(208, 43);
+            this.button2.Size = new System.Drawing.Size(165, 30);
             this.button2.TabIndex = 24;
             this.button2.Text = "Guardar Habitacion";
             this.button2.UseVisualStyleBackColor = true;
@@ -236,18 +243,18 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label9.Location = new System.Drawing.Point(439, 463);
+            this.label9.Location = new System.Drawing.Point(407, 478);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(190, 20);
             this.label9.TabIndex = 26;
             this.label9.Text = "Numero de habitaciones";
             // 
-            // numericUpDown2
+            // numericHabitaciones
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(443, 497);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 25;
+            this.numericHabitaciones.Location = new System.Drawing.Point(411, 512);
+            this.numericHabitaciones.Name = "numericHabitaciones";
+            this.numericHabitaciones.Size = new System.Drawing.Size(120, 20);
+            this.numericHabitaciones.TabIndex = 25;
             // 
             // listHabitacionesListas
             // 
@@ -260,7 +267,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1008, 268);
+            this.comboBox1.Location = new System.Drawing.Point(1001, 268);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(179, 21);
             this.comboBox1.TabIndex = 28;
@@ -269,7 +276,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label10.Location = new System.Drawing.Point(1004, 235);
+            this.label10.Location = new System.Drawing.Point(998, 235);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(129, 20);
             this.label10.TabIndex = 29;
@@ -279,7 +286,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label11.Location = new System.Drawing.Point(1009, 304);
+            this.label11.Location = new System.Drawing.Point(1001, 303);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(176, 20);
             this.label11.TabIndex = 31;
@@ -288,7 +295,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1013, 337);
+            this.comboBox2.Location = new System.Drawing.Point(1005, 336);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(179, 21);
             this.comboBox2.TabIndex = 30;
@@ -296,7 +303,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(1008, 617);
+            this.comboBox3.Location = new System.Drawing.Point(1002, 518);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(240, 21);
             this.comboBox3.TabIndex = 39;
@@ -305,7 +312,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(1020, 588);
+            this.label12.Location = new System.Drawing.Point(1003, 495);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(135, 20);
             this.label12.TabIndex = 38;
@@ -316,7 +323,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(1004, 518);
+            this.label13.Location = new System.Drawing.Point(1250, 495);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(170, 20);
             this.label13.TabIndex = 37;
@@ -325,7 +332,7 @@
             // 
             // numericCamas
             // 
-            this.numericCamas.Location = new System.Drawing.Point(1013, 552);
+            this.numericCamas.Location = new System.Drawing.Point(1259, 517);
             this.numericCamas.Name = "numericCamas";
             this.numericCamas.Size = new System.Drawing.Size(120, 20);
             this.numericCamas.TabIndex = 36;
@@ -333,7 +340,7 @@
             // comboHabitacionVista
             // 
             this.comboHabitacionVista.FormattingEnabled = true;
-            this.comboHabitacionVista.Location = new System.Drawing.Point(1008, 477);
+            this.comboHabitacionVista.Location = new System.Drawing.Point(1003, 446);
             this.comboHabitacionVista.Name = "comboHabitacionVista";
             this.comboHabitacionVista.Size = new System.Drawing.Size(227, 21);
             this.comboHabitacionVista.TabIndex = 35;
@@ -342,7 +349,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(1004, 441);
+            this.label14.Location = new System.Drawing.Point(999, 423);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(293, 20);
             this.label14.TabIndex = 34;
@@ -353,7 +360,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(1004, 372);
+            this.label15.Location = new System.Drawing.Point(1003, 365);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(271, 20);
             this.label15.TabIndex = 33;
@@ -363,14 +370,14 @@
             // comboHabitacionNivel
             // 
             this.comboHabitacionNivel.FormattingEnabled = true;
-            this.comboHabitacionNivel.Location = new System.Drawing.Point(1008, 398);
+            this.comboHabitacionNivel.Location = new System.Drawing.Point(1003, 388);
             this.comboHabitacionNivel.Name = "comboHabitacionNivel";
             this.comboHabitacionNivel.Size = new System.Drawing.Size(228, 21);
             this.comboHabitacionNivel.TabIndex = 32;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(26, 640);
+            this.button3.Location = new System.Drawing.Point(26, 580);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(153, 43);
             this.button3.TabIndex = 40;
@@ -379,7 +386,7 @@
             // 
             // dateReservacion
             // 
-            this.dateReservacion.Location = new System.Drawing.Point(438, 587);
+            this.dateReservacion.Location = new System.Drawing.Point(402, 582);
             this.dateReservacion.Name = "dateReservacion";
             this.dateReservacion.Size = new System.Drawing.Size(200, 20);
             this.dateReservacion.TabIndex = 42;
@@ -388,15 +395,15 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(443, 553);
+            this.label16.Location = new System.Drawing.Point(407, 548);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(115, 20);
+            this.label16.Size = new System.Drawing.Size(156, 20);
             this.label16.TabIndex = 41;
-            this.label16.Text = "Dia de Inicio";
+            this.label16.Text = "Dia de Operacion";
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(202, 640);
+            this.button4.Location = new System.Drawing.Point(191, 580);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(153, 43);
             this.button4.TabIndex = 43;
@@ -405,19 +412,79 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(754, 564);
+            this.button5.Location = new System.Drawing.Point(786, 544);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(208, 43);
+            this.button5.Size = new System.Drawing.Size(165, 30);
             this.button5.TabIndex = 44;
             this.button5.Text = "Modificar Habitacion";
             this.button5.UseVisualStyleBackColor = true;
+            // 
+            // textEstado
+            // 
+            this.textEstado.Location = new System.Drawing.Point(397, 147);
+            this.textEstado.Multiline = true;
+            this.textEstado.Name = "textEstado";
+            this.textEstado.Size = new System.Drawing.Size(254, 24);
+            this.textEstado.TabIndex = 46;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label17.Location = new System.Drawing.Point(398, 114);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(127, 20);
+            this.label17.TabIndex = 45;
+            this.label17.Text = "Ingresar Estado";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1001, 122);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(209, 24);
+            this.textBox1.TabIndex = 48;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label18.Location = new System.Drawing.Point(1001, 87);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(205, 20);
+            this.label18.TabIndex = 47;
+            this.label18.Text = "Ingresar Costo de servicio";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
+            this.label19.Location = new System.Drawing.Point(998, 558);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(317, 20);
+            this.label19.TabIndex = 50;
+            this.label19.Text = "Cantidad de personas por habitacion";
+            this.label19.UseWaitCursor = true;
+            // 
+            // numericHabitacionGente
+            // 
+            this.numericHabitacionGente.Location = new System.Drawing.Point(1007, 580);
+            this.numericHabitacionGente.Name = "numericHabitacionGente";
+            this.numericHabitacionGente.Size = new System.Drawing.Size(120, 20);
+            this.numericHabitacionGente.TabIndex = 49;
             // 
             // Hoteles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1490, 715);
+            this.ClientSize = new System.Drawing.Size(1428, 661);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.numericHabitacionGente);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.textEstado);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.dateReservacion);
@@ -437,30 +504,32 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listHabitacionesListas);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericHabitaciones);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listServicios);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.numericPisos);
+            this.Controls.Add(this.textDomicilio);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textnombreHotel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textCiudad);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textPais);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listHotelesRegistados);
             this.Name = "Hoteles";
             this.Text = "Hoteles";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.Load += new System.EventHandler(this.Hoteles_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericPisos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHabitaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCamas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericHabitacionGente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,18 +537,18 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listHotelesRegistados;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textCiudad;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textPais;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textnombreHotel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textDomicilio;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericPisos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label8;
@@ -487,7 +556,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericHabitaciones;
         private System.Windows.Forms.ListBox listHabitacionesListas;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
@@ -506,5 +575,11 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textEstado;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown numericHabitacionGente;
     }
 }

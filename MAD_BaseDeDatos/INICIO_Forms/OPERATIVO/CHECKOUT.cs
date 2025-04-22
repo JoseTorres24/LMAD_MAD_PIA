@@ -28,5 +28,12 @@ namespace INICIO_Forms.OPERATIVO
         {
 
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            FacturaCheckOut pantallaFactura = new FacturaCheckOut();
+            pantallaFactura.Show();
+
+        }
     }
 }

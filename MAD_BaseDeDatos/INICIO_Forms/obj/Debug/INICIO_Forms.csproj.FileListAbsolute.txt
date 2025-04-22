@@ -35,3 +35,8 @@ C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\ob
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.ProcesarUsuario.resources
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.Registro.resources
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.ReporteVentas.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bin\Debug\ClasesData.dll
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bin\Debug\ClasesData.pdb
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.FacturaCheckOut.resources

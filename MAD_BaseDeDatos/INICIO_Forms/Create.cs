@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClasesData.BD;
+using ClasesData;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,12 +19,12 @@ namespace INICIO_Forms
     {   // Representacion necesaria solo para evitar que se encargue para representar
         // El hecho de que hay un usuario administrador
         //Todo esto se tendra que implementar con Base de datos?
-        private Login login;
+      
 
-        public Create(Login login)
+        public Create()
         {
             InitializeComponent();
-            this.login = login;
+           
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -88,15 +90,38 @@ namespace INICIO_Forms
                 MessageBox.Show("Los teléfonos deben contener solo números y tener al menos 10 dígitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // Ocultar el botón en el formulario Login
-            if (login != null)
-            {
-                login.OcultarBotonCrearCuenta();
-            }
 
-            // Volver a mostrar el formulario Login
-            login.Show();
-            this.Close(); // Cierra el formulario de crear cuenta
+            //Verificar esto y porque falla
+            // Crear objeto del administrador
+            UsuarioAdministrador admin = new UsuarioAdministrador
+            {
+                CorreoElectronico = correo,
+                NombreCompleto = nombre,
+                NumeroNomina = int.Parse(numeroNomina),
+                FechaNacimiento = fechaNacimiento.ToString("yyyy-MM-dd"),
+                TelefonoCasa = int.Parse(telefonoCasa),
+                TelefonoCelular = int.Parse(telefonoCelular),
+                FechaRegistro = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            };
+
+            // Enviar a base de datos
+            BD_Administrador bdAdmin = new BD_Administrador();
+            bool registrado = bdAdmin.RegistrarAdministrador(admin, contraseña);
+
+            // Validar si se registró exitosamente
+            if (registrado)
+            {
+                MessageBox.Show("Administrador registrado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Opcional: Ocultar o desactivar el botón "Crear Cuenta"
+                this.Hide(); // Cierra este form
+                Create creacion = new Create(); // Asume que tienes un form de login
+                creacion.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error al registrar administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 

@@ -60,7 +60,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(19, 76);
+            this.label4.Location = new System.Drawing.Point(19, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(152, 20);
             this.label4.TabIndex = 16;
@@ -70,7 +70,7 @@
             // listHotelesCheck
             // 
             this.listHotelesCheck.FormattingEnabled = true;
-            this.listHotelesCheck.Location = new System.Drawing.Point(23, 109);
+            this.listHotelesCheck.Location = new System.Drawing.Point(23, 113);
             this.listHotelesCheck.Name = "listHotelesCheck";
             this.listHotelesCheck.ScrollAlwaysVisible = true;
             this.listHotelesCheck.Size = new System.Drawing.Size(350, 381);
@@ -103,7 +103,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(53, 521);
+            this.iconButton1.Location = new System.Drawing.Point(60, 513);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.iconButton1.Size = new System.Drawing.Size(190, 71);
@@ -117,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(882, 622);
+            this.ClientSize = new System.Drawing.Size(983, 639);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listHotelesCheck);

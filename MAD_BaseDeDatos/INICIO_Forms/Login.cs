@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using INICIO_Forms.ADMINISTRATIVO;
 using static INICIO_Forms.Utilidades;
+using ClasesData.BD;
 
 namespace INICIO_Forms
 {
@@ -25,6 +26,12 @@ namespace INICIO_Forms
 
         private void Login_Load(object sender, EventArgs e)
         {
+            //Ya cargamos a ver como funciona con la base de datos
+            BD_Administrador bd = new BD_Administrador();
+            if (bd.ExisteAdministrador())
+            {
+                CrearCuentaAdmin_btn.Visible = false;
+            }
 
         }
 
@@ -32,44 +39,20 @@ namespace INICIO_Forms
         {
 
         }
-
+        // Boton Incio Session
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            // Luego se implementara Base de datos para esto <-
-            string AdminCorreo = "";
-            string AdminContraseña = "";
 
-            //Guardar
-            string correo = textCorreo.Text;
-            string contraseña = textContraseña.Text;
-
-            if (contraseña == AdminContraseña && correo == AdminCorreo)
-            {
-                HomeAdministrador homeAdmin = new HomeAdministrador();
-                homeAdmin.Show();
-                this.Hide();
-            }
-            else
-            {
-                HomeOperativo home = new HomeOperativo();
-                home.Show();
-                this.Hide();
-            }
 
         }
 
         private void CrearCuentaAdmin_btn_Click(object sender, EventArgs e)
         {
-            Create CrearAdmin = new Create(this);
+            Create CrearAdmin = new Create();
             CrearAdmin.Show();
             this.Hide();
             
 
-        }
-
-        public void OcultarBotonCrearCuenta()
-        {
-            CrearCuentaAdmin_btn.Visible = false;
         }
 
         private void Salir_btn_Click(object sender, EventArgs e)

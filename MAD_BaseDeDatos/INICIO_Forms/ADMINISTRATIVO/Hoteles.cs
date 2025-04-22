@@ -16,5 +16,10 @@ namespace INICIO_Forms.ADMINISTRATIVO
         {
             InitializeComponent();
         }
+
+        private void Hoteles_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

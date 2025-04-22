@@ -40,6 +40,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.9.0\lib\net462\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -113,6 +116,12 @@
     <Compile Include="OPERATIVO\CHEKIN.Designer.cs">
       <DependentUpon>CHEKIN.cs</DependentUpon>
     </Compile>
+    <Compile Include="OPERATIVO\FacturaCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPERATIVO\FacturaCheckOut.Designer.cs">
+      <DependentUpon>FacturaCheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="OPERATIVO\HomeOperativo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +174,9 @@
     <EmbeddedResource Include="OPERATIVO\CHEKIN.resx">
       <DependentUpon>CHEKIN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OPERATIVO\FacturaCheckOut.resx">
+      <DependentUpon>FacturaCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OPERATIVO\HomeOperativo.resx">
       <DependentUpon>HomeOperativo.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +212,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FotoInicio.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClasesData\ClasesData.csproj">
+      <Project>{8defda9e-8d91-41e4-a1ee-01d5581f119e}</Project>
+      <Name>ClasesData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

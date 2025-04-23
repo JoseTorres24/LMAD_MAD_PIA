@@ -115,7 +115,7 @@ namespace INICIO_Forms
 
                 // Opcional: Ocultar o desactivar el botón "Crear Cuenta"
                 this.Hide(); // Cierra este form
-                Create creacion = new Create(); // Asume que tienes un form de login
+                Login creacion = new Login(); // Asume que tienes un form de login
                 creacion.Show();
             }
             else

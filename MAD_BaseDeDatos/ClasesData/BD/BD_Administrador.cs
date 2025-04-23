@@ -32,9 +32,10 @@ namespace ClasesData.BD
                     cmdUsuario.Parameters.AddWithValue("@FechaRegistro", admin.FechaRegistro);
                     int idUsuario = (int)cmdUsuario.ExecuteScalar();
 
-                    string insertPass = "INSERT INTO Contraseñas (Contraseña, ID_Usuario)  VALUES (@Contrasena, @ID)";
-                    SqlCommand cmdPass = new SqlCommand(insertPass, conexion);
 
+                    //Insertamos contraseña y Usuario Admin
+                    string insertPass = "INSERT INTO ContraseñasHotelAdministrador (Contraseña, ID_Usuario)  VALUES (@Contrasena, @ID)";
+                    SqlCommand cmdPass = new SqlCommand(insertPass, conexion);
                     cmdPass.Parameters.AddWithValue("@Contrasena", contrasena);
                     cmdPass.Parameters.AddWithValue("@ID", idUsuario);
 
@@ -61,7 +62,7 @@ namespace ClasesData.BD
                 string query = "SELECT COUNT(*) FROM UsuarioHotelAdministrador";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 int cantidad = (int)cmd.ExecuteScalar();
-                return cantidad > 0;
+                return cantidad > 0; //Si hay mas que uno se elimina el registro
             }
         }
 

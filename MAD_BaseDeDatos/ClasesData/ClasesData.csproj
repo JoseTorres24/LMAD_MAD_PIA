@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="BD\BD_Administrador.cs" />
     <Compile Include="BD\BD_Usuario.cs" />
+    <Compile Include="BD\ConexionBD.cs" />
+    <Compile Include="BD\Sesion.cs" />
     <Compile Include="Contraseñas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clientes.cs" />

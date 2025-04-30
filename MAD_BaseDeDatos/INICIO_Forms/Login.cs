@@ -42,7 +42,22 @@ namespace INICIO_Forms
         // Boton Incio Session
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            string correo = textCorreo.Text.Trim();
+            string contrasena = textContraseña.Text.Trim();
 
+            BD_Administrador bd = new BD_Administrador();
+
+            if (bd.IniciarSesionAdministrador(correo, contrasena))
+            {
+                MessageBox.Show("Inicio de sesión exitoso como administrador.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HomeAdministrador home = new HomeAdministrador(); // o HomeOperativo si lo llamas así
+                home.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Correo o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClasesData.BD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,9 +37,10 @@ namespace INICIO_Forms.ADMINISTRATIVO
         {
 
         }
-
+        // Y cuando salgamos tenemos que cerrar esa instancia
         private void Salir_Click(object sender, EventArgs e)
         {
+            Sesion.CerrarSesion();
             Login login = new Login();
             login.Show();
             this.Hide();

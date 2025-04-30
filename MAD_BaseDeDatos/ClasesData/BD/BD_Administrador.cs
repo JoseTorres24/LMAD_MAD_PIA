@@ -1,48 +1,44 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ClasesData.BD
 {
     public class BD_Administrador
     {
-        private string cadenaConexion = "Server=localhost\\SQLEXPRESS;Database=ManejoHoteles;Trusted_Connection=True;";
-
-
         public bool RegistrarAdministrador(UsuarioAdministrador admin, string contrasena)
         {
             try
             {
-                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                using (SqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
                     conexion.Open();
+
                     string insertUsuario = @"INSERT INTO UsuarioHotelAdministrador 
                     (CorreoElectronico, NombreCompleto, NumeroNomina, FechaNacimiento, TelefonoCasa, TelefonoCelular, FechaRegistro) 
                     OUTPUT INSERTED.ID_Usuario
                     VALUES (@Correo, @Nombre, @Nomina, @FechaNac, @TelCasa, @TelCel, @FechaRegistro)";
 
-                    SqlCommand cmdUsuario = new SqlCommand(insertUsuario, conexion);
-                    cmdUsuario.Parameters.AddWithValue("@Correo", admin.CorreoElectronico);
-                    cmdUsuario.Parameters.AddWithValue("@Nombre", admin.NombreCompleto);
-                    cmdUsuario.Parameters.AddWithValue("@Nomina", admin.NumeroNomina);
-                    cmdUsuario.Parameters.AddWithValue("@FechaNac", admin.FechaNacimiento);
-                    cmdUsuario.Parameters.AddWithValue("@TelCasa", admin.TelefonoCasa);
-                    cmdUsuario.Parameters.AddWithValue("@TelCel", admin.TelefonoCelular);
-                    cmdUsuario.Parameters.AddWithValue("@FechaRegistro", admin.FechaRegistro);
-                    int idUsuario = (int)cmdUsuario.ExecuteScalar();
+                    using (SqlCommand cmdUsuario = new SqlCommand(insertUsuario, conexion))
+                    {
+                        cmdUsuario.Parameters.AddWithValue("@Correo", admin.CorreoElectronico);
+                        cmdUsuario.Parameters.AddWithValue("@Nombre", admin.NombreCompleto);
+                        cmdUsuario.Parameters.AddWithValue("@Nomina", admin.NumeroNomina);
+                        cmdUsuario.Parameters.AddWithValue("@FechaNac", admin.FechaNacimiento);
+                        cmdUsuario.Parameters.AddWithValue("@TelCasa", admin.TelefonoCasa);
+                        cmdUsuario.Parameters.AddWithValue("@TelCel", admin.TelefonoCelular);
+                        cmdUsuario.Parameters.AddWithValue("@FechaRegistro", admin.FechaRegistro);
 
+                        int idUsuario = (int)cmdUsuario.ExecuteScalar();
 
-                    //Insertamos contraseña y Usuario Admin
-                    string insertPass = "INSERT INTO ContraseñasHotelAdministrador (Contraseña, ID_Usuario)  VALUES (@Contrasena, @ID)";
-                    SqlCommand cmdPass = new SqlCommand(insertPass, conexion);
-                    cmdPass.Parameters.AddWithValue("@Contrasena", contrasena);
-                    cmdPass.Parameters.AddWithValue("@ID", idUsuario);
-
-
-                    cmdPass.ExecuteNonQuery();
-                    
-
+                        string insertPass = "INSERT INTO ContraseñasHotelAdministrador (Contraseña, ID_Usuario) VALUES (@Contrasena, @ID)";
+                        using (SqlCommand cmdPass = new SqlCommand(insertPass, conexion))
+                        {
+                            cmdPass.Parameters.AddWithValue("@Contrasena", contrasena);
+                            cmdPass.Parameters.AddWithValue("@ID", idUsuario);
+                            cmdPass.ExecuteNonQuery();
+                        }
+                    }
                 }
 
                 return true;
@@ -56,15 +52,49 @@ namespace ClasesData.BD
 
         public bool ExisteAdministrador()
         {
-            using (SqlConnection conn = new SqlConnection(cadenaConexion))
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                conn.Open();
+                conexion.Open();
                 string query = "SELECT COUNT(*) FROM UsuarioHotelAdministrador";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                int cantidad = (int)cmd.ExecuteScalar();
-                return cantidad > 0; //Si hay mas que uno se elimina el registro
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    int cantidad = (int)cmd.ExecuteScalar();
+                    return cantidad > 0;
+                }
             }
         }
+
+
+        public bool IniciarSesionAdministrador(string correo, string contrasena)
+        {
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                conexion.Open();
+
+                string query = @"
+            SELECT u.ID_Usuario, u.CorreoElectronico, c.Contraseña
+            FROM UsuarioHotelAdministrador u
+            JOIN ContraseñasHotelAdministrador c ON u.ID_Usuario = c.ID_Usuario
+            WHERE u.CorreoElectronico = @Correo AND c.Contraseña = @Contrasena";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@Correo", correo);
+                    cmd.Parameters.AddWithValue("@Contrasena", contrasena);
+
+                    object resultado = cmd.ExecuteScalar();
+                    if (resultado != null)
+                    {
+                        Sesion.ID_Usuario = (int)resultado;
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+
+
+
 
 
     }

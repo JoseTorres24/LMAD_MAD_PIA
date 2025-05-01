@@ -33,16 +33,16 @@
             this.FechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.textNomina = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textPhoneCasaAdmin = new System.Windows.Forms.TextBox();
+            this.textPhoneCasa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textPhoneAdmin = new System.Windows.Forms.TextBox();
+            this.textPhone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textContraAdmin = new System.Windows.Forms.TextBox();
+            this.textContra = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textCorreoAdmin = new System.Windows.Forms.TextBox();
+            this.textCorreo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textNombreAdmin = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
@@ -110,13 +110,13 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "Ingresar # de Nomina:";
             // 
-            // textPhoneCasaAdmin
+            // textPhoneCasa
             // 
-            this.textPhoneCasaAdmin.Location = new System.Drawing.Point(789, 426);
-            this.textPhoneCasaAdmin.Multiline = true;
-            this.textPhoneCasaAdmin.Name = "textPhoneCasaAdmin";
-            this.textPhoneCasaAdmin.Size = new System.Drawing.Size(307, 31);
-            this.textPhoneCasaAdmin.TabIndex = 35;
+            this.textPhoneCasa.Location = new System.Drawing.Point(789, 426);
+            this.textPhoneCasa.Multiline = true;
+            this.textPhoneCasa.Name = "textPhoneCasa";
+            this.textPhoneCasa.Size = new System.Drawing.Size(307, 31);
+            this.textPhoneCasa.TabIndex = 35;
             // 
             // label6
             // 
@@ -128,13 +128,13 @@
             this.label6.TabIndex = 34;
             this.label6.Text = "Telefono Hogar";
             // 
-            // textPhoneAdmin
+            // textPhone
             // 
-            this.textPhoneAdmin.Location = new System.Drawing.Point(428, 426);
-            this.textPhoneAdmin.Multiline = true;
-            this.textPhoneAdmin.Name = "textPhoneAdmin";
-            this.textPhoneAdmin.Size = new System.Drawing.Size(307, 31);
-            this.textPhoneAdmin.TabIndex = 33;
+            this.textPhone.Location = new System.Drawing.Point(428, 426);
+            this.textPhone.Multiline = true;
+            this.textPhone.Name = "textPhone";
+            this.textPhone.Size = new System.Drawing.Size(307, 31);
+            this.textPhone.TabIndex = 33;
             // 
             // label5
             // 
@@ -146,13 +146,13 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Telefono Personal";
             // 
-            // textContraAdmin
+            // textContra
             // 
-            this.textContraAdmin.Location = new System.Drawing.Point(428, 325);
-            this.textContraAdmin.Multiline = true;
-            this.textContraAdmin.Name = "textContraAdmin";
-            this.textContraAdmin.Size = new System.Drawing.Size(307, 31);
-            this.textContraAdmin.TabIndex = 31;
+            this.textContra.Location = new System.Drawing.Point(428, 325);
+            this.textContra.Multiline = true;
+            this.textContra.Name = "textContra";
+            this.textContra.Size = new System.Drawing.Size(307, 31);
+            this.textContra.TabIndex = 31;
             // 
             // label4
             // 
@@ -164,13 +164,13 @@
             this.label4.TabIndex = 30;
             this.label4.Text = "Ingresar Contraseña";
             // 
-            // textCorreoAdmin
+            // textCorreo
             // 
-            this.textCorreoAdmin.Location = new System.Drawing.Point(428, 239);
-            this.textCorreoAdmin.Multiline = true;
-            this.textCorreoAdmin.Name = "textCorreoAdmin";
-            this.textCorreoAdmin.Size = new System.Drawing.Size(307, 31);
-            this.textCorreoAdmin.TabIndex = 29;
+            this.textCorreo.Location = new System.Drawing.Point(428, 239);
+            this.textCorreo.Multiline = true;
+            this.textCorreo.Name = "textCorreo";
+            this.textCorreo.Size = new System.Drawing.Size(307, 31);
+            this.textCorreo.TabIndex = 29;
             // 
             // label3
             // 
@@ -192,13 +192,13 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Registro de operativo";
             // 
-            // textNombreAdmin
+            // textNombre
             // 
-            this.textNombreAdmin.Location = new System.Drawing.Point(428, 156);
-            this.textNombreAdmin.Multiline = true;
-            this.textNombreAdmin.Name = "textNombreAdmin";
-            this.textNombreAdmin.Size = new System.Drawing.Size(307, 31);
-            this.textNombreAdmin.TabIndex = 26;
+            this.textNombre.Location = new System.Drawing.Point(428, 156);
+            this.textNombre.Multiline = true;
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(307, 31);
+            this.textNombre.TabIndex = 26;
             // 
             // label1
             // 
@@ -286,6 +286,7 @@
             this.CrearCuenta.Text = "Crear Cuenta Operativo";
             this.CrearCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CrearCuenta.UseVisualStyleBackColor = false;
+            this.CrearCuenta.Click += new System.EventHandler(this.CrearCuenta_Click);
             // 
             // iconPictureBox4
             // 
@@ -360,6 +361,7 @@
             this.iconButton1.Text = "Modificar";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // listBox1
             // 
@@ -385,6 +387,7 @@
             this.iconButton2.Text = "Eliminar";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // Registro
             // 
@@ -409,19 +412,20 @@
             this.Controls.Add(this.FechaNacimiento);
             this.Controls.Add(this.textNomina);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textPhoneCasaAdmin);
+            this.Controls.Add(this.textPhoneCasa);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textPhoneAdmin);
+            this.Controls.Add(this.textPhone);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textContraAdmin);
+            this.Controls.Add(this.textContra);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textCorreoAdmin);
+            this.Controls.Add(this.textCorreo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textNombreAdmin);
+            this.Controls.Add(this.textNombre);
             this.Controls.Add(this.label1);
             this.Name = "Registro";
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
@@ -451,16 +455,16 @@
         private System.Windows.Forms.DateTimePicker FechaNacimiento;
         private System.Windows.Forms.TextBox textNomina;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textPhoneCasaAdmin;
+        private System.Windows.Forms.TextBox textPhoneCasa;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textPhoneAdmin;
+        private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textContraAdmin;
+        private System.Windows.Forms.TextBox textContra;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textCorreoAdmin;
+        private System.Windows.Forms.TextBox textCorreo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textNombreAdmin;
+        private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.ListBox listBox1;

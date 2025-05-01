@@ -3,48 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\administrativo\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\bd_administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\bd_administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\clasesdata\\contrase\u00F1ashoteladministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\contrase\u00F1ashoteladministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\bd_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\bd_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\clasesdata\\bd\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\clasesdata\\listitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\listitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\bd_administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\bd_administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\clasesdata\\contrase\u00F1as.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\contrase\u00F1as.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\sesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\clasesdata\\usuarioadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\usuarioadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\usuarioadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\clasesdata\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\clasesdata\\bd\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\bd_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\bd_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,11 +70,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ListItem.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\ListItem.cs",
+              "RelativeDocumentMoniker": "ClasesData\\ListItem.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\ListItem.cs",
+              "RelativeToolTip": "ClasesData\\ListItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T00:37:25.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Contrase\u00F1as.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Contrase\u00F1as.cs",
+              "RelativeDocumentMoniker": "ClasesData\\Contrase\u00F1as.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Contrase\u00F1as.cs",
+              "RelativeToolTip": "ClasesData\\Contrase\u00F1as.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T00:30:57.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Contrase\u00F1asHotelAdministrador.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Contrase\u00F1asHotelAdministrador.cs",
+              "RelativeDocumentMoniker": "ClasesData\\Contrase\u00F1asHotelAdministrador.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Contrase\u00F1asHotelAdministrador.cs",
+              "RelativeToolTip": "ClasesData\\Contrase\u00F1asHotelAdministrador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T00:30:49.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Registro.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\Registro.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\Registro.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\Registro.cs",
+              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\Registro.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T00:25:42.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Registro.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\Registro.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\Registro.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\Registro.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\Registro.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T08:39:07.028Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "HomeAdministrador.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
               "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
@@ -71,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "HomeAdministrador.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
               "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
@@ -83,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Sesion.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\Sesion.cs",
               "RelativeDocumentMoniker": "ClasesData\\BD\\Sesion.cs",
@@ -93,18 +173,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T08:58:47.343Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Registro.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\Registro.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\Registro.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\Registro.cs [Dise\u00F1o]",
-              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\Registro.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T08:39:07.028Z",
-              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
@@ -121,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "ConexionBD.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\ConexionBD.cs",
               "RelativeDocumentMoniker": "ClasesData\\BD\\ConexionBD.cs",
@@ -129,25 +197,24 @@
               "RelativeToolTip": "ClasesData\\BD\\ConexionBD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T08:12:00.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T08:12:00.669Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "BD_Usuario.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Usuario.cs",
               "RelativeDocumentMoniker": "ClasesData\\BD\\BD_Usuario.cs",
               "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Usuario.cs",
               "RelativeToolTip": "ClasesData\\BD\\BD_Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-23T08:26:10.383Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "UsuarioAdministrador.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\UsuarioAdministrador.cs",
               "RelativeDocumentMoniker": "ClasesData\\UsuarioAdministrador.cs",
@@ -155,8 +222,7 @@
               "RelativeToolTip": "ClasesData\\UsuarioAdministrador.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T08:07:39.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T08:07:39.08Z"
             },
             {
               "$type": "Document",
@@ -173,20 +239,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "BD_Administrador.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Administrador.cs",
               "RelativeDocumentMoniker": "ClasesData\\BD\\BD_Administrador.cs",
               "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Administrador.cs",
               "RelativeToolTip": "ClasesData\\BD\\BD_Administrador.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAtwEMAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T07:44:23.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Login.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\Login.cs",
               "RelativeDocumentMoniker": "INICIO_Forms\\Login.cs",

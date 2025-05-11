@@ -64,7 +64,6 @@ namespace ClasesData.BD
             }
         }
 
-
         public bool IniciarSesionAdministrador(string correo, string contrasena)
         {
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())

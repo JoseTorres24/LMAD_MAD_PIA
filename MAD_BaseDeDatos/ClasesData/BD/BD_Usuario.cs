@@ -200,6 +200,34 @@ namespace ClasesData.BD
             return contraseña;
         }
 
+        public bool IniciarSesion(string correo, string contrasena)
+        {
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                conexion.Open();
+
+                string query = @"
+            SELECT u.ID_Usuario, u.CorreoElectronico, c.Contraseña
+            FROM Usuario u
+            JOIN Contraseñas c ON u.ID_Usuario = c.ID_Usuario
+            WHERE u.CorreoElectronico = @Correo AND c.Contraseña = @Contrasena";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@Correo", correo);
+                    cmd.Parameters.AddWithValue("@Contrasena", contrasena);
+
+                    object resultado = cmd.ExecuteScalar();
+                    if (resultado != null)
+                    {
+                        Sesion.ID_Usuario = (int)resultado;
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+
 
     }
 }

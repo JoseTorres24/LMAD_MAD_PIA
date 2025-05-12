@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Hoteles = new FontAwesome.Sharp.IconMenuItem();
             this.ProcesoHotel = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeHabitacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeServiciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistroUsuario = new FontAwesome.Sharp.IconMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.ReporteHotel = new FontAwesome.Sharp.IconMenuItem();
@@ -87,7 +89,9 @@
             // Hoteles
             // 
             this.Hoteles.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ProcesoHotel});
+            this.ProcesoHotel,
+            this.registroDeHabitacionesToolStripMenuItem,
+            this.registroDeServiciosToolStripMenuItem});
             this.Hoteles.IconChar = FontAwesome.Sharp.IconChar.Building;
             this.Hoteles.IconColor = System.Drawing.Color.Black;
             this.Hoteles.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -100,9 +104,23 @@
             // ProcesoHotel
             // 
             this.ProcesoHotel.Name = "ProcesoHotel";
-            this.ProcesoHotel.Size = new System.Drawing.Size(175, 22);
+            this.ProcesoHotel.Size = new System.Drawing.Size(205, 22);
             this.ProcesoHotel.Text = "Proceso de Hoteles";
             this.ProcesoHotel.Click += new System.EventHandler(this.ProcesoHotel_Click);
+            // 
+            // registroDeHabitacionesToolStripMenuItem
+            // 
+            this.registroDeHabitacionesToolStripMenuItem.Name = "registroDeHabitacionesToolStripMenuItem";
+            this.registroDeHabitacionesToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.registroDeHabitacionesToolStripMenuItem.Text = "Registro de Habitaciones";
+            this.registroDeHabitacionesToolStripMenuItem.Click += new System.EventHandler(this.registroDeHabitacionesToolStripMenuItem_Click);
+            // 
+            // registroDeServiciosToolStripMenuItem
+            // 
+            this.registroDeServiciosToolStripMenuItem.Name = "registroDeServiciosToolStripMenuItem";
+            this.registroDeServiciosToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.registroDeServiciosToolStripMenuItem.Text = "Registro de Servicios";
+            this.registroDeServiciosToolStripMenuItem.Click += new System.EventHandler(this.registroDeServiciosToolStripMenuItem_Click);
             // 
             // RegistroUsuario
             // 
@@ -143,7 +161,7 @@
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(174, 22);
             this.toolStripMenuItem4.Text = "Reporte de Hoteles";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -164,7 +182,7 @@
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(174, 22);
             this.toolStripMenuItem5.Text = "Reporte de clientes";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
@@ -184,7 +202,7 @@
             // VentasReporte
             // 
             this.VentasReporte.Name = "VentasReporte";
-            this.VentasReporte.Size = new System.Drawing.Size(180, 22);
+            this.VentasReporte.Size = new System.Drawing.Size(168, 22);
             this.VentasReporte.Text = "Reporte de Ventas";
             this.VentasReporte.Click += new System.EventHandler(this.VentasReporte_Click);
             // 
@@ -250,5 +268,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private FontAwesome.Sharp.IconMenuItem ReporteDeVentas;
         private System.Windows.Forms.ToolStripMenuItem VentasReporte;
+        private System.Windows.Forms.ToolStripMenuItem registroDeHabitacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeServiciosToolStripMenuItem;
     }
 }

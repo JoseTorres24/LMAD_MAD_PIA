@@ -46,7 +46,7 @@ namespace INICIO_Forms.ADMINISTRATIVO
             string telefonoCasa = textPhoneCasa.Text;
             string telefonoCelular = textPhone.Text;
 
-
+            // Validaciones
             if (!ValidarCorreo(correo))
             {
                 MessageBox.Show("El correo debe ser @outlook.com, @gmail.com o @hotmail.com", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -72,11 +72,8 @@ namespace INICIO_Forms.ADMINISTRATIVO
             }
 
             // Validar que el usuario tenga al menos 21 años
-            DateTime fecha = FechaNacimiento.Value;
             int edad = DateTime.Now.Year - fechaNacimiento.Year;
-
-            // Ajustar si aún no ha cumplido años este año
-            if (fecha > DateTime.Now.AddYears(-edad))
+            if (fechaNacimiento > DateTime.Now.AddYears(-edad))
             {
                 edad--;
             }
@@ -87,30 +84,33 @@ namespace INICIO_Forms.ADMINISTRATIVO
                 return;
             }
 
-
             if (!ValidarTelefono(telefonoCasa) || !ValidarTelefono(telefonoCelular))
             {
                 MessageBox.Show("Los teléfonos deben contener solo números y tener al menos 10 dígitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // Crear usuario
             Usuario nuevo = new Usuario
             {
-                CorreoElectronico = textCorreo.Text,
-                NombreCompleto = textNombre.Text,
-                NumeroNomina = long.Parse(textNomina.Text),
-                FechaNacimiento = FechaNacimiento.Value,
-                TelefonoCasa = long.Parse(textPhoneCasa.Text),
-                TelefonoCelular = long.Parse(textPhone.Text),
+                CorreoElectronico = correo,
+                NombreCompleto = nombre,
+                NumeroNomina = long.Parse(numeroNomina),
+                FechaNacimiento = fechaNacimiento,
+                TelefonoCasa = long.Parse(telefonoCasa),
+                TelefonoCelular = long.Parse(telefonoCelular),
                 FechaRegistro = DateTime.Now,
                 ID_UsuarioRegistro = Sesion.ID_Usuario
             };
 
-            string contrasena = textContra.Text;
+            int resultado = BD_Usuario.CrearUsuarioOperativo(nuevo, contraseña);
 
-            BD_Usuario.CrearUsuarioOperativo(nuevo, contrasena);
-            CargarUsuariosEnListBox();
-
+            if (resultado > 0) // Si el usuario se creó correctamente
+            {
+                MessageBox.Show("Usuario creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarUsuariosEnListBox();
+                LimpiarCampos(); // Solo limpiar si el usuario fue creado correctamente
+            }
         }
         private void iconButton2_Click(object sender, EventArgs e)
         {
@@ -130,6 +130,8 @@ namespace INICIO_Forms.ADMINISTRATIVO
                 MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarUsuariosEnListBox();
             }
+            //Por si el admin es imbecil y le da al boton de eliminar y no al de modificar
+            //LimpiarCampos();
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -152,31 +154,35 @@ namespace INICIO_Forms.ADMINISTRATIVO
 
             // Validaciones
             if (!ValidarCorreo(nuevoCorreo) || !ValidarNombre(nuevoNombre) || !ValidarNumeroNomina(nuevaNomina) ||
-                !ValidarTelefono(nuevoTelCasa) || !ValidarTelefono(nuevoTelCel)|| !ValidarContraseña(nuevaContrasena))
+                !ValidarTelefono(nuevoTelCasa) || !ValidarTelefono(nuevoTelCel) || !ValidarContraseña(nuevaContrasena))
             {
                 MessageBox.Show("Verifica que todos los datos ingresados sean correctos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            Usuario usuarioActualizado = new Usuario
+            else
             {
-                ID_Usuario = idUsuario,
-                CorreoElectronico = nuevoCorreo,
-                NombreCompleto = nuevoNombre,
-                NumeroNomina = long.Parse(nuevaNomina),
-                FechaNacimiento = nuevaFechaNacimiento,
-                TelefonoCasa = long.Parse(nuevoTelCasa),
-                TelefonoCelular = long.Parse(nuevoTelCel),
-                //Es para saber si podemos saber quien modifico
-                FechaRegistro = DateTime.Now,
-                ID_UsuarioRegistro = Sesion.ID_Usuario
 
-            };
+                Usuario usuarioActualizado = new Usuario
+                {
+                    ID_Usuario = idUsuario,
+                    CorreoElectronico = nuevoCorreo,
+                    NombreCompleto = nuevoNombre,
+                    NumeroNomina = long.Parse(nuevaNomina),
+                    FechaNacimiento = nuevaFechaNacimiento,
+                    TelefonoCasa = long.Parse(nuevoTelCasa),
+                    TelefonoCelular = long.Parse(nuevoTelCel),
+                    //Es para saber si podemos saber quien modifico
+                    FechaRegistro = DateTime.Now,
+                    ID_UsuarioRegistro = Sesion.ID_Usuario
 
-            BD_Usuario.ModificarUsuarioOperativo(usuarioActualizado, nuevaContrasena);
+                };
 
-            MessageBox.Show("Usuario modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            CargarUsuariosEnListBox();
+                BD_Usuario.ModificarUsuarioOperativo(usuarioActualizado, nuevaContrasena);
+
+                
+                CargarUsuariosEnListBox();
+                LimpiarCampos();
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -203,6 +209,16 @@ namespace INICIO_Forms.ADMINISTRATIVO
                 // Obtener la contraseña (opcional, dependiendo de seguridad), pero como creo que se tiene que cambiar todo ahi lo dejo por 
                 textContra.Text = BD_Usuario.ObtenerContraseñaPorID(usuario.ID_Usuario);
             }
+        }
+        private void LimpiarCampos()
+        {
+            textCorreo.Clear();
+            textContra.Clear();
+            textNombre.Clear();
+            textNomina.Clear();
+            textPhoneCasa.Clear();
+            textPhone.Clear();
+            FechaNacimiento.Value = DateTime.Today; // Restablece la fecha al día actual
         }
     }
 }

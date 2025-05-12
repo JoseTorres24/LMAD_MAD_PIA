@@ -56,6 +56,9 @@
     <Compile Include="BD\BD_HotelesHabitacionesServicios.cs" />
     <Compile Include="BD\BD_Usuario.cs" />
     <Compile Include="BD\ConexionBD.cs" />
+    <Compile Include="BD\HabitacionItem.cs" />
+    <Compile Include="BD\HotelItem.cs" />
+    <Compile Include="BD\ServicioItem.cs" />
     <Compile Include="BD\Sesion.cs" />
     <Compile Include="ContraseñasHotelAdministrador.cs" />
     <Compile Include="ListItem.cs" />

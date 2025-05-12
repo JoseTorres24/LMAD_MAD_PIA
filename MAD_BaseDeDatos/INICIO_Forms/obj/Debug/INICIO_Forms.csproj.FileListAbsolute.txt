@@ -40,3 +40,5 @@ C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bi
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bin\Debug\ClasesData.pdb
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\bin\Debug\System.Data.SqlClient.xml
 C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.OPERATIVO.FacturaCheckOut.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.RegistroHabitacion.resources
+C:\Users\Luis\Desktop\Proyecto_LMAD\LMAD_MAD_PIA\MAD_BaseDeDatos\INICIO_Forms\obj\Debug\INICIO_Forms.ADMINISTRATIVO.RegistroServicio.resources

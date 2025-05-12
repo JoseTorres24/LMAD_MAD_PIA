@@ -74,6 +74,18 @@
     <Compile Include="ADMINISTRATIVO\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADMINISTRATIVO\RegistroHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\RegistroHabitacion.Designer.cs">
+      <DependentUpon>RegistroHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\RegistroServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\RegistroServicio.Designer.cs">
+      <DependentUpon>RegistroServicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="ADMINISTRATIVO\ReporteCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +164,12 @@
     <EmbeddedResource Include="ADMINISTRATIVO\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ADMINISTRATIVO\RegistroHabitacion.resx">
+      <DependentUpon>RegistroHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADMINISTRATIVO\RegistroServicio.resx">
+      <DependentUpon>RegistroServicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ADMINISTRATIVO\ReporteCliente.resx">
       <DependentUpon>ReporteCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +236,9 @@
       <Project>{8defda9e-8d91-41e4-a1ee-01d5581f119e}</Project>
       <Name>ClasesData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

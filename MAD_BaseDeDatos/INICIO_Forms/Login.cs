@@ -64,10 +64,6 @@ namespace INICIO_Forms
                 this.Hide();
             }
 
-            else
-            {
-                MessageBox.Show("Correo o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
         }
 

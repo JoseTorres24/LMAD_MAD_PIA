@@ -16,6 +16,7 @@ namespace ClasesData
         public long TelefonoCasa { get; set; }
         public long TelefonoCelular { get; set; }
         public DateTime FechaRegistro { get; set; }
+        public string Tipo { get; set; }
         public int? ID_UsuarioRegistro { get; set; } // Nullable por si el usuario fue creado por sistema directamente
     }
     

@@ -85,5 +85,17 @@ namespace INICIO_Forms.ADMINISTRATIVO
             ReporteVentas ventas = new ReporteVentas();
             ventas.Show();
         }
+
+        private void registroDeHabitacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroHabitacion registroHabitacion = new RegistroHabitacion();
+            registroHabitacion.Show();
+        }
+
+        private void registroDeServiciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroServicio registro = new RegistroServicio();
+            registro.Show();
+        }
     }
 }

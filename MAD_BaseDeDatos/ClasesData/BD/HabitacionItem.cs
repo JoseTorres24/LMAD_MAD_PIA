@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClasesData
+namespace ClasesData.BD
 {
-    public class Habitaciones
+    public class HabitacionItem
     {
         public int ID_Habitacion { get; set; }
         public int ID_Hotel { get; set; }
         public int NumeroHabitacion { get; set; }
-        public int PisoHabitacion { get; set; }
         public string NivelHabitacion { get; set; }
-        public int Capacidad { get; set; }
-        public int NumeroCamas { get; set; }
-        public string VistaHabitacion { get; set; }
         public string Estado { get; set; }
 
-    }
+        public override string ToString()
+        {
+            return $"Hab. {NumeroHabitacion} - {NivelHabitacion} ({Estado})";
+        }
 
+    }
 }

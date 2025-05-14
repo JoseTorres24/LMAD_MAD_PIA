@@ -9,7 +9,7 @@ namespace ClasesData
     public class ServiciosReservacion
     {
         public int ID_ServicioReservado { get; set; }
-        public long ID_Reservacion { get; set; }
+        public string ID_Reservacion { get; set; }
         public int ID_Servicio{ get; set;}
     }
 }

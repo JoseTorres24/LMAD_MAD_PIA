@@ -8,16 +8,25 @@ namespace ClasesData
 {
     public class Cliente
     {
-        public long RFC { get; set; }
+        public string RFC { get; set; }
         public string NombreCompleto { get; set; }
         public string CorreoElectronico { get; set; }
-        public int TelefonoCasa { get; set; }
-        public int TelefonoCelular { get; set; }
+        public long TelefonoCasa { get; set; }  //  Cambiado a long
+        public long TelefonoCelular { get; set; }  //  Cambiado a long
         public string EstadoCivil { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Ciudad { get; set; }
         public string Estado { get; set; }
         public string Pais { get; set; }
+
+
+
+        // Esta propiedad es la que se mostrará en el ListBox.
+        public string DisplayInfo
+        {
+            get { return $"{RFC} - {NombreCompleto}"; }
+        }
+
 
     }
 

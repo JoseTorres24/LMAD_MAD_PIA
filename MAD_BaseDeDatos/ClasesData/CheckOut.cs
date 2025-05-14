@@ -9,7 +9,7 @@ namespace ClasesData
     public class CheckOut
     {
         public int ID_CheckOut { get; set; }
-        public long ID_Reservacion { get; set; }
+        public string ID_Reservacion { get; set; }
         public DateTime FechaCheckOut { get; set; }
 
     }

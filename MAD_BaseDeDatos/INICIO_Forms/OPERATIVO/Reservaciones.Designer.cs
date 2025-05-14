@@ -46,7 +46,7 @@
             this.comboHabitacionVista = new System.Windows.Forms.ComboBox();
             this.numericCamas = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboTipoCama = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.numericPersonas = new System.Windows.Forms.NumericUpDown();
@@ -59,11 +59,12 @@
             this.Anticipo = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListServicios = new System.Windows.Forms.CheckedListBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateCheckOut = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnBuscarHabitaciones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericCamas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericNoches)).BeginInit();
@@ -97,6 +98,7 @@
             this.buttonGuardarReservacion.TabIndex = 6;
             this.buttonGuardarReservacion.Text = "Guardar Reservacion";
             this.buttonGuardarReservacion.UseVisualStyleBackColor = false;
+            this.buttonGuardarReservacion.Click += new System.EventHandler(this.buttonGuardarReservacion_Click);
             // 
             // label2
             // 
@@ -115,6 +117,7 @@
             this.textCliente.Location = new System.Drawing.Point(44, 142);
             this.textCliente.Multiline = true;
             this.textCliente.Name = "textCliente";
+            this.textCliente.ReadOnly = true;
             this.textCliente.Size = new System.Drawing.Size(316, 27);
             this.textCliente.TabIndex = 8;
             // 
@@ -206,6 +209,7 @@
             this.checkedListBoxHabitaciones.ScrollAlwaysVisible = true;
             this.checkedListBoxHabitaciones.Size = new System.Drawing.Size(315, 379);
             this.checkedListBoxHabitaciones.TabIndex = 20;
+            this.checkedListBoxHabitaciones.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxHabitaciones_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -244,13 +248,13 @@
             this.label9.Text = "Cantidad de camas";
             this.label9.UseWaitCursor = true;
             // 
-            // comboBox1
+            // comboTipoCama
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(486, 229);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(274, 21);
-            this.comboBox1.TabIndex = 26;
+            this.comboTipoCama.FormattingEnabled = true;
+            this.comboTipoCama.Location = new System.Drawing.Point(486, 229);
+            this.comboTipoCama.Name = "comboTipoCama";
+            this.comboTipoCama.Size = new System.Drawing.Size(274, 21);
+            this.comboTipoCama.TabIndex = 26;
             // 
             // label10
             // 
@@ -365,14 +369,14 @@
             this.label16.Text = "Busqueda de Habitacion";
             this.label16.UseWaitCursor = true;
             // 
-            // checkedListBox1
+            // checkedListServicios
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(869, 108);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.ScrollAlwaysVisible = true;
-            this.checkedListBox1.Size = new System.Drawing.Size(249, 184);
-            this.checkedListBox1.TabIndex = 40;
+            this.checkedListServicios.FormattingEnabled = true;
+            this.checkedListServicios.Location = new System.Drawing.Point(869, 108);
+            this.checkedListServicios.Name = "checkedListServicios";
+            this.checkedListServicios.ScrollAlwaysVisible = true;
+            this.checkedListServicios.Size = new System.Drawing.Size(249, 184);
+            this.checkedListServicios.TabIndex = 40;
             // 
             // label15
             // 
@@ -396,12 +400,12 @@
             this.label17.Text = "Costo, Servicios y Estancias";
             this.label17.UseWaitCursor = true;
             // 
-            // dateTimePicker1
+            // dateCheckOut
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(869, 498);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 44;
+            this.dateCheckOut.Location = new System.Drawing.Point(869, 498);
+            this.dateCheckOut.Name = "dateCheckOut";
+            this.dateCheckOut.Size = new System.Drawing.Size(200, 20);
+            this.dateCheckOut.TabIndex = 44;
             // 
             // label18
             // 
@@ -413,17 +417,29 @@
             this.label18.TabIndex = 43;
             this.label18.Text = "Dia de Check OUT";
             // 
+            // btnBuscarHabitaciones
+            // 
+            this.btnBuscarHabitaciones.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarHabitaciones.Location = new System.Drawing.Point(685, 353);
+            this.btnBuscarHabitaciones.Name = "btnBuscarHabitaciones";
+            this.btnBuscarHabitaciones.Size = new System.Drawing.Size(118, 40);
+            this.btnBuscarHabitaciones.TabIndex = 45;
+            this.btnBuscarHabitaciones.Text = "Buscar Habitacion";
+            this.btnBuscarHabitaciones.UseVisualStyleBackColor = false;
+            this.btnBuscarHabitaciones.Click += new System.EventHandler(this.btnBuscarHabitaciones_Click);
+            // 
             // Reservaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1195, 788);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnBuscarHabitaciones);
+            this.Controls.Add(this.dateCheckOut);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.checkedListServicios);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.Anticipo);
@@ -435,7 +451,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.numericPersonas);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboTipoCama);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.numericCamas);
@@ -487,7 +503,7 @@
         private System.Windows.Forms.ComboBox comboHabitacionVista;
         private System.Windows.Forms.NumericUpDown numericCamas;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboTipoCama;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown numericPersonas;
@@ -500,10 +516,11 @@
         private System.Windows.Forms.Label Anticipo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListServicios;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateCheckOut;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnBuscarHabitaciones;
     }
 }

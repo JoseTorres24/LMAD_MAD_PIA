@@ -9,9 +9,8 @@ namespace ClasesData
     public class Cancelacion
     {
         public int ID_Cancelacion { get; set; }
-        public long ID_Reservacion { get; set; }
+        public string ID_Reservacion { get; set; }
         public int UsuarioRegistro { get; set; }
-
     }
 
 }

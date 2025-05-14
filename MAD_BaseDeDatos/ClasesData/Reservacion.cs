@@ -8,15 +8,15 @@ namespace ClasesData
 {
     public class Reservacion
     {
-        public long CodigoReservacion { get; set; }
-        public long RFC_Cliente { get; set; }
+        public string CodigoReservacion { get; set; }
+        public string RFC_Cliente { get; set; }
         public int ID_Hotel { get; set; }
+        public int ID_Habitacion { get; set; } // Nuevo campo //para savesao la habitzao
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public float Anticipo { get; set; }
         public int UsuarioRegistro { get; set; }
         public DateTime FechaRegistro { get; set; }
-
     }
 
 }

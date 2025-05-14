@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\BD_Administrador.cs" />
+    <Compile Include="BD\BD_Cliente.cs" />
     <Compile Include="BD\BD_HotelesHabitacionesServicios.cs" />
+    <Compile Include="BD\BD_Reservacion.cs" />
     <Compile Include="BD\BD_Usuario.cs" />
     <Compile Include="BD\ConexionBD.cs" />
     <Compile Include="BD\HabitacionItem.cs" />

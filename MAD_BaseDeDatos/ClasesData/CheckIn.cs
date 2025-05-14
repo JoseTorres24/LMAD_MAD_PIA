@@ -9,10 +9,10 @@ namespace ClasesData
     public class CheckIn
     {
         public int ID_CheckIn { get; set; }
-        public long ID_Reservacion { get; set; }
+        public string ID_Reservacion { get; set; }
         public int UsuarioRegistro { get; set; }
         public DateTime FechaCheckIn { get; set; }
-        public string Clave { get; set; }
+        
 
     }
 

@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\reportehotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\reportehotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\bd_reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\bd_reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\administrativo\\reportecliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\reportecliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\administrativo\\reportecliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\reportecliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\administrativo\\reportehotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\reportehotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,79 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReporteHotel.cs",
-              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\ReporteHotel.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\ReporteHotel.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\ReporteHotel.cs",
-              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\ReporteHotel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMgAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T15:04:47.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ReporteHotel.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\ReporteHotel.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\ReporteHotel.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\ReporteHotel.cs [Dise\u00F1o]",
-              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\ReporteHotel.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T14:59:35.984Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BD_Reservacion.cs",
-              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Reservacion.cs",
-              "RelativeDocumentMoniker": "ClasesData\\BD\\BD_Reservacion.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Reservacion.cs",
-              "RelativeToolTip": "ClasesData\\BD\\BD_Reservacion.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAFMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T14:13:13.546Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Reservaciones.cs",
+              "Title": "Reservaciones.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
               "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
-              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
-              "ViewState": "AgIAACMBAAAAAAAAAADwv0UBAAAVAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T14:05:24.519Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReporteCliente.cs",
-              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\ReporteCliente.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\ReporteCliente.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\ReporteCliente.cs",
-              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\ReporteCliente.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAjwGoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T14:02:56.262Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReporteCliente.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\ReporteCliente.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\ReporteCliente.cs",
-              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\ReporteCliente.cs [Dise\u00F1o]",
-              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\ReporteCliente.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T13:57:43.391Z"
+              "WhenOpened": "2025-05-14T16:00:04.937Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

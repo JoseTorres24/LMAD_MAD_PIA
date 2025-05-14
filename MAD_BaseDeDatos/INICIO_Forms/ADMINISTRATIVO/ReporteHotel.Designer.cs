@@ -35,7 +35,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.listHoteles = new System.Windows.Forms.ListBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,7 +45,7 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(10, 31);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 21);
             this.comboBox1.TabIndex = 0;
@@ -55,7 +54,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.textBox1.Location = new System.Drawing.Point(425, 31);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(185, 21);
@@ -89,7 +88,7 @@
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(206, 31);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(198, 21);
             this.comboBox2.TabIndex = 3;
@@ -111,25 +110,15 @@
             this.listHoteles.FormattingEnabled = true;
             this.listHoteles.Location = new System.Drawing.Point(13, 81);
             this.listHoteles.Name = "listHoteles";
-            this.listHoteles.Size = new System.Drawing.Size(284, 511);
+            this.listHoteles.Size = new System.Drawing.Size(449, 511);
             this.listHoteles.TabIndex = 6;
             this.listHoteles.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(329, 90);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(640, 495);
-            this.textBox2.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(358, 67);
+            this.label4.Location = new System.Drawing.Point(163, 58);
             this.label4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(196, 20);
@@ -139,12 +128,13 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(998, 538);
+            this.button1.Location = new System.Drawing.Point(532, 570);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 54);
             this.button1.TabIndex = 9;
             this.button1.Text = "Exportar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -155,17 +145,17 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Agregar al reporte";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ReporteHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(3F, 4F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1193, 636);
+            this.ClientSize = new System.Drawing.Size(761, 636);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.listHoteles);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -174,9 +164,10 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "ReporteHotel";
             this.Text = "ReporteHotel";
+            this.Load += new System.EventHandler(this.ReporteHotel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +182,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listHoteles;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

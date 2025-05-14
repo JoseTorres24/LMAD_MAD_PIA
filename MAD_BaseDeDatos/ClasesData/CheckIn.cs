@@ -13,7 +13,7 @@ namespace ClasesData
         public string EstadoEntrada { get; set; }
         public int UsuarioRegistro { get; set; }
         public DateTime FechaCheckIn { get; set; }
-        
+        public string Clave { get; set; }
     }
 
 }

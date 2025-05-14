@@ -35,15 +35,17 @@
             this.comboCiudadesCheck = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // listClientes
             // 
             this.listClientes.FormattingEnabled = true;
-            this.listClientes.Location = new System.Drawing.Point(380, 111);
+            this.listClientes.Location = new System.Drawing.Point(484, 99);
             this.listClientes.Name = "listClientes";
             this.listClientes.ScrollAlwaysVisible = true;
-            this.listClientes.Size = new System.Drawing.Size(348, 446);
+            this.listClientes.Size = new System.Drawing.Size(487, 446);
             this.listClientes.TabIndex = 1;
             // 
             // label4
@@ -89,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(376, 76);
+            this.label1.Location = new System.Drawing.Point(800, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 21;
@@ -104,7 +106,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(470, 571);
+            this.iconButton1.Location = new System.Drawing.Point(740, 574);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.iconButton1.Size = new System.Drawing.Size(208, 73);
@@ -114,12 +116,50 @@
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.Yellow;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Hotel;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(322, 41);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.iconButton2.Size = new System.Drawing.Size(184, 31);
+            this.iconButton2.TabIndex = 26;
+            this.iconButton2.Text = "Generar Hoteles";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.BackColor = System.Drawing.Color.Lime;
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Hotel;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.Location = new System.Drawing.Point(454, 574);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.iconButton3.Size = new System.Drawing.Size(184, 31);
+            this.iconButton3.TabIndex = 27;
+            this.iconButton3.Text = "Generar Clientes para salir";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            // 
             // CHECKOUT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(767, 680);
+            this.ClientSize = new System.Drawing.Size(983, 680);
+            this.Controls.Add(this.iconButton3);
+            this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
@@ -144,5 +184,7 @@
         private System.Windows.Forms.ComboBox comboCiudadesCheck;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

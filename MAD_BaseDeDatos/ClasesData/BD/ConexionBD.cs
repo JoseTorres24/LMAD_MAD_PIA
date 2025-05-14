@@ -9,6 +9,7 @@ namespace ClasesData.BD
         public static SqlConnection ObtenerConexion()
         {
             return new SqlConnection(cadenaConexion);
+
         }
     }
 }

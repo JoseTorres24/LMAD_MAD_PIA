@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace ClasesData.BD
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
                 conexion.Open();
-                string consulta = "SELECT RFC, NombreCompleto FROM Clientes";
+                string consulta = "SELECT RFC, NombreCompleto, FROM Clientes";
 
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -59,6 +60,31 @@ namespace ClasesData.BD
             return ciudades;
         }
 
+        public static List<string> ObtenerPaises()
+        {
+            List<string> paises = new List<string>();
+
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                conexion.Open();
+                string consulta = "SELECT DISTINCT Pais FROM Hoteles";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        paises.Add(reader.GetString(0));
+                    }
+                }
+            }
+
+            return paises;
+        }
+
+
+
+
         // Método para cargar hoteles por ciudad
         public static List<Hoteles> ObtenerHotelesPorCiudad(string ciudad)
         {
@@ -68,17 +94,22 @@ namespace ClasesData.BD
             {
                 using (SqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    conexion.Open();
+                    // Configuración para mejor rendimiento
+                    conexion.StatisticsEnabled = true;
+
                     string consulta = @"SELECT ID_Hotel, NombreHotel, Ciudad, Domicilio 
-                              FROM Hoteles 
-                              WHERE Ciudad = @Ciudad
-                              ORDER BY NombreHotel";
+                          FROM Hoteles 
+                          WHERE Ciudad = @Ciudad
+                          ORDER BY NombreHotel";
 
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
+                        cmd.CommandTimeout = 30; // Tiempo de espera aumentado
                         cmd.Parameters.AddWithValue("@Ciudad", ciudad);
 
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        conexion.Open();
+
+                        using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SequentialAccess))
                         {
                             while (reader.Read())
                             {
@@ -92,11 +123,14 @@ namespace ClasesData.BD
                             }
                         }
                     }
+
+                    // Opcional: Ver estadísticas de la conexión
+                    var stats = conexion.RetrieveStatistics();
+                    Console.WriteLine($"Tiempo de ejecución: {stats["ExecutionTime"]}ms");
                 }
             }
             catch (Exception ex)
             {
-                // Puedes lanzar la excepción o manejarla aquí
                 throw new Exception("Error al obtener hoteles por ciudad: " + ex.Message);
             }
 
@@ -343,52 +377,87 @@ namespace ClasesData.BD
                 }
             }
         }
-
         public static List<Reservacion> ObtenerReservacionesPorHotel(int idHotel)
         {
-            List<Reservacion> lista = new List<Reservacion>();
+            List<Reservacion> reservaciones = new List<Reservacion>();
 
-            try
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+                string consulta = @"SELECT CodigoReservacion, RFC_Cliente, FechaInicio, FechaFin
+                          FROM Reservacion 
+                          WHERE ID_Hotel = @IDHotel
+                          ORDER BY FechaInicio DESC";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                 {
+                    cmd.Parameters.AddWithValue("@IDHotel", idHotel);
                     conexion.Open();
-                    string consulta = @"SELECT CodigoReservacion, RFC_Cliente, ID_Hotel, ID_Habitacion, 
-                                       FechaInicio, FechaFin, Anticipo, Total, UsuarioRegistro
-                                FROM Reservacion
-                                WHERE ID_Hotel = @ID_Hotel";
 
-                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.Parameters.AddWithValue("@ID_Hotel", idHotel);
-
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
                         {
-                            while (reader.Read())
+                            reservaciones.Add(new Reservacion
                             {
-                                lista.Add(new Reservacion
-                                {
-                                    CodigoReservacion = reader.GetString(0),
-                                    RFC_Cliente = reader.GetString(1),
-                                    ID_Hotel = reader.GetInt32(2),
-                                    ID_Habitacion = reader.GetInt32(3),
-                                    FechaInicio = reader.GetDateTime(4),
-                                    FechaFin = reader.GetDateTime(5),
-                                    Anticipo = (float)reader.GetDecimal(6),
-                                    Total = (float)reader.GetDecimal(7),
-                                    UsuarioRegistro = reader.GetInt32(8)
-                                });
-                            }
+                                CodigoReservacion = reader.GetString(0),
+                                RFC_Cliente = reader.GetString(1),
+                                FechaInicio = reader.GetDateTime(2),
+                                FechaFin = reader.GetDateTime(3)
+                            });
                         }
                     }
                 }
             }
-            catch (Exception ex)
+
+            return reservaciones;
+        }
+
+
+
+        public static List<Reservacion> ObtenerReservacionesPendientes()
+        {
+            List<Reservacion> reservaciones = new List<Reservacion>();
+
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                throw new Exception("Error al obtener reservaciones por hotel: " + ex.Message);
+                conexion.Open();
+                // Consulta: Reservaciones que no aparecen en CheckIn con EstadoEntrada = 'Marcado'
+                string query = @"
+            SELECT r.CodigoReservacion, r.RFC_Cliente, r.ID_Hotel, r.ID_Habitacion, 
+                   r.FechaInicio, r.FechaFin, r.Anticipo, r.Total, r.UsuarioRegistro, r.FechaRegistro
+            FROM Reservacion r
+            WHERE NOT EXISTS (
+                SELECT 1 
+                FROM CheckIn c 
+                WHERE c.ID_Reservacion = r.CodigoReservacion  
+                  AND c.EstadoEntrada = 'Marcado'
+            )";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        reservaciones.Add(new Reservacion
+                        {
+                            CodigoReservacion = reader.IsDBNull(0) ? string.Empty : reader.GetString(0),
+                            RFC_Cliente = reader.IsDBNull(1) ? string.Empty : reader.GetString(1),
+                            ID_Hotel = reader.IsDBNull(2) ? 0 : reader.GetInt32(2),
+                            // ID_Habitacion puede ser NULL; en ese caso asigna 0 (o el valor que convenga)
+                            ID_Habitacion = reader.IsDBNull(3) ? 0 : reader.GetInt32(3),
+                            FechaInicio = reader.IsDBNull(4) ? DateTime.MinValue : reader.GetDateTime(4),
+                            FechaFin = reader.IsDBNull(5) ? DateTime.MinValue : reader.GetDateTime(5),
+                            // Para FLOAT usamos GetDouble y luego convertimos a float
+                            Anticipo = reader.IsDBNull(6) ? 0 : (float)reader.GetDouble(6),
+                            Total = reader.IsDBNull(7) ? 0 : (float)reader.GetDouble(7),
+                            UsuarioRegistro = reader.IsDBNull(8) ? 0 : reader.GetInt32(8),
+                            FechaRegistro = reader.IsDBNull(9) ? DateTime.MinValue : reader.GetDateTime(9)
+                        });
+                    }
+                }
             }
 
-            return lista;
+            return reservaciones;
         }
 
 

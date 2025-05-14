@@ -18,6 +18,14 @@ namespace ClasesData
         public float Total { get; set; } // Tenemos que agregar este campo para poder ver el total
         public int UsuarioRegistro { get; set; }
         public DateTime FechaRegistro { get; set; }
+
+        public List<ServiciosReservacion> Servicios { get; set; } = new List<ServiciosReservacion>();
+
+        public string DisplayInfo
+        {
+            get { return $"{CodigoReservacion} - {RFC_Cliente} - {FechaInicio:dd/MM/yyyy}"; }
+        }
+
     }
 
 }

@@ -18,7 +18,7 @@ namespace ClasesData.BD
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
                 conexion.Open();
-                string consulta = "SELECT RFC, NombreCompleto, FROM Clientes";
+                string consulta = "SELECT RFC, NombreCompleto FROM Clientes";
 
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -82,9 +82,6 @@ namespace ClasesData.BD
             return paises;
         }
 
-
-
-
         // Método para cargar hoteles por ciudad
         public static List<Hoteles> ObtenerHotelesPorCiudad(string ciudad)
         {
@@ -136,6 +133,7 @@ namespace ClasesData.BD
 
             return hoteles;
         }
+
 
         public static List<Habitaciones> ObtenerHabitacionesDisponibles(
             int idHotel,
@@ -458,6 +456,77 @@ namespace ClasesData.BD
             }
 
             return reservaciones;
+        }
+
+
+        public static List<Reservacion> ObtenerReservacionesActivas()
+        {
+          
+            string query = "SELECT * FROM Reservacion WHERE Estatus != 'Eliminada'";
+
+            List<Reservacion> reservaciones = new List<Reservacion>();
+
+            using (SqlConnection conn = ConexionBD.ObtenerConexion())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        reservaciones.Add(new Reservacion
+                        {
+                            CodigoReservacion = reader["CodigoReservacion"].ToString(),
+                            RFC_Cliente = reader["RFC_Cliente"].ToString(),
+                            ID_Hotel = Convert.ToInt32(reader["ID_Hotel"]),
+                            ID_Habitacion = Convert.ToInt32(reader["ID_Habitacion"]),
+                            FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
+                            FechaFin = Convert.ToDateTime(reader["FechaFin"]),
+                            Anticipo = Convert.ToSingle(reader["Anticipo"]),
+                            Total = Convert.ToSingle(reader["Total"]),
+                            Estatus = reader["Estatus"].ToString()
+                        });
+                    }
+                }
+            }
+            return reservaciones;
+        }
+
+
+
+        public static List<Cliente> ObtenerClientesPorHotel(int idHotel)
+        {
+            string query = @"SELECT r.CodigoReservacion, c.RFC, c.NombreCompleto, c.CorreoElectronico, c.Ciudad, c.Estado, c.Pais 
+                     FROM Reservacion r
+                     INNER JOIN Clientes c ON r.RFC_Cliente = c.RFC WHERE
+                     r.ID_Hotel = @ID_Hotel";
+
+            List<Cliente> clientes = new List<Cliente>();
+
+            using (SqlConnection conn = ConexionBD.ObtenerConexion())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID_Hotel", idHotel);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            clientes.Add(new Cliente
+                            {
+                                RFC = reader["RFC"].ToString(),
+                                NombreCompleto = reader["NombreCompleto"].ToString(),
+                                CorreoElectronico = reader["CorreoElectronico"].ToString(),
+                                Ciudad = reader["Ciudad"].ToString(),
+                                Estado = reader["Estado"].ToString(),
+                                Pais = reader["Pais"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            return clientes;
         }
 
 

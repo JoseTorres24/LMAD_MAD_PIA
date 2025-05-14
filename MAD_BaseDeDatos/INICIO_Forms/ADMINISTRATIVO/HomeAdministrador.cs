@@ -97,5 +97,11 @@ namespace INICIO_Forms.ADMINISTRATIVO
             RegistroServicio registro = new RegistroServicio();
             registro.Show();
         }
+
+        private void cancelacionDeReservacionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CancelacionReservacion modulo = new CancelacionReservacion();
+            modulo.Show();
+        }
     }
 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.menuAdmin = new System.Windows.Forms.MenuStrip();
-            this.menuAdminTitulo = new System.Windows.Forms.MenuStrip();
-            this.label1 = new System.Windows.Forms.Label();
             this.Hoteles = new FontAwesome.Sharp.IconMenuItem();
             this.ProcesoHotel = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeHabitacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +43,10 @@
             this.VentasReporte = new System.Windows.Forms.ToolStripMenuItem();
             this.SalirMenu = new FontAwesome.Sharp.IconMenuItem();
             this.Salir = new FontAwesome.Sharp.IconMenuItem();
+            this.menuAdminTitulo = new System.Windows.Forms.MenuStrip();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cancelacionDeReservacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelacionDeReservacionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,34 +59,13 @@
             this.ReporteHotel,
             this.ReporteClientes,
             this.ReporteDeVentas,
-            this.SalirMenu});
+            this.SalirMenu,
+            this.cancelacionDeReservacionToolStripMenuItem});
             this.menuAdmin.Location = new System.Drawing.Point(0, 88);
             this.menuAdmin.Name = "menuAdmin";
-            this.menuAdmin.Size = new System.Drawing.Size(861, 71);
+            this.menuAdmin.Size = new System.Drawing.Size(983, 71);
             this.menuAdmin.TabIndex = 0;
             this.menuAdmin.Text = "menuStrip1";
-            // 
-            // menuAdminTitulo
-            // 
-            this.menuAdminTitulo.AutoSize = false;
-            this.menuAdminTitulo.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.menuAdminTitulo.Location = new System.Drawing.Point(0, 0);
-            this.menuAdminTitulo.Name = "menuAdminTitulo";
-            this.menuAdminTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuAdminTitulo.Size = new System.Drawing.Size(861, 88);
-            this.menuAdminTitulo.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label1.Font = new System.Drawing.Font("Franklin Gothic Demi", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(34, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 33);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Control de Hoteles";
             // 
             // Hoteles
             // 
@@ -227,15 +208,53 @@
             this.Salir.IconColor = System.Drawing.Color.Black;
             this.Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(159, 22);
+            this.Salir.Size = new System.Drawing.Size(180, 22);
             this.Salir.Text = "Salir del Sistema";
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
+            // 
+            // menuAdminTitulo
+            // 
+            this.menuAdminTitulo.AutoSize = false;
+            this.menuAdminTitulo.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.menuAdminTitulo.Location = new System.Drawing.Point(0, 0);
+            this.menuAdminTitulo.Name = "menuAdminTitulo";
+            this.menuAdminTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuAdminTitulo.Size = new System.Drawing.Size(983, 88);
+            this.menuAdminTitulo.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Demi", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(34, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(245, 33);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Control de Hoteles";
+            // 
+            // cancelacionDeReservacionToolStripMenuItem
+            // 
+            this.cancelacionDeReservacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cancelacionDeReservacionToolStripMenuItem1});
+            this.cancelacionDeReservacionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.cancelacionDeReservacionToolStripMenuItem.Name = "cancelacionDeReservacionToolStripMenuItem";
+            this.cancelacionDeReservacionToolStripMenuItem.Size = new System.Drawing.Size(84, 67);
+            this.cancelacionDeReservacionToolStripMenuItem.Text = "Cancelacion";
+            // 
+            // cancelacionDeReservacionToolStripMenuItem1
+            // 
+            this.cancelacionDeReservacionToolStripMenuItem1.Name = "cancelacionDeReservacionToolStripMenuItem1";
+            this.cancelacionDeReservacionToolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
+            this.cancelacionDeReservacionToolStripMenuItem1.Text = "Cancelacion de Reservacion";
+            this.cancelacionDeReservacionToolStripMenuItem1.Click += new System.EventHandler(this.cancelacionDeReservacionToolStripMenuItem1_Click);
             // 
             // HomeAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 572);
+            this.ClientSize = new System.Drawing.Size(983, 572);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuAdmin);
@@ -270,5 +289,7 @@
         private System.Windows.Forms.ToolStripMenuItem VentasReporte;
         private System.Windows.Forms.ToolStripMenuItem registroDeHabitacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeServiciosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cancelacionDeReservacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cancelacionDeReservacionToolStripMenuItem1;
     }
 }

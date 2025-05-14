@@ -18,6 +18,7 @@ namespace ClasesData
         public float Total { get; set; } // Tenemos que agregar este campo para poder ver el total
         public int UsuarioRegistro { get; set; }
         public DateTime FechaRegistro { get; set; }
+        public string Estatus { get; set; } //ESTO Para disque eliminar 
 
         public List<ServiciosReservacion> Servicios { get; set; } = new List<ServiciosReservacion>();
 

@@ -37,6 +37,10 @@
             this.MostrarCodigo = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // listReservaciones
@@ -151,17 +155,76 @@
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(23, 40);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(274, 21);
+            this.comboBox1.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(19, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 20);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Seleccione Ciudad";
+            this.label2.UseWaitCursor = true;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.BackColor = System.Drawing.Color.Yellow;
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Hotel;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.Location = new System.Drawing.Point(246, 69);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.iconButton3.Size = new System.Drawing.Size(184, 31);
+            this.iconButton3.TabIndex = 18;
+            this.iconButton3.Text = "Generar Hoteles";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.BackColor = System.Drawing.Color.Tomato;
+            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Hotel;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton4.Location = new System.Drawing.Point(579, 560);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.iconButton4.Size = new System.Drawing.Size(247, 57);
+            this.iconButton4.TabIndex = 19;
+            this.iconButton4.Text = "Generar Reservaciones";
+            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton4.UseVisualStyleBackColor = false;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
             // CHEKIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(983, 639);
+            this.Controls.Add(this.iconButton4);
+            this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.MostrarCodigo);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.listHotelesCheck);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboCiudadesCheck);
             this.Controls.Add(this.label1);
@@ -185,5 +248,9 @@
         private FontAwesome.Sharp.IconButton MostrarCodigo;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton4;
     }
 }

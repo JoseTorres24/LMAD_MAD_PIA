@@ -65,6 +65,7 @@
             this.dateCheckOut = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
             this.btnBuscarHabitaciones = new System.Windows.Forms.Button();
+            this.btnGenerarTotal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericCamas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPersonas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericNoches)).BeginInit();
@@ -77,6 +78,7 @@
             this.comboReservacion.Name = "comboReservacion";
             this.comboReservacion.Size = new System.Drawing.Size(316, 21);
             this.comboReservacion.TabIndex = 1;
+            this.comboReservacion.SelectedIndexChanged += new System.EventHandler(this.comboReservacion_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -139,6 +141,7 @@
             this.comboCiudades.Name = "comboCiudades";
             this.comboCiudades.Size = new System.Drawing.Size(316, 21);
             this.comboCiudades.TabIndex = 9;
+            this.comboCiudades.SelectedIndexChanged += new System.EventHandler(this.comboCiudades_SelectedIndexChanged);
             // 
             // listHoteles
             // 
@@ -428,12 +431,24 @@
             this.btnBuscarHabitaciones.UseVisualStyleBackColor = false;
             this.btnBuscarHabitaciones.Click += new System.EventHandler(this.btnBuscarHabitaciones_Click);
             // 
+            // btnGenerarTotal
+            // 
+            this.btnGenerarTotal.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnGenerarTotal.Location = new System.Drawing.Point(1065, 590);
+            this.btnGenerarTotal.Name = "btnGenerarTotal";
+            this.btnGenerarTotal.Size = new System.Drawing.Size(118, 40);
+            this.btnGenerarTotal.TabIndex = 46;
+            this.btnGenerarTotal.Text = "Generar Total";
+            this.btnGenerarTotal.UseVisualStyleBackColor = false;
+            this.btnGenerarTotal.Click += new System.EventHandler(this.btnGenerarTotal_Click);
+            // 
             // Reservaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1195, 788);
+            this.Controls.Add(this.btnGenerarTotal);
             this.Controls.Add(this.btnBuscarHabitaciones);
             this.Controls.Add(this.dateCheckOut);
             this.Controls.Add(this.label18);
@@ -522,5 +537,6 @@
         private System.Windows.Forms.DateTimePicker dateCheckOut;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnBuscarHabitaciones;
+        private System.Windows.Forms.Button btnGenerarTotal;
     }
 }

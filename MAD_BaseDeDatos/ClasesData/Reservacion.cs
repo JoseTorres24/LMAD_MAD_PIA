@@ -15,6 +15,7 @@ namespace ClasesData
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public float Anticipo { get; set; }
+        public float Total { get; set; } // Tenemos que agregar este campo para poder ver el total
         public int UsuarioRegistro { get; set; }
         public DateTime FechaRegistro { get; set; }
     }

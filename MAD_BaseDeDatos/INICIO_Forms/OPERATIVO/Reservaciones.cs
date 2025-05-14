@@ -39,6 +39,7 @@ namespace INICIO_Forms.OPERATIVO
         private void Reservaciones_Load(object sender, EventArgs e)
         {
             CargarDatosIniciales();
+            CargarCiudades();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -48,152 +49,266 @@ namespace INICIO_Forms.OPERATIVO
         // Ademas se tiene que asignar el guid 
         private void buttonGuardarReservacion_Click(object sender, EventArgs e)
         {
-            // Validaciones
-            if (checkedListBoxHabitaciones.CheckedItems.Count == 0)
+            try
             {
-                MessageBox.Show("Selecciona una habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!decimal.TryParse(textAnticipo.Text, out decimal anticipo) || anticipo < (costoTotal * 0.1m))
-            {
-                MessageBox.Show("Ingresa un anticipo válido (mínimo 10%)", "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Crear reservación
-            var reservacion = new Reservacion
-            {
-                CodigoReservacion = Guid.NewGuid().ToString(),
-                RFC_Cliente = ((Cliente)comboReservacion.SelectedItem).RFC,
-                ID_Hotel = ((Hoteles)listHoteles.SelectedItem).ID_Hotel,
-                FechaInicio = dateCheckIn.Value,
-                FechaFin = dateCheckOut.Value,
-                Anticipo = (float)anticipo,
-                UsuarioRegistro = Sesion.ID_Usuario // Asume que tienes una clase con el usuario actual
-            };
-
-            // Guardar reservación
-            if (BD_Reservacion.CrearReservacion(reservacion))
-            {
-                // Guardar servicios seleccionados
-                foreach (int index in checkedListServicios.CheckedIndices)
+                // 1. Validar habitación seleccionada
+                if (checkedListBoxHabitaciones.CheckedItems.Count == 0)
                 {
-                    var servicioReservacion = new ServiciosReservacion
-                    {
-                        ID_Reservacion = reservacion.CodigoReservacion,
-                        ID_Servicio = serviciosDisponibles[index].ID_Servicio
-                    };
-                    BD_Reservacion.AgregarServicioReservacion(servicioReservacion);
+                    MessageBox.Show("Selecciona una habitación primero.");
+                    return;
                 }
 
-                MessageBox.Show("Reservación creada exitosamente", "Éxito",
-                              MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                // 2. Validar que se haya calculado el total
+                if (costoTotal <= 0)
+                {
+                    MessageBox.Show("Genera el costo total antes de guardar la reservación.");
+                    return;
+                }
+
+                // 3. Validar anticipo mínimo del 10%
+                if (!decimal.TryParse(textAnticipo.Text, out decimal anticipoDecimal))
+                {
+                    MessageBox.Show("El anticipo ingresado no es válido.");
+                    return;
+                }
+
+                decimal minimoAnticipo = costoTotal * 0.1m;
+                if (anticipoDecimal < minimoAnticipo)
+                {
+                    MessageBox.Show($"El anticipo debe ser al menos el 10% del total (${minimoAnticipo:N2}).");
+                    return;
+                }
+
+                // 4. Validar que la cantidad de noches coincida con los días entre fechas
+                int dias = (dateCheckOut.Value.Date - dateCheckIn.Value.Date).Days;
+                if (dias <= 0)
+                {
+                    MessageBox.Show("La fecha de salida debe ser posterior a la de entrada.");
+                    return;
+                }
+
+                if (dias != (int)numericNoches.Value)
+                {
+                    MessageBox.Show($"El número de noches no coincide con las fechas seleccionadas ({dias} noches).");
+                    return;
+                }
+
+                // 5. Obtener la habitación seleccionada
+                int indexHabitacion = checkedListBoxHabitaciones.CheckedIndices[0];
+                int idHabitacion = habitacionesDisponibles[indexHabitacion].ID_Habitacion;
+
+                // 6. Crear objeto reservación
+                var reservacion = new Reservacion
+                {
+                    CodigoReservacion = Guid.NewGuid().ToString(),
+                    RFC_Cliente = ((Cliente)comboReservacion.SelectedItem).RFC,
+                    ID_Hotel = ((Hoteles)listHoteles.SelectedItem).ID_Hotel,
+                    ID_Habitacion = idHabitacion,
+                    FechaInicio = dateCheckIn.Value,
+                    FechaFin = dateCheckOut.Value,
+                    Anticipo = (float)anticipoDecimal,
+                    Total = (float)costoTotal,
+                    UsuarioRegistro = Sesion.ID_Usuario
+                };
+
+                // 7. Guardar en base de datos
+                if (BD_Reservacion.CrearReservacion(reservacion))
+                {
+                    MessageBox.Show("Reservación creada exitosamente.");
+                    // Aquí podrías limpiar el formulario o hacer otra acción
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo crear la reservación.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al crear la reservación", "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al crear reservación: {ex.Message}");
             }
         }
+
 
         private void btnBuscarHabitaciones_Click(object sender, EventArgs e)
         {
-            if (listHoteles.SelectedItem == null)
+            try
             {
-                MessageBox.Show("Selecciona un hotel primero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                // Resetear variables de costo
+                costoTotal = 0;
+                costoHabitacion = 0;
+                costoServicios = 0;
+                LabelDeCosto.Text = "Total: $0";
+                textAnticipo.Text = "";
 
-            int idHotel = ((Hoteles)listHoteles.SelectedItem).ID_Hotel;
-            string nivel = comboHabitacionNivel.SelectedItem.ToString();
-            string vista = comboHabitacionVista.SelectedItem.ToString();
-            string tipoCama = comboTipoCama.SelectedItem.ToString();
 
-            habitacionesDisponibles = BD_Reservacion.ObtenerHabitacionesDisponibles(
-                idHotel,
-                dateCheckIn.Value,
-                dateCheckOut.Value,
-                nivel,
-                vista,
-                tipoCama,
-                (int)numericCamas.Value
-            );
+                // 1. Validaciones básicas
+                if (listHoteles.SelectedItem == null)
+                {
+                    MessageBox.Show("Selecciona un hotel primero", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            checkedListBoxHabitaciones.Items.Clear();
-            foreach (var habitacion in habitacionesDisponibles)
-            {
-                checkedListBoxHabitaciones.Items.Add(
-                    $"Habitación {habitacion.NumeroHabitacion} - Piso {habitacion.PisoHabitacion} - {habitacion.NivelHabitacion}"
+
+
+                // 2. Obtener parámetros
+                int idHotel = ((Hoteles)listHoteles.SelectedItem).ID_Hotel;
+                string tipoHabitacion = comboHabitacionNivel.SelectedItem?.ToString() ?? "";
+                string vista = comboHabitacionVista.SelectedItem?.ToString() ?? "";
+                string tipoCama = comboTipoCama.SelectedItem?.ToString() ?? "";
+                int numeroCamas = (int)numericCamas.Value;
+
+                // 3. Buscar habitaciones
+                habitacionesDisponibles = BD_Reservacion.ObtenerHabitacionesDisponibles(
+                    idHotel,
+                    dateCheckIn.Value,
+                    dateCheckOut.Value,
+                    tipoHabitacion,
+                    vista,
+                    tipoCama,
+                    numeroCamas
                 );
-            }
 
-            // Cargar servicios disponibles para el hotel
-            serviciosDisponibles = BD_Reservacion.ObtenerServiciosPorHotel(idHotel);
-            checkedListServicios.Items.Clear();
-            foreach (var servicio in serviciosDisponibles)
+                // 4. Mostrar resultados
+                checkedListBoxHabitaciones.Items.Clear();
+                if (habitacionesDisponibles.Count == 0)
+                {
+                    checkedListBoxHabitaciones.Items.Add("No hay habitaciones disponibles con estos filtros");
+                }
+                else
+                {
+                    foreach (var habitacion in habitacionesDisponibles)
+                    {
+                        checkedListBoxHabitaciones.Items.Add(
+                            $"{habitacion.NumeroHabitacion} - " +
+                            $"Piso {habitacion.PisoHabitacion} - " +
+                            $"{habitacion.TipoHabitacion} - " +
+                            $"{habitacion.VistaHabitacion} - " +
+                            $"{habitacion.NumeroCamas} cama(s)");
+                    }
+                }
+
+                // 5. Cargar servicios
+                serviciosDisponibles = BD_Reservacion.ObtenerServiciosPorHotel(idHotel);
+                checkedListServicios.Items.Clear();
+                foreach (var servicio in serviciosDisponibles)
+                {
+                    checkedListServicios.Items.Add($"{servicio.NombreServicio} (${servicio.Costo})", false);
+                }
+                CalcularCostoTotal(); // Forzar cálculo inicial
+            }
+            catch (Exception ex)
             {
-                checkedListServicios.Items.Add($"{servicio.NombreServicio} - ${servicio.Costo}", false);
+                MessageBox.Show($"Error al buscar habitaciones: {ex.Message}\n\nDetalle:\n{ex.StackTrace}",
+                              "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void checkedListBoxHabitaciones_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            // Solo permitir una selección
-            if (e.NewValue == CheckState.Checked)
+            BeginInvoke((Action)(() =>
             {
+                Console.WriteLine($"✅ Se cambió selección de habitación: índice {e.Index}");
+
                 for (int i = 0; i < checkedListBoxHabitaciones.Items.Count; i++)
                 {
-                    if (i != e.Index)
+                    if (i != e.Index && checkedListBoxHabitaciones.GetItemChecked(i))
                     {
                         checkedListBoxHabitaciones.SetItemChecked(i, false);
                     }
                 }
-            }
 
-            CalcularCostoTotal();
+                CalcularCostoTotal();
+            }));
         }
+
+
 
         private void checkedListServicios_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            CalcularCostoTotal();
+            // Esperar a que el cambio se complete antes de calcular
+            BeginInvoke((Action)(() => CalcularCostoTotal()));
         }
-
-
         //Funciones de costos y precios
         private void CalcularCostoTotal()
         {
-            costoHabitacion = 0;
-            costoServicios = 0;
+            Console.WriteLine($"📦 habitacionesDisponibles.Count = {habitacionesDisponibles?.Count}");
 
-            // Calcular costo de habitación
-            if (checkedListBoxHabitaciones.CheckedItems.Count > 0)
+            try
             {
-                int index = checkedListBoxHabitaciones.CheckedIndices[0];
-                var habitacion = habitacionesDisponibles[index];
+                costoHabitacion = 0;
+                costoServicios = 0;
 
-                // Precios según nivel
-                switch (habitacion.NivelHabitacion)
+                // 1. Calcular costo de habitación
+                if (checkedListBoxHabitaciones.CheckedItems.Count > 0 &&
+                    habitacionesDisponibles != null &&
+                    habitacionesDisponibles.Count > 0)
                 {
-                    case "Sencilla": costoHabitacion = 1500; break;
-                    case "Lujo": costoHabitacion = 3000; break;
-                    case "Suite": costoHabitacion = 5000; break;
+                    int selectedIndex = checkedListBoxHabitaciones.CheckedIndices[0];
+                    if (selectedIndex >= 0 && selectedIndex < habitacionesDisponibles.Count)
+                    {
+                        var habitacion = habitacionesDisponibles[selectedIndex];
+
+                        // Precios según tipo de habitación
+                        switch (habitacion.TipoHabitacion)
+                        {
+                            case "Sencilla": costoHabitacion = 1500; break;
+                            case "Lujo": costoHabitacion = 3000; break;
+                            case "Suite": costoHabitacion = 5000; break;
+                            default: costoHabitacion = 0; break;
+                        }
+
+                        // Multiplicar por número de noches (mínimo 1)
+                        int noches = Math.Max(1, (int)numericNoches.Value);
+                        costoHabitacion *= noches;
+                    }
                 }
 
-                // Multiplicar por noches
-                costoHabitacion *= numericNoches.Value;
-            }
+                // 2. Calcular costo de servicios
+                if (checkedListServicios.CheckedItems.Count > 0 &&
+                    serviciosDisponibles != null &&
+                    serviciosDisponibles.Count > 0)
+                {
+                    foreach (int index in checkedListServicios.CheckedIndices)
+                    {
+                        if (index >= 0 && index < serviciosDisponibles.Count)
+                        {
+                            costoServicios += (decimal)serviciosDisponibles[index].Costo;
+                        }
+                    }
+                }
 
-            // Calcular costo de servicios
-            foreach (int index in checkedListServicios.CheckedIndices)
+                // 3. Calcular total
+                costoTotal = costoHabitacion + costoServicios;
+                LabelDeCosto.Text = $"Total: ${costoTotal:N2}";
+
+                // 4. Actualizar anticipo mínimo si ya hay un valor
+                if (!string.IsNullOrWhiteSpace(textAnticipo.Text) && decimal.TryParse(textAnticipo.Text, out decimal anticipo))
+                {
+                    decimal minimo = costoTotal * 0.1m;
+                    if (anticipo < minimo)
+                    {
+                        textAnticipo.BackColor = Color.LightPink;
+                    }
+                    else
+                    {
+                        textAnticipo.BackColor = SystemColors.Window;
+                    }
+                }
+            }
+            catch (Exception ex)
             {
-                costoServicios += (decimal)serviciosDisponibles[index].Costo;
+                Console.WriteLine($"Error en CalcularCostoTotal: {ex.Message}");
             }
+        }
 
-            costoTotal = costoHabitacion + costoServicios;
-            LabelDeCosto.Text = $"Total: ${costoTotal}";
+        private void numericNoches_ValueChanged(object sender, EventArgs e)
+        {
+            // Actualizar fecha de salida
+            dateCheckOut.Value = dateCheckIn.Value.AddDays((double)numericNoches.Value);
+
+            // Recalcular costo
+            CalcularCostoTotal();
         }
         private void textAnticipo_TextChanged(object sender, EventArgs e)
         {
@@ -231,13 +346,168 @@ namespace INICIO_Forms.OPERATIVO
             dateCheckIn.Value = DateTime.Today;
             dateCheckOut.Value = DateTime.Today.AddDays(1);
         }
-        private void checkedListBoxHabitaciones_SelectedIndexChanged(object sender, EventArgs e)
+        public  void checkedListBoxHabitaciones_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+        private void CargarCiudades()
+        {
+            try
+            {
+                comboCiudades.DataSource = BD_Reservacion.ObtenerCiudades();
+                comboCiudades.SelectedIndex = 0; // Sin selección inicial
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar ciudades: " + ex.Message);
+            }
+        }
 
 
+        //Aqui se tendria que cargar las hoteles al momento de seleccionar la ciudad no
+        private void comboCiudades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Limpiar controles dependientes
+                listHoteles.DataSource = null;
+                checkedListBoxHabitaciones.Items.Clear();
+                checkedListServicios.Items.Clear();
+                costoTotal = 0;
+                costoHabitacion = 0;
+                costoServicios = 0;
+                LabelDeCosto.Text = "Total: $0";
+                textAnticipo.Text = "";
 
+                // Validar selección
+                if (comboCiudades.SelectedIndex < 0) return;
+
+                string ciudadSeleccionada = comboCiudades.SelectedItem.ToString();
+
+                // Mostrar carga mientras se consulta
+                Cursor.Current = Cursors.WaitCursor;
+                listHoteles.DataSource = null;
+                listHoteles.Items.Add("Cargando hoteles...");
+
+                // Usar Task para no bloquear la interfaz
+                Task.Run(() =>
+                {
+                    List<Hoteles> hoteles = BD_Reservacion.ObtenerHotelesPorCiudad(ciudadSeleccionada);
+
+                    // Actualizar UI en el hilo principal
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        Cursor.Current = Cursors.Default;
+
+                        if (hoteles == null || hoteles.Count == 0)
+                        {
+                            listHoteles.DataSource = null;
+                            listHoteles.Items.Add("No se encontraron hoteles en " + ciudadSeleccionada);
+                            return;
+                        }
+
+                        listHoteles.DataSource = hoteles;
+                        listHoteles.DisplayMember = "NombreHotel";
+                        listHoteles.ValueMember = "ID_Hotel";
+
+                        // Seleccionar el primer hotel por defecto si hay resultados
+                        if (hoteles.Count > 0)
+                        {
+                            listHoteles.SelectedIndex = 0;
+                        }
+                    });
+                });
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                MessageBox.Show($"Error al cargar hoteles para {comboCiudades.SelectedItem}: {ex.Message}",
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void comboReservacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboReservacion.SelectedItem is Cliente clienteSeleccionado)
+            {
+                textCliente.Text = clienteSeleccionado.NombreCompleto;
+            }
+            else
+            {
+                textCliente.Text = string.Empty;
+            }
+        }
+
+        private void btnGenerarTotal_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                costoHabitacion = 0;
+                costoServicios = 0;
+
+                // Verificar selección de habitación
+                if (checkedListBoxHabitaciones.CheckedItems.Count > 0 &&
+                    habitacionesDisponibles != null &&
+                    habitacionesDisponibles.Count > 0)
+                {
+                    int selectedIndex = checkedListBoxHabitaciones.CheckedIndices[0];
+                    if (selectedIndex >= 0 && selectedIndex < habitacionesDisponibles.Count)
+                    {
+                        var habitacion = habitacionesDisponibles[selectedIndex];
+
+                        // Precio según tipo
+                        switch (habitacion.TipoHabitacion.Trim().ToLower())
+                        {
+                            case "sencilla":
+                                costoHabitacion = 1500;
+                                break;
+                            case "lujo":
+                                costoHabitacion = 3000;
+                                break;
+                            case "suite":
+                                costoHabitacion = 5000;
+                                break;
+                            default:
+                                costoHabitacion = 0;
+                                break;
+                        }
+
+                        int noches = Math.Max(1, (int)numericNoches.Value);
+                        costoHabitacion *= noches;
+                    }
+                }
+
+                // Calcular costo de servicios
+                if (checkedListServicios.CheckedItems.Count > 0 &&
+                    serviciosDisponibles != null &&
+                    serviciosDisponibles.Count > 0)
+                {
+                    foreach (int index in checkedListServicios.CheckedIndices)
+                    {
+                        if (index >= 0 && index < serviciosDisponibles.Count)
+                        {
+                            costoServicios += (decimal)serviciosDisponibles[index].Costo;
+                        }
+                    }
+                }
+
+                // Sumar total
+                costoTotal = costoHabitacion + costoServicios;
+                LabelDeCosto.Text = $"Total: ${costoTotal:N2}";
+
+                // Validar anticipo
+                if (!string.IsNullOrWhiteSpace(textAnticipo.Text) &&
+                    decimal.TryParse(textAnticipo.Text, out decimal anticipo))
+                {
+                    decimal minimo = costoTotal * 0.1m;
+                    textAnticipo.BackColor = anticipo < minimo ? Color.LightPink : SystemColors.Window;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al calcular el total: {ex.Message}");
+            }
+        }
 
     }
 }

@@ -103,7 +103,7 @@ namespace INICIO_Forms.ADMINISTRATIVO
                     NumeroHabitacion = numeroHabitacion,
                     PisoHabitacion = nivelPiso,
 
-                    NivelHabitacion = comboHabitacionNivel.SelectedItem.ToString(),
+                    TipoHabitacion = comboHabitacionNivel.SelectedItem.ToString(),
                     VistaHabitacion = comboHabitacionVista.SelectedItem.ToString(),
                     NumeroCamas = (int)numericCamas.Value,
                     Capacidad = (int)numericHabitacionGente.Value,

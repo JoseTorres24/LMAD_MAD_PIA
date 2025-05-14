@@ -55,7 +55,7 @@ namespace ClasesData.BD
                     cmd.Parameters.AddWithValue("@ID_Hotel", nuevaHabitacion.ID_Hotel);
                     cmd.Parameters.AddWithValue("@NumeroHabitacion", nuevaHabitacion.NumeroHabitacion);
                     cmd.Parameters.AddWithValue("@NivelPiso", nuevaHabitacion.PisoHabitacion);
-                    cmd.Parameters.AddWithValue("@Tipo", nuevaHabitacion.NivelHabitacion);
+                    cmd.Parameters.AddWithValue("@Tipo", nuevaHabitacion.TipoHabitacion);
                     cmd.Parameters.AddWithValue("@Capacidad", nuevaHabitacion.Capacidad);
                     cmd.Parameters.AddWithValue("@Camas", nuevaHabitacion.NumeroCamas);
                     cmd.Parameters.AddWithValue("@Vista", nuevaHabitacion.VistaHabitacion);
@@ -199,7 +199,7 @@ namespace ClasesData.BD
                             ID_Hotel = reader.GetInt32(1),
                             NumeroHabitacion = reader.GetInt32(2),
                             PisoHabitacion = reader.GetInt32(3),
-                            NivelHabitacion = reader.GetString(4),
+                            TipoHabitacion = reader.GetString(4),
                             Capacidad = reader.GetInt32(5),
                             NumeroCamas = reader.GetInt32(6),
                             VistaHabitacion = reader.GetString(7),
@@ -287,7 +287,7 @@ namespace ClasesData.BD
                     ID_Habitacion = habitacion.ID_Habitacion,
                     ID_Hotel = habitacion.ID_Hotel,
                     NumeroHabitacion = habitacion.NumeroHabitacion,
-                    NivelHabitacion = habitacion.NivelHabitacion,
+                    NivelHabitacion = habitacion.TipoHabitacion,
                     Estado = habitacion.Estado
                 });
             }

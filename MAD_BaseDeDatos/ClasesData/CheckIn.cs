@@ -10,10 +10,10 @@ namespace ClasesData
     {
         public int ID_CheckIn { get; set; }
         public string ID_Reservacion { get; set; }
+        public string EstadoEntrada { get; set; }
         public int UsuarioRegistro { get; set; }
         public DateTime FechaCheckIn { get; set; }
         
-
     }
 
 }

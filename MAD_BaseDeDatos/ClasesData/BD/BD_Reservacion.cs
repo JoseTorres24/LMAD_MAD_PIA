@@ -64,115 +64,151 @@ namespace ClasesData.BD
         {
             List<Hoteles> hoteles = new List<Hoteles>();
 
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            try
             {
-                conexion.Open();
-                string consulta = "SELECT ID_Hotel, NombreHotel FROM Hoteles WHERE Ciudad = @Ciudad";
-
-                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                using (SqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    cmd.Parameters.AddWithValue("@Ciudad", ciudad);
+                    conexion.Open();
+                    string consulta = @"SELECT ID_Hotel, NombreHotel, Ciudad, Domicilio 
+                              FROM Hoteles 
+                              WHERE Ciudad = @Ciudad
+                              ORDER BY NombreHotel";
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
-                        while (reader.Read())
+                        cmd.Parameters.AddWithValue("@Ciudad", ciudad);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            hoteles.Add(new Hoteles
+                            while (reader.Read())
                             {
-                                ID_Hotel = reader.GetInt32(0),
-                                NombreHotel = reader.GetString(1)
-                            });
+                                hoteles.Add(new Hoteles
+                                {
+                                    ID_Hotel = reader.GetInt32(0),
+                                    NombreHotel = reader.GetString(1),
+                                    Ciudad = reader.GetString(2),
+                                    Domicilio = reader.GetString(3)
+                                });
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                // Puedes lanzar la excepción o manejarla aquí
+                throw new Exception("Error al obtener hoteles por ciudad: " + ex.Message);
             }
 
             return hoteles;
         }
 
-        
         public static List<Habitaciones> ObtenerHabitacionesDisponibles(
-    int idHotel,
-    DateTime fechaInicio,
-    DateTime fechaFin,
-    string nivel,
-    string vista,
-    string tipoCama,
-    int numeroCamas)
+            int idHotel,
+            DateTime fechaInicio,
+            DateTime fechaFin,
+            string tipoHabitacion,
+            string vista,
+            string tipoCama,
+            int numeroCamas)
         {
             List<Habitaciones> habitaciones = new List<Habitaciones>();
 
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            try
             {
-                conexion.Open();
-                string consulta = @"
-                SELECT h.ID_Habitacion, h.NumeroHabitacion, h.PisoHabitacion, h.NivelHabitacion, 
-                       h.Capacidad, h.NumeroCamas, h.VistaHabitacion
-                FROM Habitaciones h
-                WHERE h.ID_Hotel = @ID_Hotel
-                AND h.NivelHabitacion = @Nivel
-                AND h.VistaHabitacion = @Vista
-                AND h.NumeroCamas >= @NumeroCamas
-                AND h.Estado = 'Disponible'
-                AND NOT EXISTS (
-                    SELECT 1 FROM Reservacion r
-                    WHERE r.ID_Hotel = h.ID_Hotel
-                    AND (
-                        (@FechaInicio BETWEEN r.FechaInicio AND r.FechaFin)
-                        OR (@FechaFin BETWEEN r.FechaInicio AND r.FechaFin)
-                        OR (r.FechaInicio BETWEEN @FechaInicio AND @FechaFin)
-                    )
-                )";
-
-                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                using (SqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    cmd.Parameters.AddWithValue("@ID_Hotel", idHotel);
-                    cmd.Parameters.AddWithValue("@Nivel", nivel);
-                    cmd.Parameters.AddWithValue("@Vista", vista);
-                    cmd.Parameters.AddWithValue("@NumeroCamas", numeroCamas);
-                    cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
-                    cmd.Parameters.AddWithValue("@FechaFin", fechaFin);
+                    conexion.Open();
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    // Consulta SQL corregida (eliminamos referencia a TipoCama que no existe en WHERE)
+                    string consulta = @"
+                SELECT 
+                    h.ID_Habitacion, 
+                    h.NumeroHabitacion, 
+                    h.NivelPiso, 
+                    h.TipoHabitacion, 
+                    h.Capacidad, 
+                    h.NumeroCamas, 
+                    h.VistaHabitacion,
+                    h.Estado
+                FROM Habitaciones h
+                WHERE 
+                    h.ID_Hotel = @ID_Hotel
+                    AND h.TipoHabitacion = @TipoHabitacion
+                    AND h.VistaHabitacion = @Vista
+                    AND h.NumeroCamas >= @NumeroCamas
+                    AND h.Estado = 'Disponible'
+                    AND NOT EXISTS (
+                        SELECT 1 
+                        FROM Reservacion r
+                        WHERE 
+                            r.ID_Hotel = h.ID_Hotel
+                            AND r.ID_Habitacion = h.ID_Habitacion
+                            AND (
+                                (@FechaInicio BETWEEN r.FechaInicio AND r.FechaFin)
+                                OR (@FechaFin BETWEEN r.FechaInicio AND r.FechaFin)
+                                OR (r.FechaInicio BETWEEN @FechaInicio AND @FechaFin)
+                            )
+                    )";
+
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
-                        while (reader.Read())
+                        // Parámetros con validación de nulos
+                        cmd.Parameters.AddWithValue("@ID_Hotel", idHotel);
+                        cmd.Parameters.AddWithValue("@TipoHabitacion", tipoHabitacion ?? "");
+                        cmd.Parameters.AddWithValue("@Vista", vista ?? "");
+                        cmd.Parameters.AddWithValue("@NumeroCamas", numeroCamas);
+                        cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                        cmd.Parameters.AddWithValue("@FechaFin", fechaFin);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            habitaciones.Add(new Habitaciones
+                            while (reader.Read())
                             {
-                                ID_Habitacion = reader.GetInt32(0),
-                                NumeroHabitacion = reader.GetInt32(1),
-                                PisoHabitacion = reader.GetInt32(2),
-                                NivelHabitacion = reader.GetString(3),
-                                Capacidad = reader.GetInt32(4),
-                                NumeroCamas = reader.GetInt32(5),
-                                VistaHabitacion = reader.GetString(6),
-                                Estado = "Disponible"
-                            });
+                                habitaciones.Add(new Habitaciones
+                                {
+                                    ID_Habitacion = reader.GetInt32(0),
+                                    NumeroHabitacion = reader.GetInt32(1),
+                                    PisoHabitacion = reader.GetInt32(2),
+                                    TipoHabitacion = reader.GetString(3),
+                                    Capacidad = reader.GetInt32(4),
+                                    NumeroCamas = reader.GetInt32(5),
+                                    VistaHabitacion = reader.GetString(6),
+                                    Estado = reader.IsDBNull(7) ? "Desconocido" : reader.GetString(7)
+                                });
+                            }
                         }
                     }
                 }
+            }
+            catch (SqlException sqlEx)
+            {
+                // Log específico para errores SQL
+                Console.WriteLine($"Error SQL al buscar habitaciones: {sqlEx.Number} - {sqlEx.Message}");
+                throw new Exception("Error de base de datos al buscar habitaciones disponibles");
+            }
+            catch (Exception ex)
+            {
+                // Log general
+                Console.WriteLine($"Error al buscar habitaciones: {ex.Message}");
+                throw new Exception("Error al obtener habitaciones disponibles");
             }
 
             return habitaciones;
         }
 
-
-
-
-
         public static List<Servicios> ObtenerServiciosPorHotel(int idHotel)
         {
             List<Servicios> servicios = new List<Servicios>();
-
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
                 conexion.Open();
                 string consulta = @"
-                SELECT s.ID_Servicio, s.NombreServicio, s.Costo, s.Descripcion
-                FROM Servicios s
-                INNER JOIN HotelServicios hs ON s.ID_Servicio = hs.ID_Servicio
-                WHERE hs.ID_Hotel = @ID_Hotel";
-
+        SELECT s.ID_Servicio, s.NombreServicio, s.Costo, s.Descripcion
+        FROM Servicios s
+        INNER JOIN Hotel_Servicios hs ON s.ID_Servicio = hs.ID_Servicio
+        WHERE hs.ID_Hotel = @ID_Hotel
+        ORDER BY s.NombreServicio";
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                 {
                     cmd.Parameters.AddWithValue("@ID_Hotel", idHotel);
@@ -199,79 +235,78 @@ namespace ClasesData.BD
 
         public static bool CrearReservacion(Reservacion reservacion)
         {
-            SqlTransaction transaction = null;
-
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                try
+                conexion.Open();
+                using (SqlTransaction transaction = conexion.BeginTransaction())
                 {
-                    conexion.Open();
-
-                    // Iniciar transacción
-                    transaction = conexion.BeginTransaction();
-
-                    // 1. Insertar la reservación
-                    string consultaReservacion = @"
-                INSERT INTO Reservacion (CodigoReservacion, RFC_Cliente, ID_Hotel, ID_Habitacion,
-                                       FechaInicio, FechaFin, Anticipo, UsuarioRegistro)
-                VALUES (@Codigo, @RFC, @IDHotel, @IDHabitacion, 
-                        @FechaInicio, @FechaFin, @Anticipo, @Usuario)";
-
-                    using (SqlCommand cmdReservacion = new SqlCommand(consultaReservacion, conexion, transaction))
+                    try
                     {
-                        cmdReservacion.Parameters.AddWithValue("@Codigo", reservacion.CodigoReservacion);
-                        cmdReservacion.Parameters.AddWithValue("@RFC", reservacion.RFC_Cliente);
-                        cmdReservacion.Parameters.AddWithValue("@IDHotel", reservacion.ID_Hotel);
-                        cmdReservacion.Parameters.AddWithValue("@IDHabitacion", reservacion.ID_Habitacion);
-                        cmdReservacion.Parameters.AddWithValue("@FechaInicio", reservacion.FechaInicio);
-                        cmdReservacion.Parameters.AddWithValue("@FechaFin", reservacion.FechaFin);
-                        cmdReservacion.Parameters.AddWithValue("@Anticipo", reservacion.Anticipo);
-                        cmdReservacion.Parameters.AddWithValue("@Usuario", reservacion.UsuarioRegistro);
+                        // Consulta modificada para incluir ID_Habitacion y Total
+                        string consulta = @"
+                INSERT INTO Reservacion (
+                    CodigoReservacion, RFC_Cliente, ID_Hotel, ID_Habitacion,
+                    FechaInicio, FechaFin, Anticipo, Total, UsuarioRegistro
+                ) VALUES (
+                    @Codigo, @RFC, @IDHotel, @IDHabitacion,
+                    @FechaInicio, @FechaFin, @Anticipo, @Total, @Usuario
+                )";
 
-                        int filasAfectadas = cmdReservacion.ExecuteNonQuery();
-
-                        if (filasAfectadas == 0)
+                        using (SqlCommand cmd = new SqlCommand(consulta, conexion, transaction))
                         {
-                            transaction.Rollback();
-                            return false;
-                        }
-                    }
+                            cmd.Parameters.AddWithValue("@Codigo", reservacion.CodigoReservacion);
+                            cmd.Parameters.AddWithValue("@RFC", reservacion.RFC_Cliente);
+                            cmd.Parameters.AddWithValue("@IDHotel", reservacion.ID_Hotel);
+                            cmd.Parameters.AddWithValue("@IDHabitacion", reservacion.ID_Habitacion);
+                            cmd.Parameters.AddWithValue("@FechaInicio", reservacion.FechaInicio);
+                            cmd.Parameters.AddWithValue("@FechaFin", reservacion.FechaFin);
+                            cmd.Parameters.AddWithValue("@Anticipo", reservacion.Anticipo);
+                            cmd.Parameters.AddWithValue("@Total", reservacion.Total);  // ✅ Nuevo campo
+                            cmd.Parameters.AddWithValue("@Usuario", reservacion.UsuarioRegistro);
 
-                    // 2. Actualizar estado de la habitación a "Ocupada"
-                    string consultaHabitacion = @"
+                            int filasAfectadas = cmd.ExecuteNonQuery();
+                            if (filasAfectadas == 0)
+                            {
+                                transaction.Rollback();
+                                return false;
+                            }
+                        }
+
+                        // Actualizar estado de la habitación reservada
+                        string updateHabitacion = @"
                 UPDATE Habitaciones 
                 SET Estado = 'Ocupada' 
                 WHERE ID_Habitacion = @IDHabitacion";
 
-                    using (SqlCommand cmdHabitacion = new SqlCommand(consultaHabitacion, conexion, transaction))
-                    {
-                        cmdHabitacion.Parameters.AddWithValue("@IDHabitacion", reservacion.ID_Habitacion);
-
-                        int filasActualizadas = cmdHabitacion.ExecuteNonQuery();
-
-                        if (filasActualizadas == 0)
+                        using (SqlCommand cmd = new SqlCommand(updateHabitacion, conexion, transaction))
                         {
-                            transaction.Rollback();
-                            return false;
+                            cmd.Parameters.AddWithValue("@IDHabitacion", reservacion.ID_Habitacion);
+                            cmd.ExecuteNonQuery();
                         }
-                    }
 
-                    // Si todo salió bien, confirmar la transacción
-                    transaction.Commit();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    // Si hay error, revertir la transacción
-                    transaction?.Rollback();
-                    // Considera registrar el error (log)
-                    return false;
+                        transaction.Commit();
+                        return true;
+                    }
+                    catch (SqlException ex)
+                    {
+                        transaction.Rollback();
+                        throw new Exception($"Error SQL {ex.Number}: {ex.Message}");
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw new Exception($"Error al crear reservación: {ex.Message}");
+                    }
                 }
             }
         }
 
-        public static bool AgregarServiciosReservacion(List<ServiciosReservacion> servicios, string codigoReservacion)
+        // Versión mejorada que usa el ID_Reservacion de cada objeto ServiciosReservacion
+        public static bool AgregarServiciosReservacion(List<ServiciosReservacion> servicios)
         {
+            if (servicios == null || servicios.Count == 0)
+                return false;
+
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
                 conexion.Open();
@@ -286,7 +321,7 @@ namespace ClasesData.BD
                     {
                         using (SqlCommand cmd = new SqlCommand(consulta, conexion, transaction))
                         {
-                            cmd.Parameters.AddWithValue("@IDReservacion", codigoReservacion);
+                            cmd.Parameters.AddWithValue("@IDReservacion", servicio.ID_Reservacion);
                             cmd.Parameters.AddWithValue("@IDServicio", servicio.ID_Servicio);
 
                             if (cmd.ExecuteNonQuery() <= 0)
@@ -309,9 +344,52 @@ namespace ClasesData.BD
             }
         }
 
+        public static List<Reservacion> ObtenerReservacionesPorHotel(int idHotel)
+        {
+            List<Reservacion> lista = new List<Reservacion>();
 
+            try
+            {
+                using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+                {
+                    conexion.Open();
+                    string consulta = @"SELECT CodigoReservacion, RFC_Cliente, ID_Hotel, ID_Habitacion, 
+                                       FechaInicio, FechaFin, Anticipo, Total, UsuarioRegistro
+                                FROM Reservacion
+                                WHERE ID_Hotel = @ID_Hotel";
 
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@ID_Hotel", idHotel);
 
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                lista.Add(new Reservacion
+                                {
+                                    CodigoReservacion = reader.GetString(0),
+                                    RFC_Cliente = reader.GetString(1),
+                                    ID_Hotel = reader.GetInt32(2),
+                                    ID_Habitacion = reader.GetInt32(3),
+                                    FechaInicio = reader.GetDateTime(4),
+                                    FechaFin = reader.GetDateTime(5),
+                                    Anticipo = (float)reader.GetDecimal(6),
+                                    Total = (float)reader.GetDecimal(7),
+                                    UsuarioRegistro = reader.GetInt32(8)
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener reservaciones por hotel: " + ex.Message);
+            }
+
+            return lista;
+        }
 
 
 

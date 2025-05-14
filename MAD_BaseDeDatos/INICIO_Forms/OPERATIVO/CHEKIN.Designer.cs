@@ -34,7 +34,7 @@
             this.listHotelesCheck = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboCiudadesCheck = new System.Windows.Forms.ComboBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.MostrarCodigo = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // listReservaciones
@@ -95,22 +95,23 @@
             this.comboCiudadesCheck.Size = new System.Drawing.Size(274, 21);
             this.comboCiudadesCheck.TabIndex = 13;
             // 
-            // iconButton1
+            // MostrarCodigo
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.LightGreen;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Ticket;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(60, 513);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.iconButton1.Size = new System.Drawing.Size(190, 71);
-            this.iconButton1.TabIndex = 17;
-            this.iconButton1.Text = "Generar Codigo";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.MostrarCodigo.BackColor = System.Drawing.Color.LightGreen;
+            this.MostrarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.MostrarCodigo.IconChar = FontAwesome.Sharp.IconChar.Ticket;
+            this.MostrarCodigo.IconColor = System.Drawing.Color.Black;
+            this.MostrarCodigo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MostrarCodigo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MostrarCodigo.Location = new System.Drawing.Point(60, 513);
+            this.MostrarCodigo.Name = "MostrarCodigo";
+            this.MostrarCodigo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MostrarCodigo.Size = new System.Drawing.Size(190, 71);
+            this.MostrarCodigo.TabIndex = 17;
+            this.MostrarCodigo.Text = "Generar Codigo";
+            this.MostrarCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MostrarCodigo.UseVisualStyleBackColor = false;
+            this.MostrarCodigo.Click += new System.EventHandler(this.MostrarCodigo_Click);
             // 
             // CHEKIN
             // 
@@ -118,7 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(983, 639);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.MostrarCodigo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listHotelesCheck);
             this.Controls.Add(this.label3);
@@ -141,6 +142,6 @@
         private System.Windows.Forms.ListBox listHotelesCheck;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboCiudadesCheck;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton MostrarCodigo;
     }
 }

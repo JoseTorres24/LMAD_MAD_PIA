@@ -33,7 +33,16 @@ namespace ClasesData.BD
                     cmd.Parameters.AddWithValue("@FechaInicio", nuevoHotel.FechaInicioOperaciones);
                     cmd.Parameters.AddWithValue("@UsuarioRegistro", Sesion.ID_Usuario);
 
-                    nuevoID = (int)cmd.ExecuteScalar();
+                    try
+                    {
+                        var result = cmd.ExecuteScalar();
+                        if (result != null)
+                            nuevoID = Convert.ToInt32(result);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al guardar el hotel: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
 
@@ -151,7 +160,43 @@ namespace ClasesData.BD
             {
                 conexion.Open();
                 string consulta = @"SELECT ID_Hotel, NombreHotel, Pais, Ciudad, Domicilio, NumeroPisos, NumeroHabitaciones, FechaInicioOperaciones, UsuarioRegistro 
-                            FROM Hoteles";
+                                    FROM Hoteles;";
+
+                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Hoteles hotel = new Hoteles
+                        {
+                            ID_Hotel = reader.GetInt32(0),
+                            NombreHotel = reader.GetString(1),
+                            Pais = reader.GetString(2),
+                            Ciudad = reader.GetString(3),
+                            Domicilio = reader.GetString(4),
+                            NumeroPisos = reader.GetInt32(5),
+                            NumeroHabitaciones = reader.GetInt32(6),
+                            FechaInicioOperaciones = reader.GetDateTime(7),
+                            UsuarioRegistro = reader.GetInt32(8)
+                        };
+
+                        lista.Add(hotel);
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        public static List<Hoteles> ObtenerHotelesPorFecha()
+        {
+            List<Hoteles> lista = new List<Hoteles>();
+
+            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            {
+                conexion.Open();
+                string consulta = @"SELECT ID_Hotel, NombreHotel, Pais, Ciudad, Domicilio, NumeroPisos, NumeroHabitaciones, FechaInicioOperaciones, UsuarioRegistro 
+                                    FROM Hoteles WHERE FechaInicioOperaciones = CAST(GETDATE() AS DATE);";
 
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                 using (SqlDataReader reader = cmd.ExecuteReader())

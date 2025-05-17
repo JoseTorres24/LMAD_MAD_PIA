@@ -126,8 +126,9 @@ namespace INICIO_Forms.OPERATIVO
             {
                 MessageBox.Show($"Error al crear reservación: {ex.Message}");
             }
+            this.Close(); // Porque pues el registro de reservacion es unico y nose puede repetir
+            homeOperativo.Show();
         }
-
 
         private void btnBuscarHabitaciones_Click(object sender, EventArgs e)
         {
@@ -157,6 +158,7 @@ namespace INICIO_Forms.OPERATIVO
                 string vista = comboHabitacionVista.SelectedItem?.ToString() ?? "";
                 string tipoCama = comboTipoCama.SelectedItem?.ToString() ?? "";
                 int numeroCamas = (int)numericCamas.Value;
+                int personas = (int)numericPersonas.Value;
 
                 // 3. Buscar habitaciones
                 habitacionesDisponibles = BD_Reservacion.ObtenerHabitacionesDisponibles(
@@ -166,6 +168,7 @@ namespace INICIO_Forms.OPERATIVO
                     tipoHabitacion,
                     vista,
                     tipoCama,
+                    personas,
                     numeroCamas
                 );
 
@@ -221,8 +224,6 @@ namespace INICIO_Forms.OPERATIVO
                 CalcularCostoTotal();
             }));
         }
-
-
 
         private void checkedListServicios_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -362,8 +363,6 @@ namespace INICIO_Forms.OPERATIVO
                 MessageBox.Show("Error al cargar ciudades: " + ex.Message);
             }
         }
-
-
         //Aqui se tendria que cargar las hoteles al momento de seleccionar la ciudad no
         private void comboCiudades_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -403,6 +402,9 @@ namespace INICIO_Forms.OPERATIVO
                         {
                             listHoteles.DataSource = null;
                             listHoteles.Items.Add("No se encontraron hoteles en " + ciudadSeleccionada);
+                            Timer timer = new Timer();
+                            timer.Interval = 6000; // 2 segundos
+                            listHoteles.Items.Clear();
                             return;
                         }
 
@@ -509,5 +511,9 @@ namespace INICIO_Forms.OPERATIVO
             }
         }
 
+        private void listHoteles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

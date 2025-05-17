@@ -36,6 +36,9 @@ namespace INICIO_Forms.OPERATIVO
             CargarCiudades();
         }
 
+        
+
+
         private void CargarCiudades()
         {
             try
@@ -48,45 +51,6 @@ namespace INICIO_Forms.OPERATIVO
                 MessageBox.Show("Error al cargar ciudades: " + ex.Message);
             }
         }
-
-        public void ObtenerDatosFactura(string codigoReservacion)
-        {
-
-            string query = @"SELECT 
-                        r.CodigoReservacion, r.FechaInicio, r.FechaFin, r.Anticipo, r.Total, r.ID_Habitacion, 
-                        c.RFC, c.NombreCompleto, c.Ciudad, c.Estado, c.Pais,
-                        s.ID_Servicio, bd.NombreServicio
-                    FROM Reservacion r
-                    INNER JOIN Cliente c ON r.RFC_Cliente = c.RFC
-                    LEFT JOIN ServiciosReservacion s ON s.CodigoReservacion = r.CodigoReservacion
-                    LEFT JOIN BD_Servicios bd ON bd.ID_Servicio = s.ID_Servicio
-                    WHERE r.CodigoReservacion = @CodigoReservacion";
-
-            using (SqlConnection conn = ConexionBD.ObtenerConexion())
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@CodigoReservacion", codigoReservacion);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            Console.WriteLine($"Reservación: {reader["CodigoReservacion"]}");
-                            Console.WriteLine($"Cliente: {reader["NombreCompleto"]} ({reader["RFC"]})");
-                            Console.WriteLine($"Ubicación: {reader["Ciudad"]}, {reader["Estado"]}, {reader["Pais"]}");
-                            Console.WriteLine($"Total: {reader["Total"]}");
-                            Console.WriteLine($"Anticipo: {reader["Anticipo"]}");
-                            Console.WriteLine($"Habitación: {reader["ID_Habitacion"]}");
-
-                            if (!reader.IsDBNull(reader.GetOrdinal("NombreServicio")))
-                                Console.WriteLine($"Servicio utilizado: {reader["NombreServicio"]}");
-                        }
-                    }
-                }
-            }
-        }
-
 
 
         //Boton de factura 
@@ -188,16 +152,19 @@ namespace INICIO_Forms.OPERATIVO
 
         public Cliente ObtenerClientePorReservacion(string codigoReservacion)
         {
-            //Aqui parece que hay problemas
+            // Validar que el código de reservación no esté vacío o nulo
             if (string.IsNullOrEmpty(codigoReservacion))
             {
                 throw new ArgumentException("El código de reservación no puede estar vacío");
             }
 
-            string query = @"SELECT c.RFC, c.NombreCompleto, c.Ciudad, c.Estado, c.Pais, c.EstadoCivil
-            FROM Reservacion r
-            INNER JOIN Cliente c ON r.RFC_Cliente = c.RFC
-            WHERE r.CodigoReservacion = @CodigoReservacion";
+            // Consulta para obtener el cliente relacionado con la reservación filtrando por estatus
+            string query = @"
+        SELECT c.RFC, c.NombreCompleto, c.Ciudad, c.Estado, c.Pais, c.EstadoCivil
+        FROM Reservacion r
+        INNER JOIN Cliente c ON r.RFC_Cliente = c.RFC
+        WHERE r.CodigoReservacion = @CodigoReservacion 
+        AND r.Estatus IN ('Aceptada', 'Eliminada')";
 
             using (SqlConnection conn = ConexionBD.ObtenerConexion())
             {
@@ -210,6 +177,7 @@ namespace INICIO_Forms.OPERATIVO
                     {
                         if (reader.Read())
                         {
+                            // Crear y devolver el cliente si se encuentra en la base de datos
                             return new Cliente
                             {
                                 RFC = reader["RFC"].ToString(),
@@ -223,8 +191,11 @@ namespace INICIO_Forms.OPERATIVO
                     }
                 }
             }
-            return null; // Si no se encuentra el cliente
+
+            // Devolver null si no se encuentra ningún cliente
+            return null;
         }
+
 
         private async void iconButton2_Click(object sender, EventArgs e)
         {
@@ -299,6 +270,9 @@ namespace INICIO_Forms.OPERATIVO
             listClientes.DisplayMember = "NombreCompleto"; // Se muestra el nombre del cliente
             listClientes.ValueMember = "RFC"; // Valor asociado será el RFC
         }
+
+        // En tu lógica de check-out
+     
     }
 
 }

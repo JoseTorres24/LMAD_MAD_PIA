@@ -112,7 +112,7 @@ namespace INICIO_Forms.ADMINISTRATIVO
                 Cursor.Current = Cursors.WaitCursor;
 
                 // Obtener reservaciones de forma asíncrona
-                List<Reservacion> reservaciones = await Task.Run(() =>BD_Reservacion.ObtenerReservacionesPorHotel(hotel.ID_Hotel));
+                List<Reservacion> reservaciones = await Task.Run(() => BD_Reservacion.ObtenerReservacionesParaCheckIn(hotel.ID_Hotel));
 
                 // Actualizar UI en el hilo principal
                 this.Invoke((MethodInvoker)delegate
@@ -203,7 +203,7 @@ namespace INICIO_Forms.ADMINISTRATIVO
         public bool EliminarReservacion(string codigoReservacion)
         {
           
-            string query = "UPDATE Reservacion SET Estatus = 'Eliminada'OR Estatus = NULL WHERE CodigoReservacion = @CodigoReservacion";
+            string query = "UPDATE Reservacion SET Estatus = 'Eliminada' WHERE CodigoReservacion = @CodigoReservacion";
 
             using (SqlConnection conn = ConexionBD.ObtenerConexion())
             {

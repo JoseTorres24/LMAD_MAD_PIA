@@ -91,22 +91,21 @@ namespace ClasesData.BD
             {
                 using (SqlConnection conexion = ConexionBD.ObtenerConexion())
                 {
-                    // Configuración para mejor rendimiento
-                    conexion.StatisticsEnabled = true;
+                    conexion.Open();
 
-                    string consulta = @"SELECT ID_Hotel, NombreHotel, Ciudad, Domicilio 
-                          FROM Hoteles 
-                          WHERE Ciudad = @Ciudad
-                          ORDER BY NombreHotel";
+                    string consulta = @"
+            SELECT ID_Hotel, NombreHotel, Ciudad, Domicilio
+            FROM Hoteles
+            WHERE Ciudad = @Ciudad
+            AND CONVERT(DATE, FechaInicioOperaciones) <= CONVERT(DATE, GETDATE())
+            ORDER BY NombreHotel;";
 
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
-                        cmd.CommandTimeout = 30; // Tiempo de espera aumentado
-                        cmd.Parameters.AddWithValue("@Ciudad", ciudad);
+                        cmd.CommandTimeout = 30;
+                        cmd.Parameters.AddWithValue("@Ciudad", ciudad ?? "");
 
-                        conexion.Open();
-
-                        using (SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SequentialAccess))
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
@@ -120,10 +119,6 @@ namespace ClasesData.BD
                             }
                         }
                     }
-
-                    // Opcional: Ver estadísticas de la conexión
-                    var stats = conexion.RetrieveStatistics();
-                    Console.WriteLine($"Tiempo de ejecución: {stats["ExecutionTime"]}ms");
                 }
             }
             catch (Exception ex)
@@ -136,13 +131,14 @@ namespace ClasesData.BD
 
 
         public static List<Habitaciones> ObtenerHabitacionesDisponibles(
-            int idHotel,
-            DateTime fechaInicio,
-            DateTime fechaFin,
-            string tipoHabitacion,
-            string vista,
-            string tipoCama,
-            int numeroCamas)
+           int idHotel,
+           DateTime fechaInicio,
+           DateTime fechaFin,
+           string tipoHabitacion,
+           string vista,
+           string tipoCama,
+           int numeroCamas,
+           int capacidadMinima)
         {
             List<Habitaciones> habitaciones = new List<Habitaciones>();
 
@@ -152,44 +148,44 @@ namespace ClasesData.BD
                 {
                     conexion.Open();
 
-                    // Consulta SQL corregida (eliminamos referencia a TipoCama que no existe en WHERE)
                     string consulta = @"
-                SELECT 
-                    h.ID_Habitacion, 
-                    h.NumeroHabitacion, 
-                    h.NivelPiso, 
-                    h.TipoHabitacion, 
-                    h.Capacidad, 
-                    h.NumeroCamas, 
-                    h.VistaHabitacion,
-                    h.Estado
-                FROM Habitaciones h
-                WHERE 
-                    h.ID_Hotel = @ID_Hotel
-                    AND h.TipoHabitacion = @TipoHabitacion
-                    AND h.VistaHabitacion = @Vista
-                    AND h.NumeroCamas >= @NumeroCamas
-                    AND h.Estado = 'Disponible'
-                    AND NOT EXISTS (
-                        SELECT 1 
-                        FROM Reservacion r
-                        WHERE 
-                            r.ID_Hotel = h.ID_Hotel
-                            AND r.ID_Habitacion = h.ID_Habitacion
-                            AND (
-                                (@FechaInicio BETWEEN r.FechaInicio AND r.FechaFin)
-                                OR (@FechaFin BETWEEN r.FechaInicio AND r.FechaFin)
-                                OR (r.FechaInicio BETWEEN @FechaInicio AND @FechaFin)
-                            )
-                    )";
+            SELECT 
+                h.ID_Habitacion, 
+                h.NumeroHabitacion, 
+                h.NivelPiso, 
+                h.TipoHabitacion, 
+                h.Capacidad, 
+                h.NumeroCamas, 
+                h.VistaHabitacion,
+                h.Estado
+            FROM Habitaciones h
+            WHERE 
+                h.ID_Hotel = @ID_Hotel
+                AND h.TipoHabitacion = @TipoHabitacion
+                AND h.VistaHabitacion = @Vista
+                AND h.NumeroCamas = @NumeroCamas
+                AND h.Capacidad = @CapacidadMinima
+                AND h.Estado = 'Disponible'
+                AND NOT EXISTS (
+                    SELECT 1 
+                    FROM Reservacion r
+                    WHERE 
+                        r.ID_Hotel = h.ID_Hotel
+                        AND r.ID_Habitacion = h.ID_Habitacion
+                        AND (
+                            (@FechaInicio BETWEEN r.FechaInicio AND r.FechaFin)
+                            OR (@FechaFin BETWEEN r.FechaInicio AND r.FechaFin)
+                            OR (r.FechaInicio BETWEEN @FechaInicio AND @FechaFin)
+                        )
+                )";
 
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
-                        // Parámetros con validación de nulos
                         cmd.Parameters.AddWithValue("@ID_Hotel", idHotel);
                         cmd.Parameters.AddWithValue("@TipoHabitacion", tipoHabitacion ?? "");
                         cmd.Parameters.AddWithValue("@Vista", vista ?? "");
                         cmd.Parameters.AddWithValue("@NumeroCamas", numeroCamas);
+                        cmd.Parameters.AddWithValue("@CapacidadMinima", capacidadMinima);
                         cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
                         cmd.Parameters.AddWithValue("@FechaFin", fechaFin);
 
@@ -215,13 +211,11 @@ namespace ClasesData.BD
             }
             catch (SqlException sqlEx)
             {
-                // Log específico para errores SQL
                 Console.WriteLine($"Error SQL al buscar habitaciones: {sqlEx.Number} - {sqlEx.Message}");
                 throw new Exception("Error de base de datos al buscar habitaciones disponibles");
             }
             catch (Exception ex)
             {
-                // Log general
                 Console.WriteLine($"Error al buscar habitaciones: {ex.Message}");
                 throw new Exception("Error al obtener habitaciones disponibles");
             }
@@ -461,7 +455,7 @@ namespace ClasesData.BD
 
         public static List<Reservacion> ObtenerReservacionesActivas()
         {
-          
+
             string query = "SELECT * FROM Reservacion WHERE Estatus != 'Eliminada'";
 
             List<Reservacion> reservaciones = new List<Reservacion>();
@@ -529,12 +523,82 @@ namespace ClasesData.BD
             return clientes;
         }
 
+        public static List<Reservacion> ObtenerReservacionesParaCheckIn(int idHotel)
+        {
+            List<Reservacion> resultado = new List<Reservacion>();
+            DateTime hoy = DateTime.Today;
 
+            // Trae solo las activas de este hotel
+            var todas = ObtenerReservacionesActivas()
+                .Where(r => r.ID_Hotel == idHotel)
+                .ToList();
 
+            foreach (var reservacion in todas)
+            {
+                int diasRestantes = (reservacion.FechaInicio.Date - DateTime.Today).Days;
+                if (diasRestantes == 3)
+                {
+                    resultado.Add(reservacion);
+                }
+                else if (diasRestantes <= 2 && reservacion.Estatus != "Aceptada")
+                {
+                    // Actualiza automáticamente a "Aceptada"
+                    ActualizarEstatusReservacion(reservacion.CodigoReservacion, "Aceptada");
+                }
+            }
 
+            return resultado;
+        }
+
+        public static bool ActualizarEstatusReservacion(string codigoReservacion, string nuevoEstatus)
+        {
+            using (SqlConnection conn = ConexionBD.ObtenerConexion())
+            {
+                conn.Open();
+                string query = "UPDATE Reservacion SET Estatus = @Estatus WHERE CodigoReservacion = @CodigoReservacion";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Estatus", nuevoEstatus);
+                    cmd.Parameters.AddWithValue("@CodigoReservacion", codigoReservacion);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        // Ejemplo para filtrar en CancelacionReservacion.cs
+        public static List<Reservacion> ObtenerReservacionesFiltradas()
+        {
+            string query = @"SELECT r.CodigoReservacion, r.RFC_Cliente, r.FechaInicio, r.FechaFin, r.Estatus 
+                             FROM Reservacion r 
+                             WHERE r.Estatus IN ('Eliminada', 'Aceptada')";
+
+            var reservaciones = new List<Reservacion>();
+
+            using (SqlConnection conn = ConexionBD.ObtenerConexion())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            reservaciones.Add(new Reservacion
+                            {
+                                CodigoReservacion = reader["CodigoReservacion"].ToString(),
+                                RFC_Cliente = reader["RFC_Cliente"].ToString(),
+                                FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
+                                FechaFin = Convert.ToDateTime(reader["FechaFin"]),
+                                Estatus = reader["Estatus"].ToString(),
+                            });
+                        }
+                    }
+                }
+            }
+
+            return reservaciones;
+        }
 
     }
-
-
-
 }
+

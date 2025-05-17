@@ -76,7 +76,7 @@
             this.comboReservacion.FormattingEnabled = true;
             this.comboReservacion.Location = new System.Drawing.Point(44, 84);
             this.comboReservacion.Name = "comboReservacion";
-            this.comboReservacion.Size = new System.Drawing.Size(316, 21);
+            this.comboReservacion.Size = new System.Drawing.Size(316, 25);
             this.comboReservacion.TabIndex = 1;
             this.comboReservacion.SelectedIndexChanged += new System.EventHandler(this.comboReservacion_SelectedIndexChanged);
             // 
@@ -86,7 +86,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(40, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.Size = new System.Drawing.Size(184, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Busqueda por RFC ";
             this.label1.UseWaitCursor = true;
@@ -108,7 +108,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(40, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 20);
+            this.label2.Size = new System.Drawing.Size(178, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "Nombre del Cliente";
             this.label2.UseWaitCursor = true;
@@ -129,7 +129,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(40, 187);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 20);
+            this.label3.Size = new System.Drawing.Size(177, 25);
             this.label3.TabIndex = 10;
             this.label3.Text = "Seleccione Ciudad";
             this.label3.UseWaitCursor = true;
@@ -139,18 +139,20 @@
             this.comboCiudades.FormattingEnabled = true;
             this.comboCiudades.Location = new System.Drawing.Point(44, 210);
             this.comboCiudades.Name = "comboCiudades";
-            this.comboCiudades.Size = new System.Drawing.Size(316, 21);
+            this.comboCiudades.Size = new System.Drawing.Size(316, 25);
             this.comboCiudades.TabIndex = 9;
             this.comboCiudades.SelectedIndexChanged += new System.EventHandler(this.comboCiudades_SelectedIndexChanged);
             // 
             // listHoteles
             // 
             this.listHoteles.FormattingEnabled = true;
+            this.listHoteles.ItemHeight = 17;
             this.listHoteles.Location = new System.Drawing.Point(44, 294);
             this.listHoteles.Name = "listHoteles";
             this.listHoteles.ScrollAlwaysVisible = true;
-            this.listHoteles.Size = new System.Drawing.Size(360, 433);
+            this.listHoteles.Size = new System.Drawing.Size(360, 429);
             this.listHoteles.TabIndex = 11;
+            this.listHoteles.SelectedIndexChanged += new System.EventHandler(this.listHoteles_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -158,7 +160,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(40, 255);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 20);
+            this.label4.Size = new System.Drawing.Size(159, 25);
             this.label4.TabIndex = 12;
             this.label4.Text = "Seleccione Hotel";
             this.label4.UseWaitCursor = true;
@@ -169,7 +171,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(38, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(291, 31);
+            this.label5.Size = new System.Drawing.Size(359, 39);
             this.label5.TabIndex = 13;
             this.label5.Text = "Generar Reservacion";
             this.label5.UseWaitCursor = true;
@@ -179,7 +181,7 @@
             this.comboHabitacionNivel.FormattingEnabled = true;
             this.comboHabitacionNivel.Location = new System.Drawing.Point(486, 87);
             this.comboHabitacionNivel.Name = "comboHabitacionNivel";
-            this.comboHabitacionNivel.Size = new System.Drawing.Size(274, 21);
+            this.comboHabitacionNivel.Size = new System.Drawing.Size(274, 25);
             this.comboHabitacionNivel.TabIndex = 14;
             // 
             // label6
@@ -188,7 +190,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(482, 61);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(226, 20);
+            this.label6.Size = new System.Drawing.Size(281, 25);
             this.label6.TabIndex = 15;
             this.label6.Text = "Seleccione Nivel de Habitacion";
             this.label6.UseWaitCursor = true;
@@ -199,7 +201,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(865, 317);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 20);
+            this.label7.Size = new System.Drawing.Size(187, 25);
             this.label7.TabIndex = 16;
             this.label7.Text = "Cantidad de noches";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -210,7 +212,7 @@
             this.checkedListBoxHabitaciones.Location = new System.Drawing.Point(474, 397);
             this.checkedListBoxHabitaciones.Name = "checkedListBoxHabitaciones";
             this.checkedListBoxHabitaciones.ScrollAlwaysVisible = true;
-            this.checkedListBoxHabitaciones.Size = new System.Drawing.Size(315, 379);
+            this.checkedListBoxHabitaciones.Size = new System.Drawing.Size(315, 364);
             this.checkedListBoxHabitaciones.TabIndex = 20;
             this.checkedListBoxHabitaciones.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxHabitaciones_SelectedIndexChanged);
             // 
@@ -220,7 +222,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(482, 130);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(245, 20);
+            this.label8.Size = new System.Drawing.Size(302, 25);
             this.label8.TabIndex = 21;
             this.label8.Text = "Seleccione Vista de la Habitacion";
             this.label8.UseWaitCursor = true;
@@ -230,14 +232,14 @@
             this.comboHabitacionVista.FormattingEnabled = true;
             this.comboHabitacionVista.Location = new System.Drawing.Point(486, 166);
             this.comboHabitacionVista.Name = "comboHabitacionVista";
-            this.comboHabitacionVista.Size = new System.Drawing.Size(274, 21);
+            this.comboHabitacionVista.Size = new System.Drawing.Size(274, 25);
             this.comboHabitacionVista.TabIndex = 22;
             // 
             // numericCamas
             // 
             this.numericCamas.Location = new System.Drawing.Point(490, 280);
             this.numericCamas.Name = "numericCamas";
-            this.numericCamas.Size = new System.Drawing.Size(120, 20);
+            this.numericCamas.Size = new System.Drawing.Size(120, 23);
             this.numericCamas.TabIndex = 23;
             // 
             // label9
@@ -246,7 +248,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(486, 255);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(146, 20);
+            this.label9.Size = new System.Drawing.Size(181, 25);
             this.label9.TabIndex = 24;
             this.label9.Text = "Cantidad de camas";
             this.label9.UseWaitCursor = true;
@@ -256,7 +258,7 @@
             this.comboTipoCama.FormattingEnabled = true;
             this.comboTipoCama.Location = new System.Drawing.Point(486, 229);
             this.comboTipoCama.Name = "comboTipoCama";
-            this.comboTipoCama.Size = new System.Drawing.Size(274, 21);
+            this.comboTipoCama.Size = new System.Drawing.Size(274, 25);
             this.comboTipoCama.TabIndex = 26;
             // 
             // label10
@@ -265,7 +267,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(482, 204);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 20);
+            this.label10.Size = new System.Drawing.Size(146, 25);
             this.label10.TabIndex = 25;
             this.label10.Text = "Tipo de Camas";
             this.label10.UseWaitCursor = true;
@@ -276,7 +278,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(482, 311);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(273, 20);
+            this.label11.Size = new System.Drawing.Size(336, 25);
             this.label11.TabIndex = 28;
             this.label11.Text = "Cantidad de Personas por Habitacion";
             this.label11.UseWaitCursor = true;
@@ -285,7 +287,7 @@
             // 
             this.numericPersonas.Location = new System.Drawing.Point(492, 335);
             this.numericPersonas.Name = "numericPersonas";
-            this.numericPersonas.Size = new System.Drawing.Size(120, 20);
+            this.numericPersonas.Size = new System.Drawing.Size(120, 23);
             this.numericPersonas.TabIndex = 27;
             // 
             // label12
@@ -294,7 +296,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(865, 542);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 20);
+            this.label12.Size = new System.Drawing.Size(113, 25);
             this.label12.TabIndex = 29;
             this.label12.Text = "Costo Total";
             // 
@@ -302,7 +304,7 @@
             // 
             this.numericNoches.Location = new System.Drawing.Point(869, 365);
             this.numericNoches.Name = "numericNoches";
-            this.numericNoches.Size = new System.Drawing.Size(120, 20);
+            this.numericNoches.Size = new System.Drawing.Size(120, 23);
             this.numericNoches.TabIndex = 30;
             // 
             // label13
@@ -311,7 +313,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(865, 408);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(124, 20);
+            this.label13.Size = new System.Drawing.Size(154, 25);
             this.label13.TabIndex = 31;
             this.label13.Text = "Dia de Check IN";
             // 
@@ -319,7 +321,7 @@
             // 
             this.dateCheckIn.Location = new System.Drawing.Point(869, 440);
             this.dateCheckIn.Name = "dateCheckIn";
-            this.dateCheckIn.Size = new System.Drawing.Size(200, 20);
+            this.dateCheckIn.Size = new System.Drawing.Size(200, 23);
             this.dateCheckIn.TabIndex = 32;
             // 
             // textAnticipo
@@ -336,7 +338,7 @@
             this.LabelDeCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelDeCosto.Location = new System.Drawing.Point(865, 574);
             this.LabelDeCosto.Name = "LabelDeCosto";
-            this.LabelDeCosto.Size = new System.Drawing.Size(82, 20);
+            this.LabelDeCosto.Size = new System.Drawing.Size(99, 25);
             this.LabelDeCosto.TabIndex = 34;
             this.LabelDeCosto.Text = "Resultado";
             // 
@@ -346,7 +348,7 @@
             this.Anticipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Anticipo.Location = new System.Drawing.Point(865, 626);
             this.Anticipo.Name = "Anticipo";
-            this.Anticipo.Size = new System.Drawing.Size(66, 20);
+            this.Anticipo.Size = new System.Drawing.Size(82, 25);
             this.Anticipo.TabIndex = 35;
             this.Anticipo.Text = "Anticipo";
             // 
@@ -356,7 +358,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(486, 365);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(184, 20);
+            this.label14.Size = new System.Drawing.Size(227, 25);
             this.label14.TabIndex = 36;
             this.label14.Text = "Seleccione Habitaciones";
             this.label14.UseWaitCursor = true;
@@ -367,7 +369,7 @@
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
             this.label16.Location = new System.Drawing.Point(469, 19);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(269, 25);
+            this.label16.Size = new System.Drawing.Size(312, 30);
             this.label16.TabIndex = 39;
             this.label16.Text = "Busqueda de Habitacion";
             this.label16.UseWaitCursor = true;
@@ -387,7 +389,7 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(865, 71);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(220, 20);
+            this.label15.Size = new System.Drawing.Size(274, 25);
             this.label15.TabIndex = 41;
             this.label15.Text = "Seleccionar servicios del hotel";
             this.label15.UseWaitCursor = true;
@@ -398,7 +400,7 @@
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold);
             this.label17.Location = new System.Drawing.Point(864, 20);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(313, 25);
+            this.label17.Size = new System.Drawing.Size(365, 30);
             this.label17.TabIndex = 42;
             this.label17.Text = "Costo, Servicios y Estancias";
             this.label17.UseWaitCursor = true;
@@ -407,7 +409,7 @@
             // 
             this.dateCheckOut.Location = new System.Drawing.Point(869, 498);
             this.dateCheckOut.Name = "dateCheckOut";
-            this.dateCheckOut.Size = new System.Drawing.Size(200, 20);
+            this.dateCheckOut.Size = new System.Drawing.Size(200, 23);
             this.dateCheckOut.TabIndex = 44;
             // 
             // label18
@@ -416,7 +418,7 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(865, 466);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(141, 20);
+            this.label18.Size = new System.Drawing.Size(178, 25);
             this.label18.TabIndex = 43;
             this.label18.Text = "Dia de Check OUT";
             // 
@@ -444,7 +446,7 @@
             // 
             // Reservaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1195, 788);

@@ -48,7 +48,16 @@ namespace ClasesData.BD
                         cmd.Parameters.AddWithValue("@EstadoEntrada", checkIn.EstadoEntrada);
                         cmd.Parameters.AddWithValue("@Clave", checkIn.Clave);
 
-                        return cmd.ExecuteNonQuery() > 0;
+                        bool exito = cmd.ExecuteNonQuery() > 0;
+
+                        if (exito)
+                        {
+                            BD_Reservacion.ActualizarEstatusReservacion(checkIn.ID_Reservacion, "Aceptada");
+                            MessageBox.Show("Check-In registrado correctamente");
+                            // ...
+                        }
+
+                        return exito;
                     }
 
                 }

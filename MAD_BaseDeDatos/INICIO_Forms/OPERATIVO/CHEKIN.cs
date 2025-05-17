@@ -62,7 +62,7 @@ namespace INICIO_Forms.OPERATIVO
                     ID_Reservacion = reservacionSeleccionada.CodigoReservacion,
                     UsuarioRegistro = Sesion.ID_Usuario,
                     FechaCheckIn = DateTime.Now,
-                    EstadoEntrada = "Marcado", // Se marca el check-in
+                     // Se marca el check-in
                                              // Clave se genera automáticamente, p.ej. Guid.NewGuid().ToString()
                     Clave = reservacionSeleccionada.CodigoReservacion
                 };

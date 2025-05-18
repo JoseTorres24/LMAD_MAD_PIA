@@ -1,66 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\",
+  "WorkspaceRootPath": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\administrativo\\cancelacionreservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\cancelacionreservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\bd_reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\bd_reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\registroservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\registroservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|c:\\users\\luist\\onedrive\\desktop\\pia_proyectos\\lmad_mad_pia\\mad_basededatos\\clasesdata\\bd\\bd_check.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\bd_check.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\bd_hoteleshabitacionesservicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\bd_hoteleshabitacionesservicios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\administrativo\\cancelacionreservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\cancelacionreservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\reservaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\bd_reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\bd_reservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\clasesdata\\serviciosreservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\serviciosreservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\registroservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\registroservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\checkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\homeadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|c:\\users\\luis\\desktop\\proyecto_lmad\\lmad_mad_pia\\mad_basededatos\\inicio_forms\\administrativo\\cancelacionreservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\administrativo\\cancelacionreservacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\bd\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\bd\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\clasesdata\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8DEFDA9E-8D91-41E4-A1EE-01D5581F119E}|ClasesData\\ClasesData.csproj|solutionrelative:clasesdata\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D3439918-846B-4B14-AB26-84D7DE07D798}|INICIO_Forms\\INICIO_Forms.csproj|solutionrelative:inicio_forms\\operativo\\chekin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,191 +62,173 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CHECKOUT.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAuwDgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T08:24:28.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegistroServicio.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\RegistroServicio.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\RegistroServicio.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\RegistroServicio.cs",
+              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\RegistroServicio.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAuwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T08:15:30.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegistroServicio.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\RegistroServicio.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\RegistroServicio.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\RegistroServicio.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\RegistroServicio.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T08:15:27.852Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ServiciosReservacion.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\ServiciosReservacion.cs",
+              "RelativeDocumentMoniker": "ClasesData\\ServiciosReservacion.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\ServiciosReservacion.cs",
+              "RelativeToolTip": "ClasesData\\ServiciosReservacion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T06:02:07.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeAdministrador.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
+              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T21:18:57.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Reservacion.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Reservacion.cs",
+              "RelativeDocumentMoniker": "ClasesData\\Reservacion.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Reservacion.cs",
+              "RelativeToolTip": "ClasesData\\Reservacion.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAwwBUAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T18:57:09.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Clientes.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Clientes.cs",
+              "RelativeDocumentMoniker": "ClasesData\\Clientes.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Clientes.cs",
+              "RelativeToolTip": "ClasesData\\Clientes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T18:49:12.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "BD_Reservacion.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Reservacion.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Reservacion.cs",
               "RelativeDocumentMoniker": "ClasesData\\BD\\BD_Reservacion.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Reservacion.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Reservacion.cs",
               "RelativeToolTip": "ClasesData\\BD\\BD_Reservacion.cs",
-              "ViewState": "AgIAABoCAAAAAAAAAAAMwCgCAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAMcBAAAAAAAAAAAswAACAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T18:38:28.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CancelacionReservacion.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
-              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAAMwNAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T01:27:34.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CHECKOUT.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
+              "DocumentIndex": 7,
+              "Title": "CHECKOUT.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
               "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs [Design]",
-              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs [Design]",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T18:48:08.211Z",
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CHECKOUT.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
-              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHECKOUT.cs",
-              "ViewState": "AgIAAMUAAAAAAAAAAAAmwMUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "ConexionBD.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\ConexionBD.cs",
+              "RelativeDocumentMoniker": "ClasesData\\BD\\ConexionBD.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\ConexionBD.cs",
+              "RelativeToolTip": "ClasesData\\BD\\ConexionBD.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T18:48:11.816Z",
+              "WhenOpened": "2025-05-14T16:07:49.758Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CHEKIN.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs [Design]",
-              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T18:31:15.863Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "CHEKIN.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
               "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
               "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAMwEUAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAvwCgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T18:34:43.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BD_Check.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Check.cs",
-              "RelativeDocumentMoniker": "ClasesData\\BD\\BD_Check.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_Check.cs",
-              "RelativeToolTip": "ClasesData\\BD\\BD_Check.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAWwDYAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T01:31:05.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BD_HotelesHabitacionesServicios.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_HotelesHabitacionesServicios.cs",
-              "RelativeDocumentMoniker": "ClasesData\\BD\\BD_HotelesHabitacionesServicios.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\BD_HotelesHabitacionesServicios.cs",
-              "RelativeToolTip": "ClasesData\\BD\\BD_HotelesHabitacionesServicios.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAAswL0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T23:18:36.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CancelacionReservacion.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs [Design]",
-              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T01:27:23.098Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Reservaciones.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs [Design]",
-              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T01:15:03.41Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Reservaciones.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
-              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\Reservaciones.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAjwHIAAAAzAAAAAAAAAA==",
+              "Title": "CancelacionReservacion.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
+              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\CancelacionReservacion.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAAAHIAAAB0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T01:15:10.407Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Reservacion.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Reservacion.cs",
-              "RelativeDocumentMoniker": "ClasesData\\Reservacion.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Reservacion.cs",
-              "RelativeToolTip": "ClasesData\\Reservacion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T18:57:09.445Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ConexionBD.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\ConexionBD.cs",
-              "RelativeDocumentMoniker": "ClasesData\\BD\\ConexionBD.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\BD\\ConexionBD.cs",
-              "RelativeToolTip": "ClasesData\\BD\\ConexionBD.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T16:07:49.758Z"
+              "WhenOpened": "2025-05-17T22:53:20.368Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "HomeAdministrador.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
-              "RelativeDocumentMoniker": "INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs [Design]",
-              "RelativeToolTip": "INICIO_Forms\\ADMINISTRATIVO\\HomeAdministrador.cs [Design]",
+              "Title": "CHEKIN.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "RelativeDocumentMoniker": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\Proyecto_LMAD\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\INICIO_Forms\\OPERATIVO\\CHEKIN.cs [Dise\u00F1o]",
+              "RelativeToolTip": "INICIO_Forms\\OPERATIVO\\CHEKIN.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T18:16:36.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Clientes.cs",
-              "DocumentMoniker": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Clientes.cs",
-              "RelativeDocumentMoniker": "ClasesData\\Clientes.cs",
-              "ToolTip": "C:\\Users\\Luist\\OneDrive\\Desktop\\PIA_Proyectos\\LMAD_MAD_PIA\\MAD_BaseDeDatos\\ClasesData\\Clientes.cs",
-              "RelativeToolTip": "ClasesData\\Clientes.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T18:49:12.489Z"
+              "WhenOpened": "2025-05-14T18:31:15.863Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

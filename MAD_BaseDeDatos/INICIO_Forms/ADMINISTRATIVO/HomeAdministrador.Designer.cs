@@ -41,12 +41,12 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.ReporteDeVentas = new FontAwesome.Sharp.IconMenuItem();
             this.VentasReporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelacionDeReservacionToolStripMenuItem = new FontAwesome.Sharp.IconMenuItem();
+            this.cancelacionDeReservacionToolStripMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             this.SalirMenu = new FontAwesome.Sharp.IconMenuItem();
             this.Salir = new FontAwesome.Sharp.IconMenuItem();
             this.menuAdminTitulo = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
-            this.cancelacionDeReservacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelacionDeReservacionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,8 +59,8 @@
             this.ReporteHotel,
             this.ReporteClientes,
             this.ReporteDeVentas,
-            this.SalirMenu,
-            this.cancelacionDeReservacionToolStripMenuItem});
+            this.cancelacionDeReservacionToolStripMenuItem,
+            this.SalirMenu});
             this.menuAdmin.Location = new System.Drawing.Point(0, 88);
             this.menuAdmin.Name = "menuAdmin";
             this.menuAdmin.Size = new System.Drawing.Size(983, 71);
@@ -183,9 +183,34 @@
             // VentasReporte
             // 
             this.VentasReporte.Name = "VentasReporte";
-            this.VentasReporte.Size = new System.Drawing.Size(168, 22);
+            this.VentasReporte.Size = new System.Drawing.Size(180, 22);
             this.VentasReporte.Text = "Reporte de Ventas";
             this.VentasReporte.Click += new System.EventHandler(this.VentasReporte_Click);
+            // 
+            // cancelacionDeReservacionToolStripMenuItem
+            // 
+            this.cancelacionDeReservacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cancelacionDeReservacionToolStripMenuItem1});
+            this.cancelacionDeReservacionToolStripMenuItem.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.cancelacionDeReservacionToolStripMenuItem.IconColor = System.Drawing.Color.Black;
+            this.cancelacionDeReservacionToolStripMenuItem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.cancelacionDeReservacionToolStripMenuItem.IconSize = 40;
+            this.cancelacionDeReservacionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.cancelacionDeReservacionToolStripMenuItem.Name = "cancelacionDeReservacionToolStripMenuItem";
+            this.cancelacionDeReservacionToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cancelacionDeReservacionToolStripMenuItem.Size = new System.Drawing.Size(84, 67);
+            this.cancelacionDeReservacionToolStripMenuItem.Text = "Cancelacion";
+            this.cancelacionDeReservacionToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // cancelacionDeReservacionToolStripMenuItem1
+            // 
+            this.cancelacionDeReservacionToolStripMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.cancelacionDeReservacionToolStripMenuItem1.IconColor = System.Drawing.Color.Black;
+            this.cancelacionDeReservacionToolStripMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.cancelacionDeReservacionToolStripMenuItem1.Name = "cancelacionDeReservacionToolStripMenuItem1";
+            this.cancelacionDeReservacionToolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
+            this.cancelacionDeReservacionToolStripMenuItem1.Text = "Cancelacion de Reservacion";
+            this.cancelacionDeReservacionToolStripMenuItem1.Click += new System.EventHandler(this.cancelacionDeReservacionToolStripMenuItem1_Click);
             // 
             // SalirMenu
             // 
@@ -208,7 +233,7 @@
             this.Salir.IconColor = System.Drawing.Color.Black;
             this.Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(180, 22);
+            this.Salir.Size = new System.Drawing.Size(159, 22);
             this.Salir.Text = "Salir del Sistema";
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
@@ -233,22 +258,6 @@
             this.label1.Size = new System.Drawing.Size(245, 33);
             this.label1.TabIndex = 3;
             this.label1.Text = "Control de Hoteles";
-            // 
-            // cancelacionDeReservacionToolStripMenuItem
-            // 
-            this.cancelacionDeReservacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cancelacionDeReservacionToolStripMenuItem1});
-            this.cancelacionDeReservacionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.cancelacionDeReservacionToolStripMenuItem.Name = "cancelacionDeReservacionToolStripMenuItem";
-            this.cancelacionDeReservacionToolStripMenuItem.Size = new System.Drawing.Size(84, 67);
-            this.cancelacionDeReservacionToolStripMenuItem.Text = "Cancelacion";
-            // 
-            // cancelacionDeReservacionToolStripMenuItem1
-            // 
-            this.cancelacionDeReservacionToolStripMenuItem1.Name = "cancelacionDeReservacionToolStripMenuItem1";
-            this.cancelacionDeReservacionToolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
-            this.cancelacionDeReservacionToolStripMenuItem1.Text = "Cancelacion de Reservacion";
-            this.cancelacionDeReservacionToolStripMenuItem1.Click += new System.EventHandler(this.cancelacionDeReservacionToolStripMenuItem1_Click);
             // 
             // HomeAdministrador
             // 
@@ -289,7 +298,7 @@
         private System.Windows.Forms.ToolStripMenuItem VentasReporte;
         private System.Windows.Forms.ToolStripMenuItem registroDeHabitacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeServiciosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelacionDeReservacionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelacionDeReservacionToolStripMenuItem1;
+        private FontAwesome.Sharp.IconMenuItem cancelacionDeReservacionToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem cancelacionDeReservacionToolStripMenuItem1;
     }
 }

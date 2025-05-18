@@ -26,7 +26,7 @@ namespace INICIO_Forms.OPERATIVO
         {
             comboCiudadesCheck.DataSource = BD_Reservacion.ObtenerCiudades();
             CargarCiudades();
-            
+            _ = CargarReservacionesAsync();
 
 
         }
@@ -35,9 +35,9 @@ namespace INICIO_Forms.OPERATIVO
             homeOperativo.Show();
         }
 
-        private async void comboCiudadesCheck_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboCiudadesCheck_SelectedIndexChanged(object sender, EventArgs e)
         {
- //NO JALO DEJALO ASI
+            //NO JALO DEJALO ASI
         }
 
         private void listHotelesCheck_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,8 +62,7 @@ namespace INICIO_Forms.OPERATIVO
                     ID_Reservacion = reservacionSeleccionada.CodigoReservacion,
                     UsuarioRegistro = Sesion.ID_Usuario,
                     FechaCheckIn = DateTime.Now,
-                     // Se marca el check-in
-                                             // Clave se genera automáticamente, p.ej. Guid.NewGuid().ToString()
+                    EstadoEntrada = "Marcado", // Cambiado de carácter a cadena
                     Clave = reservacionSeleccionada.CodigoReservacion
                 };
 
@@ -72,7 +71,6 @@ namespace INICIO_Forms.OPERATIVO
                 {
                     MessageBox.Show("Check-In registrado correctamente");
                     // Actualizar la lista: se recargan sólo las reservaciones que aún no tienen checkin marcado.
-                    
                     listReservaciones.DisplayMember = "CodigoReservacion";
                 }
                 else
@@ -91,7 +89,6 @@ namespace INICIO_Forms.OPERATIVO
             try
             {
                 comboCiudadesCheck.DataSource = BD_Reservacion.ObtenerCiudades();
-                comboCiudadesCheck.SelectedIndex = 0; // Sin selección inicial
             }
             catch (Exception ex)
             {
@@ -209,5 +206,39 @@ namespace INICIO_Forms.OPERATIVO
             }
         }
 
+
+
+
+       private async Task CargarReservacionesAsync()
+        {
+            try
+            {
+                if (!(listHotelesCheck.SelectedItem is Hoteles hotel))
+                {
+                    return;
+                }
+
+                // Obtener reservaciones de forma asíncrona
+                List<Reservacion> reservaciones = await Task.Run(() =>
+                    BD_Reservacion.ObtenerReservacionesPorHotel(hotel.ID_Hotel));
+
+                if (reservaciones == null || reservaciones.Count == 0)
+                {
+                    listReservaciones.Items.Add("No se encontraron reservaciones para este hotel.");
+                }
+                else
+                {
+                    // Configurar correctamente el DataSource
+                    listReservaciones.DisplayMember = "DisplayInfo"; // Propiedad que quieres mostrar
+                    listReservaciones.ValueMember = "CodigoReservacion"; // Valor asociado
+                    listReservaciones.DataSource = reservaciones;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Error al cargar reservaciones: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

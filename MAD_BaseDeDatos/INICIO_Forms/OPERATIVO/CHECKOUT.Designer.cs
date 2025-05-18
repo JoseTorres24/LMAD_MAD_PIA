@@ -142,10 +142,10 @@
             this.iconButton3.IconColor = System.Drawing.Color.Black;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(454, 574);
+            this.iconButton3.Location = new System.Drawing.Point(430, 574);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.iconButton3.Size = new System.Drawing.Size(184, 31);
+            this.iconButton3.Size = new System.Drawing.Size(264, 60);
             this.iconButton3.TabIndex = 27;
             this.iconButton3.Text = "Generar Clientes para salir";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -375,10 +375,18 @@ namespace ClasesData.BD
 
             using (SqlConnection conexion = ConexionBD.ObtenerConexion())
             {
-                string consulta = @"SELECT CodigoReservacion, RFC_Cliente, FechaInicio, FechaFin
-                          FROM Reservacion 
-                          WHERE ID_Hotel = @IDHotel
-                          ORDER BY FechaInicio DESC";
+                string consulta = @"SELECT  
+                R.CodigoReservacion,  
+                R.RFC_Cliente,  
+                R.FechaInicio,  
+                R.FechaFin,  
+                R.Estatus  
+                FROM Reservacion R
+                INNER JOIN Hoteles H ON R.ID_Hotel = H.ID_Hotel
+                WHERE R.ID_Hotel = @IDHotel
+                AND (R.Estatus NOT IN ('Eliminada', 'Aceptada') OR R.Estatus IS NULL)
+                AND CAST(R.FechaInicio AS DATE) <= CAST(GETDATE() AS DATE)
+                ORDER BY R.FechaInicio DESC;";
 
                 using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                 {
@@ -490,10 +498,20 @@ namespace ClasesData.BD
 
         public static List<Cliente> ObtenerClientesPorHotel(int idHotel)
         {
-            string query = @"SELECT r.CodigoReservacion, c.RFC, c.NombreCompleto, c.CorreoElectronico, c.Ciudad, c.Estado, c.Pais 
-                     FROM Reservacion r
-                     INNER JOIN Clientes c ON r.RFC_Cliente = c.RFC WHERE
-                     r.ID_Hotel = @ID_Hotel";
+            string query = @"
+    SELECT  
+        r.CodigoReservacion,  
+        c.RFC,  
+        c.NombreCompleto,  
+        c.CorreoElectronico,  
+        c.Ciudad,  
+        c.Estado,  
+        c.Pais  
+    FROM Reservacion r
+    INNER JOIN Clientes c ON r.RFC_Cliente = c.RFC
+    WHERE r.ID_Hotel = @IDHotel
+    AND (r.Estatus IN ('Aceptada', 'Eliminada') OR r.Estatus IS NULL)
+    ORDER BY r.CodigoReservacion ASC;";
 
             List<Cliente> clientes = new List<Cliente>();
 
@@ -502,7 +520,7 @@ namespace ClasesData.BD
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@ID_Hotel", idHotel);
+                    cmd.Parameters.AddWithValue("@IDHotel", idHotel);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -523,32 +541,7 @@ namespace ClasesData.BD
             return clientes;
         }
 
-        public static List<Reservacion> ObtenerReservacionesParaCheckIn(int idHotel)
-        {
-            List<Reservacion> resultado = new List<Reservacion>();
-            DateTime hoy = DateTime.Today;
 
-            // Trae solo las activas de este hotel
-            var todas = ObtenerReservacionesActivas()
-                .Where(r => r.ID_Hotel == idHotel)
-                .ToList();
-
-            foreach (var reservacion in todas)
-            {
-                int diasRestantes = (reservacion.FechaInicio.Date - DateTime.Today).Days;
-                if (diasRestantes == 3)
-                {
-                    resultado.Add(reservacion);
-                }
-                else if (diasRestantes <= 2 && reservacion.Estatus != "Aceptada")
-                {
-                    // Actualiza automáticamente a "Aceptada"
-                    ActualizarEstatusReservacion(reservacion.CodigoReservacion, "Aceptada");
-                }
-            }
-
-            return resultado;
-        }
 
         public static bool ActualizarEstatusReservacion(string codigoReservacion, string nuevoEstatus)
         {
@@ -566,19 +559,27 @@ namespace ClasesData.BD
         }
 
         // Ejemplo para filtrar en CancelacionReservacion.cs
-        public static List<Reservacion> ObtenerReservacionesFiltradas()
+        public static List<Reservacion> ObtenerReservacionesSinEstatus(int idHotel)
         {
-            string query = @"SELECT r.CodigoReservacion, r.RFC_Cliente, r.FechaInicio, r.FechaFin, r.Estatus 
-                             FROM Reservacion r 
-                             WHERE r.Estatus IN ('Eliminada', 'Aceptada')";
+            string query = @"
+        SELECT 
+            CodigoReservacion, 
+            RFC_Cliente, 
+            FechaInicio, 
+            FechaFin 
+        FROM Reservacion 
+        WHERE Estatus IS NULL
+            AND ID_Hotel = @IDHotel
+            AND DATEDIFF(DAY, GETDATE(), FechaInicio) >= 3;";
 
-            var reservaciones = new List<Reservacion>();
+            List<Reservacion> reservaciones = new List<Reservacion>();
 
             using (SqlConnection conn = ConexionBD.ObtenerConexion())
             {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@IDHotel", idHotel);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -587,9 +588,8 @@ namespace ClasesData.BD
                             {
                                 CodigoReservacion = reader["CodigoReservacion"].ToString(),
                                 RFC_Cliente = reader["RFC_Cliente"].ToString(),
-                                FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
-                                FechaFin = Convert.ToDateTime(reader["FechaFin"]),
-                                Estatus = reader["Estatus"].ToString(),
+                                FechaInicio = reader.GetDateTime(reader.GetOrdinal("FechaInicio")),
+                                FechaFin = reader.GetDateTime(reader.GetOrdinal("FechaFin"))
                             });
                         }
                     }
@@ -598,6 +598,34 @@ namespace ClasesData.BD
 
             return reservaciones;
         }
+
+        public static bool PuedeCancelarReservacion(string codigoReservacion)
+        {
+            string query = @"
+        SELECT 
+            DATEDIFF(DAY, GETDATE(), FechaInicio) AS DiasRestantes
+        FROM Reservacion
+        WHERE CodigoReservacion = @CodigoReservacion;";
+
+            using (SqlConnection conn = ConexionBD.ObtenerConexion())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@CodigoReservacion", codigoReservacion);
+                    object resultado = cmd.ExecuteScalar();
+
+                    if (resultado != null && int.TryParse(resultado.ToString(), out int diasRestantes))
+                    {
+                        return diasRestantes >= 3;
+                    }
+                }
+            }
+
+            return false; // No se encontró la reservación o no cumple la condición
+        }
+
+
 
     }
 }

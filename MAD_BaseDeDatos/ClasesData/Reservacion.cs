@@ -19,12 +19,23 @@ namespace ClasesData
         public int UsuarioRegistro { get; set; }
         public DateTime FechaRegistro { get; set; }
         public string Estatus { get; set; } //ESTO Para disque eliminar 
-
-        public List<ServiciosReservacion> Servicios { get; set; } = new List<ServiciosReservacion>();
-
+        public List<Servicios> Servicios { get; set; } = new List<Servicios>(); // Tenemos una elemento en la tabla que recibe caracteres lo que tenemos que obtener aqui es para poder apoyarnos
+        // De aqui tengo que tener referencia con la tabla de serviciosReservacion
         public string DisplayInfo
         {
             get { return $"{CodigoReservacion} - {RFC_Cliente} - {FechaInicio:dd/MM/yyyy}"; }
+        }
+
+        public string DisplayServicios
+        {
+            get
+            {
+                if (Servicios != null && Servicios.Count > 0)
+                {
+                    return string.Join(", ", Servicios.Select(s => $"Servicio ID: {s.ID_Servicio}"));
+                }
+                return "No hay servicios reservados.";
+            }
         }
 
     }

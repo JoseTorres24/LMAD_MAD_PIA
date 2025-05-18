@@ -51,20 +51,13 @@ namespace INICIO_Forms.ADMINISTRATIVO
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            // Validar que haya un hotel seleccionado
             int idHotelSeleccionado = ObtenerIDHotelSeleccionado();
             if (idHotelSeleccionado <= 0)
             {
                 MessageBox.Show("Debe seleccionar un hotel antes de registrar servicios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // Validar que haya servicios en la lista
-            if (listServicios.Items.Count == 0)
-            {
-                MessageBox.Show("No hay servicios para registrar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            // Validar que los campos no estén vacíos
+
             if (string.IsNullOrWhiteSpace(textServicio.Text))
             {
                 MessageBox.Show("El nombre del servicio no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -77,7 +70,6 @@ namespace INICIO_Forms.ADMINISTRATIVO
                 return;
             }
 
-            // Guardar servicio en la base de datos con los valores correctos
             Servicios nuevoServicio = new Servicios
             {
                 NombreServicio = textServicio.Text,
@@ -85,27 +77,24 @@ namespace INICIO_Forms.ADMINISTRATIVO
             };
 
             int idServicio = BD_HotelesHabitacionesServicios.GuardarServicio(nuevoServicio);
+            if (idServicio <= 0)
+            {
+                MessageBox.Show("Error al guardar el servicio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-              if (idServicio > 0)
-                {
-                    // Asociar el servicio al hotel
-                  HotelServicios relacion = new HotelServicios
-                  {
-                        ID_Hotel = idHotelSeleccionado,
-                        ID_Servicio = idServicio
-                  };
+            HotelServicios relacion = new HotelServicios
+            {
+                ID_Hotel = idHotelSeleccionado,
+                ID_Servicio = idServicio
+            };
 
-                  BD_HotelesHabitacionesServicios.AsociarServicioAHotel(relacion);
-              }
-              else
-              {
-                 MessageBox.Show("Error al guardar el servicio en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-              }
-            
+            BD_HotelesHabitacionesServicios.AsociarServicioAHotel(relacion);
 
             BD_HotelesHabitacionesServicios.CargarServiciosEnListBox(listServicios);
-            MessageBox.Show("Servicios registrados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Servicio registrado y asociado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
         //No sirve para nada
         private void listServicios_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -111,8 +111,8 @@ namespace INICIO_Forms.ADMINISTRATIVO
                 listReservaciones.Enabled = false;
                 Cursor.Current = Cursors.WaitCursor;
 
-                // Obtener reservaciones de forma asíncrona
-                List<Reservacion> reservaciones = await Task.Run(() => BD_Reservacion.ObtenerReservacionesParaCheckIn(hotel.ID_Hotel));
+                // Obtener reservaciones sin Estatus de forma asíncrona
+                List<Reservacion> reservaciones = await Task.Run(() => BD_Reservacion.ObtenerReservacionesSinEstatus(hotel.ID_Hotel));
 
                 // Actualizar UI en el hilo principal
                 this.Invoke((MethodInvoker)delegate
@@ -121,17 +121,15 @@ namespace INICIO_Forms.ADMINISTRATIVO
 
                     if (reservaciones == null || reservaciones.Count == 0)
                     {
-                        listReservaciones.Items.Add("No se encontraron reservaciones para este hotel.");
+                        listReservaciones.Items.Add("No se encontraron reservaciones sin estatus para este hotel.");
                     }
                     else
-                   {
-                        reservaciones = BD_Reservacion.ObtenerReservacionesActivas();
+                    {
                         // Configurar correctamente el DataSource
                         listReservaciones.DisplayMember = "DisplayInfo"; // Propiedad que quieres mostrar
                         listReservaciones.ValueMember = "CodigoReservacion"; // Valor asociado
                         listReservaciones.DataSource = reservaciones;
                     }
-
                 });
             }
             catch (InvalidCastException icex)
@@ -152,6 +150,8 @@ namespace INICIO_Forms.ADMINISTRATIVO
                 Cursor.Current = Cursors.Default;
             }
         }
+
+
         //Eliminar Reservacion 
         private void MostrarCodigo_Click(object sender, EventArgs e)
         {

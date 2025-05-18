@@ -1,6 +1,5 @@
 ﻿using ClasesData;
 using ClasesData.BD;
-using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,16 +9,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
 using System.Data.SqlClient;
+using System.IO;
+using OfficeOpenXml;
+using PdfSharp.Drawing;
+using PdfSharp.Pdf;
+using ControlzEx;
+using System.Diagnostics;
+using System.Threading;
+
+
+
 
 namespace INICIO_Forms.OPERATIVO
 {
+    
     public partial class CHECKOUT : Form
     {
+
         private HomeOperativo home;
+        private static double sumaServicios;
+
         public CHECKOUT(HomeOperativo home)
         {
             InitializeComponent();
@@ -53,104 +63,326 @@ namespace INICIO_Forms.OPERATIVO
         }
 
 
-        //Boton de factura 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            if (listClientes.SelectedItem is Reservacion reservacion)
+            if (listClientes.SelectedItem is Cliente clienteSeleccionado)
             {
+                Reservacion reservacion = ObtenerReservacionPorCliente(clienteSeleccionado.RFC);
 
-                Cliente referenciado = ObtenerClientePorReservacion(reservacion.RFC_Cliente);
+                if (reservacion == null)
+                {
+                    MessageBox.Show("Este cliente no tiene reservaciones activas.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-
-
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "Archivo Excel (*.xlsx)|*.xlsx|Archivo PDF (*.pdf)|*.pdf";
-                saveFileDialog.FileName = $"Factura_{reservacion.CodigoReservacion}";
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Archivo Excel (*.xlsx)|*.xlsx|Archivo PDF (*.pdf)|*.pdf",
+                    FileName = $"Factura_{reservacion.CodigoReservacion}"
+                };
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string selectedExtension = System.IO.Path.GetExtension(saveFileDialog.FileName).ToLower();
+                    string selectedExtension = Path.GetExtension(saveFileDialog.FileName).ToLower();
+                    double gastoTotal = reservacion.Servicios.Sum(s => ObtenerDetalleServicio(s.ID_Servicio)?.Costo ?? 0);
+
+                    List<Servicios> serviciosSeleccionados = reservacion.Servicios
+                        .Select(s => ObtenerDetalleServicio(s.ID_Servicio))
+                        .Where(servicio => servicio != null)
+                        .ToList();
+
+                    // Verificación de los servicios seleccionados
+                    if (serviciosSeleccionados.Count == 0)
+                    {
+                        Console.WriteLine("No hay servicios asociados a esta reservación.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Servicios asociados:");
+                        foreach (var servicio in serviciosSeleccionados)
+                        {
+                            Console.WriteLine($"- {servicio.NombreServicio}: {servicio.Costo:C2}");
+                        }
+                    }
 
                     if (selectedExtension == ".xlsx")
                     {
-                        // 🔹 GENERAR EXCEL
-                        var workbook = new XLWorkbook();
-                        var ws = workbook.Worksheets.Add("Factura");
-
-                        ws.Cell("A1").Value = "Hotel TuOtaku, S.A. de C.V.";
-                        ws.Cell("A2").Value = "RFC: TUO123456789";
-                        ws.Cell("A3").Value = "Factura de Check-Out";
-                        ws.Range("A1:D1").Merge().Style.Font.SetBold().Font.FontSize = 16;
-                        ws.Range("A1:D3").Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-
-                        int row = 5;
-                        ws.Cell(row, 1).Value = "Folio:";
-                        ws.Cell(row++, 2).Value = $"FACT-{reservacion.CodigoReservacion}";
-                        ws.Cell(row, 1).Value = "Fecha:";
-                        ws.Cell(row++, 2).Value = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-
-                        // 🔹 DATOS DEL CLIENTE
-                        ws.Cell(row++, 1).Value = "Datos del Cliente:";
-                        ws.Cell(row, 1).Value = "Nombre Completo:";
-                        ws.Cell(row++, 2).Value = referenciado.NombreCompleto ?? "No registrado";
-                        ws.Cell(row, 1).Value = "RFC:";
-                        ws.Cell(row++, 2).Value = referenciado.RFC ?? "No registrado";
-                        ws.Cell(row, 1).Value = "Ubicación:";
-                        ws.Cell(row++, 2).Value = $"{referenciado.Ciudad ?? "No registrado"}, {referenciado.Estado ?? "No registrado"}, {referenciado.Pais ?? "No registrado"}";
-                        ws.Cell(row, 1).Value = "Estado Civil:";
-                        ws.Cell(row++, 2).Value = referenciado.EstadoCivil ?? "No registrado";
-
-                        ws.Columns().AdjustToContents();
-                        workbook.SaveAs(saveFileDialog.FileName);
-                        MessageBox.Show("Factura en Excel generada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GenerarFacturaExcel(clienteSeleccionado, reservacion, serviciosSeleccionados, gastoTotal, saveFileDialog.FileName);
                     }
                     else if (selectedExtension == ".pdf")
                     {
-                        // 🔹 GENERAR PDF
-                        using (var writer = new PdfWriter(saveFileDialog.FileName))
-                        using (var pdf = new PdfDocument(writer))
-                        using (var document = new Document(pdf))
-                        {
-
-                            document.Add(new Paragraph("Hotel TuOtaku, S.A. de C.V.")
-                                .SetFontSize(16).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                            document.Add(new Paragraph("RFC: TUO123456789"));
-                            document.Add(new Paragraph("Factura de Check-Out"));
-                            document.Add(new Paragraph($"Fecha: {DateTime.Now:dd/MM/yyyy HH:mm}"));
-                            document.Add(new Paragraph($"Folio: FACT-{reservacion.CodigoReservacion}"));
-
-                            document.Add(new Paragraph("\n🔹 **Datos del Cliente**"));
-                            document.Add(new Paragraph($"Nombre: {referenciado.NombreCompleto ?? "No registrado"}"));
-                            document.Add(new Paragraph($"RFC: {referenciado.RFC ?? "No registrado"}"));
-                            document.Add(new Paragraph($"Ubicación: {referenciado.Ciudad ?? "No registrado"}, {referenciado.Estado ?? "No registrado"}, {referenciado.Pais ?? "No registrado"}"));
-                            document.Add(new Paragraph($"Estado Civil: {referenciado.EstadoCivil ?? "No registrado"}"));
-
-                            document.Add(new Paragraph("\n🔹 **Servicios Utilizados**"));
-                            if (reservacion.Servicios != null && reservacion.Servicios.Count > 0)
-                            {
-                                foreach (var servicio in reservacion.Servicios)
-                                {
-                                    document.Add(new Paragraph($"- {BD_Servicios.ObtenerNombreServicio(servicio.ID_Servicio)}"));
-                                }
-                            }
-                            else
-                            {
-                                document.Add(new Paragraph("No se registraron servicios."));
-                            }
-
-                            MessageBox.Show("Factura en PDF generada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        GenerarFacturaPDF(clienteSeleccionado, reservacion, serviciosSeleccionados, gastoTotal, saveFileDialog.FileName);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Selecciona una reservación para generar la factura.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecciona un cliente para generar la factura.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
 
-        public Cliente ObtenerClientePorReservacion(string codigoReservacion)
+        public static Servicios ObtenerDetalleServicio(int idServicio)
+        {
+            string query = "SELECT NombreServicio, Costo FROM Servicios WHERE ID_Servicio = @IDServicio;";
+            using (SqlConnection conn = ConexionBD.ObtenerConexion())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IDServicio", idServicio);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Validar que los datos no sean nulos antes de asignarlos
+                            return new Servicios
+                            {
+                                ID_Servicio = idServicio,
+                                NombreServicio = reader["NombreServicio"].ToString(),
+                                Costo = reader["Costo"] == DBNull.Value ? 0 : Convert.ToDouble(reader["Costo"])
+                            };
+                        }
+                    }
+                }
+            }
+            return null; // Retornar null si no se encuentra
+        }
+
+        public static List<Servicios> ObtenerServiciosPorReservacion(string idReservacion)
+        {
+            string query = @"
+        SELECT S.ID_Servicio, S.NombreServicio, S.Costo
+        FROM Servicios_Reservacion SR
+        JOIN Servicios S ON SR.ID_Servicio = S.ID_Servicio
+        WHERE SR.ID_Reservacion = @IDReservacion;";
+
+            List<Servicios> servicios = new List<Servicios>();
+
+            using (SqlConnection conn = ConexionBD.ObtenerConexion())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IDReservacion", idReservacion);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            servicios.Add(new Servicios
+                            {
+                                ID_Servicio = Convert.ToInt32(reader["ID_Servicio"]),
+                                NombreServicio = reader["NombreServicio"].ToString(),
+                                Costo = reader["Costo"] == DBNull.Value ? 0 : Convert.ToDouble(reader["Costo"])
+                            });
+                        }
+                    }
+                }
+            }
+
+            return servicios;
+        }
+
+
+
+        // The issue is caused by an extra closing brace '}' in the method `GenerarFacturaExcel`.
+        // The misplaced brace prematurely ends the method, causing a syntax error.
+        // Below is the corrected version of the method.
+
+        public static void GenerarFacturaExcel(Cliente cliente, Reservacion reservacion, List<Servicios> servicios, double gastoTotal, string filePath)
+        {
+            Console.WriteLine($"Generando factura en Excel para la reservación {reservacion.CodigoReservacion}");
+
+            using (ExcelPackage excel = new ExcelPackage())
+            {
+                var ws = excel.Workbook.Worksheets.Add("Factura");
+
+                // Encabezado
+                ws.Cells["A1"].Value = "Hotel TuOtaku, S.A. de C.V.";
+                ws.Cells["A2"].Value = "RFC: TUO123456789";
+                ws.Cells["A3"].Value = "Factura de Check-Out";
+                ws.Cells["A1:A3"].Style.Font.Bold = true;
+                ws.Cells["A1:A3"].Style.Font.Size = 14;
+
+                int row = 5;
+                ws.Cells[row, 1].Value = "Folio:";
+                ws.Cells[row++, 2].Value = $"FACT-{reservacion.CodigoReservacion}";
+                ws.Cells[row, 1].Value = "Fecha:";
+                ws.Cells[row++, 2].Value = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
+                // Datos del Cliente
+                ws.Cells[row++, 1].Value = "Datos del Cliente:";
+                ws.Cells[row, 1].Value = "Nombre Completo:";
+                ws.Cells[row++, 2].Value = cliente.NombreCompleto ?? "No registrado";
+                ws.Cells[row, 1].Value = "RFC:";
+                ws.Cells[row++, 2].Value = cliente.RFC ?? "No registrado";
+                ws.Cells[row, 1].Value = "Ubicación:";
+                ws.Cells[row++, 2].Value = $"{cliente.Ciudad ?? "No registrado"}, {cliente.Estado ?? "No registrado"}, {cliente.Pais ?? "No registrado"}";
+
+                // Servicios Seleccionados
+                ws.Cells[row++, 1].Value = "Servicios Seleccionados:";
+
+                if (servicios.Count > 0)
+                {
+                    foreach (var servicio in servicios)
+                    {
+                        ws.Cells[row, 1].Value = servicio.NombreServicio;
+                        ws.Cells[row++, 2].Value = servicio.Costo.ToString("C2");
+                        sumaServicios += servicio.Costo;
+                    }
+                }
+                else
+                {
+                    ws.Cells[row++, 1].Value = "No se registraron servicios.";
+                    sumaServicios = 0;
+                }
+
+                gastoTotal = reservacion.Total + sumaServicios - reservacion.Anticipo;
+                // Gasto Total
+                ws.Cells[row, 1].Value = "Gasto Total:";
+                ws.Cells[row++, 2].Value = gastoTotal.ToString("C2");
+
+                File.WriteAllBytes(filePath, excel.GetAsByteArray());
+                Console.WriteLine("Factura en Excel generada exitosamente.");
+            }
+        }
+        
+        
+        public static void GenerarFacturaPDF(Cliente cliente, Reservacion reservacion, List<Servicios> servicios, double gastoTotal, string filePath)
+        {
+            
+            Console.WriteLine($"Generando factura en PDF para la reservación {reservacion.CodigoReservacion}");
+
+            PdfDocument pdf = new PdfDocument();
+            pdf.Info.Title = "Factura de Check-Out";
+            PdfPage page = pdf.AddPage();
+            XGraphics gfx = XGraphics.FromPdfPage(page);
+            XFont font = new XFont("Arial", 12);
+            XFont fontBold = new XFont("Arial", 14);
+
+            int yPos = 50;
+
+            // Encabezado
+            gfx.DrawString("Hotel TuOtaku, S.A. de C.V.", fontBold, XBrushes.Black, new XRect(20, yPos, page.Width, page.Height), XStringFormats.TopLeft);
+            yPos += 20;
+            gfx.DrawString("RFC: TUO123456789", font, XBrushes.Black, 20, yPos);
+            yPos += 20;
+            gfx.DrawString($"Factura de Check-Out", font, XBrushes.Black, 20, yPos);
+            yPos += 30;
+            gfx.DrawString($"Folio: FACT-{reservacion.CodigoReservacion}", font, XBrushes.Black, 20, yPos);
+            yPos += 20;
+            gfx.DrawString($"Fecha: {DateTime.Now:dd/MM/yyyy HH:mm}", font, XBrushes.Black, 20, yPos);
+            yPos += 40;
+
+            // Datos del Cliente
+            gfx.DrawString("Datos del Cliente:", fontBold, XBrushes.Black, 20, yPos);
+            yPos += 20;
+            gfx.DrawString($"Nombre: {cliente.NombreCompleto ?? "No registrado"}", font, XBrushes.Black, 20, yPos);
+            yPos += 20;
+            gfx.DrawString($"RFC: {cliente.RFC ?? "No registrado"}", font, XBrushes.Black, 20, yPos);
+            yPos += 20;
+            gfx.DrawString($"Ubicación: {cliente.Ciudad ?? "No registrado"}, {cliente.Estado ?? "No registrado"}, {cliente.Pais ?? "No registrado"}", font, XBrushes.Black, 20, yPos);
+            yPos += 40;
+
+            // Servicios Seleccionados
+            gfx.DrawString("Servicios Seleccionados:", fontBold, XBrushes.Black, 20, yPos);
+            yPos += 20;
+            if (servicios.Count > 0)
+            {
+                foreach (var servicio in servicios)
+                {
+                    gfx.DrawString($"- {servicio.NombreServicio}: {servicio.Costo:C2}", font, XBrushes.Black, 20, yPos);
+                    yPos += 20;
+                    sumaServicios = +servicio.Costo;
+                }
+            }
+            else
+            {
+                gfx.DrawString("No se registraron servicios.", font, XBrushes.Black, 20, yPos);
+                sumaServicios = 0;
+            }
+            yPos += 40;
+
+            gastoTotal = reservacion.Total + sumaServicios - reservacion.Anticipo;
+            // Gasto Total
+            gfx.DrawString($"Gasto Total: {gastoTotal:C2}", fontBold, XBrushes.Black, 20, yPos);
+
+            pdf.Save(filePath);
+            Console.WriteLine("Factura en PDF generada exitosamente.");
+        }
+
+
+        public static Reservacion ObtenerReservacionPorCliente(string rfcCliente)
+        {
+            string query = @"
+    SELECT   
+        R.CodigoReservacion, 
+        R.FechaInicio, 
+        R.FechaFin, 
+        R.Estatus, 
+        R.Total,
+        R.Anticipo,
+        S.ID_Servicio, 
+        S.NombreServicio, 
+        S.Costo
+    FROM Reservacion R  
+    LEFT JOIN Servicios_Reservacion SR 
+        ON R.CodigoReservacion = SR.ID_Reservacion  
+    LEFT JOIN Servicios S 
+        ON SR.ID_Servicio = S.ID_Servicio  
+    WHERE R.RFC_Cliente = @RFCCliente    
+    ORDER BY R.FechaInicio DESC;";
+
+            using (SqlConnection conn = ConexionBD.ObtenerConexion())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@RFCCliente", rfcCliente);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        Reservacion reservacion = null;
+
+                        while (reader.Read())
+                        {
+                            if (reservacion == null)
+                            {
+                                reservacion = new Reservacion
+                                {
+                                    CodigoReservacion = reader["CodigoReservacion"].ToString(),
+                                    FechaInicio = Convert.ToDateTime(reader["FechaInicio"]),
+                                    FechaFin = Convert.ToDateTime(reader["FechaFin"]),
+                                    Estatus = reader["Estatus"].ToString(),
+                                    Total = Convert.ToSingle(reader["Total"]),
+                                    Anticipo = Convert.ToSingle(reader["Anticipo"]),
+                                    Servicios = new List<Servicios>()
+                                };
+                            }
+
+                            // Agregar servicios asociados si existen
+                            if (!reader.IsDBNull(reader.GetOrdinal("ID_Servicio")))
+                            {
+                                reservacion.Servicios.Add(new Servicios
+                                {
+                                    ID_Servicio = Convert.ToInt32(reader["ID_Servicio"]),
+                                    NombreServicio = reader["NombreServicio"].ToString(),
+                                    Costo = reader["Costo"] == DBNull.Value ? 0 : Convert.ToDouble(reader["Costo"])
+                                });
+                            }
+                        }
+
+                        return reservacion;
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+        public static Cliente ObtenerClientePorReservacion(string codigoReservacion)
         {
             // Validar que el código de reservación no esté vacío o nulo
             if (string.IsNullOrEmpty(codigoReservacion))
@@ -160,11 +392,11 @@ namespace INICIO_Forms.OPERATIVO
 
             // Consulta para obtener el cliente relacionado con la reservación filtrando por estatus
             string query = @"
-        SELECT c.RFC, c.NombreCompleto, c.Ciudad, c.Estado, c.Pais, c.EstadoCivil
-        FROM Reservacion r
-        INNER JOIN Cliente c ON r.RFC_Cliente = c.RFC
-        WHERE r.CodigoReservacion = @CodigoReservacion 
-        AND r.Estatus IN ('Aceptada', 'Eliminada')";
+            SELECT c.RFC, c.NombreCompleto, c.Ciudad, c.Estado, c.Pais, c.EstadoCivil
+            FROM Reservacion r
+            INNER JOIN Cliente c ON r.RFC_Cliente = c.RFC
+            WHERE r.CodigoReservacion = @CodigoReservacion 
+            AND (r.Estatus IN ('Aceptada', 'Eliminada') OR r.Estatus IS NULL);";
 
             using (SqlConnection conn = ConexionBD.ObtenerConexion())
             {
